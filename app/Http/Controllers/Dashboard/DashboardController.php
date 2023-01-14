@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -26,7 +27,11 @@ class DashboardController extends Controller
         return view('Dashboard.message');
     }
     public function profile(){
-        return view('Dashboard.profile');
+
+        $users = User::select('name' , 'username' , 'email' , 'image' , 'phone' , 'created_at')->get();
+
+
+        return view('Dashboard.profile')->with(compact('users'));
     }
     public function purchase(){
         return view('Dashboard.purchase');

@@ -1,15 +1,24 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'a18b5f3ae724eef72b0ae5d1490e34af76ff51a5',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
     'versions' => array(
+        'beberlei/assert' => array(
+            'pretty_version' => 'v3.3.2',
+            'version' => '3.3.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../beberlei/assert',
+            'aliases' => array(),
+            'reference' => 'cb70015c04be1baee6f5f5c953703347c0ac1655',
+            'dev_requirement' => false,
+        ),
         'brick/math' => array(
             'pretty_version' => '0.10.2',
             'version' => '0.10.2.0',
@@ -374,12 +383,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'a18b5f3ae724eef72b0ae5d1490e34af76ff51a5',
             'dev_requirement' => false,
         ),
         'laravel/pint' => array(
@@ -488,6 +497,15 @@
             'install_path' => __DIR__ . '/../monolog/monolog',
             'aliases' => array(),
             'reference' => '720488632c590286b88b80e62aa3d3d551ad4a50',
+            'dev_requirement' => false,
+        ),
+        'morilog/jalali' => array(
+            'pretty_version' => 'v3.4.0',
+            'version' => '3.4.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../morilog/jalali',
+            'aliases' => array(),
+            'reference' => '6051d96facb33ccb384db6349b27ce39bd93fe5b',
             'dev_requirement' => false,
         ),
         'mtdowling/cron-expression' => array(

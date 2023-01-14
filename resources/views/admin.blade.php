@@ -37,7 +37,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-12">
                         <div class="logo-box logo--box">
-                            <a href="{{route('dashboard')}}" class="logo"><img src="images/logo.png" alt="لوگو" /></a>
+                            <a href="{{route('dashboard')}}" class="logo"><img src="images/logo.png" style="width: 30%" alt="لوگو" /></a>
                             <div class="user-btn-action">
                                 <div class="search-menu-toggle icon-element icon-element-sm shadow-sm mr-2" data-toggle="tooltip" data-placement="top" title="جستجو کردن">
                                     <i class="la la-search"></i>
@@ -549,7 +549,7 @@
         </div>
 
         <div class="logo-box px-4">
-            <a href="{{route('dashboard')}}" class="logo"><img src="images/logo.png" alt="لوگو" /></a>
+            <a href="{{route('dashboard')}}" class="logo"><img src="images/logo.png" style="width: 30%" alt="لوگو" /></a>
         </div>
         <ul class="generic-list-item off-canvas-menu-list off--canvas-menu-list pt-35px">
             <li class= {{ Request::segment(1)  == 'dashboard' ?  "page-active" : '' }}>
