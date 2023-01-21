@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('reasult_books', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('username');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('course_id');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->string('count_class');
             $table->string('api_token');
             $table->unsignedInteger('level');
             $table->string('email')->unique();
@@ -27,15 +30,8 @@ return new class extends Migration
             $table->boolean('phone_verify');
             $table->integer('telphone');
             $table->unsignedBigInteger('type_id');
-            $table->foreign('type_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('state_id');
             $table->unsignedBigInteger('city_id');
-            $table->string('birthday');
-            $table->text('address');
-            $table->boolean('status');
-            $table->text('bio');
-            $table->unsignedBigInteger('academic_id');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -47,6 +43,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('reasult_books');
     }
 };
