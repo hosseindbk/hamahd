@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Active_code extends Model
 {
     use HasFactory;
+    public $fillable = ['user_id' , 'code' , 'expired_at'];
+
 }

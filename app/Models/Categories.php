@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Categories extends Model
 {
     use HasFactory;
+    public $fillable = ['title' , 'slug' , 'status' , 'user_id'];
 }

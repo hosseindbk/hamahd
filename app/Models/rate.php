@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class rate extends Model
 {
     use HasFactory;
+    public $fillable=['title','status','user_id'];
+
 }

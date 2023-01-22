@@ -1,46 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3f281dc-e80c-4db7-b55c-2c8fc05a93f2" name="Changes" comment="v1.0.1">
-      <change afterPath="$PROJECT_DIR$/DB/hamahd.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/beberlei/assert/.github/workflows/ci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/beberlei/assert/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/beberlei/assert/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/beberlei/assert/lib/Assert/Assert.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/beberlei/assert/lib/Assert/Assertion.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/beberlei/assert/lib/Assert/AssertionChain.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/beberlei/assert/lib/Assert/AssertionFailedException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/beberlei/assert/lib/Assert/InvalidArgumentException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/beberlei/assert/lib/Assert/LazyAssertion.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/beberlei/assert/lib/Assert/LazyAssertionException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/beberlei/assert/lib/Assert/functions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/morilog/jalali/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/morilog/jalali/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/morilog/jalali/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/morilog/jalali/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/morilog/jalali/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/morilog/jalali/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/morilog/jalali/src/CalendarUtils.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/morilog/jalali/src/Jalalian.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/morilog/jalali/src/helpers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/morilog/jalali/tests/CalendarUtilsTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/morilog/jalali/tests/HelperTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/morilog/jalali/tests/JalalianTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="a3f281dc-e80c-4db7-b55c-2c8fc05a93f2" name="Changes" comment="v1.2.1">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Dashboard/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Dashboard/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/CourseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Active_code.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Active_code.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Categories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Commentrate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Commentrate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Course.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Mark_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Mark_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Media.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Media.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ReasultBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ReasultBook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Slide.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Slide.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Submenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Submenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/menu_panel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/menu_panel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/permission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/permission_role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/permission_role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/rate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/rate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/role_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/role_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/submenu_panel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/submenu_panel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/user_type.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/user_type.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/visitor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/visitor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2023_01_21_070653_create_reasult_books_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2023_01_21_070653_create_reasult_books_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +173,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../autokala" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -212,7 +201,14 @@
       <workItem from="1673099596204" duration="633000" />
       <workItem from="1673100239222" duration="2418000" />
       <workItem from="1673675641409" duration="257000" />
-      <workItem from="1673703450118" duration="3765000" />
+      <workItem from="1673703450118" duration="3824000" />
+      <workItem from="1673848095182" duration="596000" />
+      <workItem from="1673942912471" duration="73000" />
+      <workItem from="1674034290463" duration="1175000" />
+      <workItem from="1674277790779" duration="15185000" />
+      <workItem from="1674310140063" duration="486000" />
+      <workItem from="1674315631305" duration="62000" />
+      <workItem from="1674364570846" duration="6173000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0.1">
       <created>1673105255784</created>
@@ -221,7 +217,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673105255784</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="v1.0.1">
+      <created>1673708673722</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673708673722</updated>
+    </task>
+    <task id="LOCAL-00003" summary="v1.2.1">
+      <created>1674315677498</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674315677498</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +265,7 @@
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="v1.0.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.0.1" />
+    <MESSAGE value="v1.2.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.2.1" />
   </component>
 </project>

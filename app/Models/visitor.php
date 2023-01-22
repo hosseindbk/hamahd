@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class visitor extends Model
 {
     use HasFactory;
+    public $fillable=['ip' ,'page_id' ,'device' ,'browser' ,'from_page' ,'to_page' ,'date' ];
+
 }

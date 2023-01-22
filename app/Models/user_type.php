@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class user_type extends Model
 {
     use HasFactory;
+    public $fillable=['title' ,'user_id' ];
+
 }

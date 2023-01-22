@@ -14,7 +14,7 @@ class IndexController extends Controller
 
         $menus      = Menu::select('id' , 'title' , 'slug' , 'submenu')->whereStatus('4')->get();
         $submenus   = Submenu::select('title' , 'slug' , 'menu_id')->whereStatus('4')->get();
-        $slides     = Slide::select('title1' ,'title2' , 'image')->whereStatus('4')->get();
+        $slides     = Slide::select('title' , 'file_link')->whereStatus('4')->get();
 
         return view('Site.index')
             ->with(compact('menus'))
