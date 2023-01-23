@@ -13,13 +13,13 @@
 
     <link rel="icon" sizes="16x16" href="images/favicon.png" />
 
-    <link rel="stylesheet" href="{{'css/bootstrap.min.css'}}" />
-    <link rel="stylesheet" href="{{'css/line-awesome.css'}}" />
-    <link rel="stylesheet" href="{{'css/owl.carousel.min.css'}}" />
-    <link rel="stylesheet" href="{{'css/owl.theme.default.min.css'}}" />
-    <link rel="stylesheet" href="{{'css/bootstrap-select.min.css'}}" />
-    <link rel="stylesheet" href="{{'css/fancybox.css'}}" />
-    <link rel="stylesheet" href="{{'css/style.css'}}" />
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/line-awesome.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/bootstrap-select.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/fancybox.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/style.css')}}" />
 </head>
 <body>
 
@@ -37,7 +37,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-12">
                         <div class="logo-box logo--box">
-                            <a href="{{route('dashboard')}}" class="logo"><img src="images/logo.png" style="width: 30%" alt="لوگو" /></a>
+                            <a href="{{route('dashboard')}}" class="logo"><img src="{{asset('images/logo.png')}}" style="width: 30%" alt="لوگو" /></a>
                             <div class="user-btn-action">
                                 <div class="search-menu-toggle icon-element icon-element-sm shadow-sm mr-2" data-toggle="tooltip" data-placement="top" title="جستجو کردن">
                                     <i class="la la-search"></i>
@@ -70,7 +70,7 @@
                                                 <ul class="cart-dropdown-menu after-none">
                                                     <li class="media media-card">
                                                         <a href="lesson-details.html" class="media-img">
-                                                            <img class="mr-3" src="images/small-img-3.jpg" alt="تصویر کوچک دوره" />
+                                                            <img class="mr-3" src="{{asset('images/small-img-3.jpg')}}" alt="تصویر کوچک دوره" />
                                                         </a>
                                                         <div class="media-body">
                                                             <h5><a href="lesson-details.html">دوره جامع خانواده 1</a></h5>
@@ -85,7 +85,7 @@
                                                     </li>
                                                     <li class="media media-card">
                                                         <a href="lesson-details.html" class="media-img">
-                                                            <img class="mr-3" src="images/small-img-4.jpg" alt="تصویر کوچک دوره" />
+                                                            <img class="mr-3" src="{{asset('images/small-img-4.jpg')}}" alt="تصویر کوچک دوره" />
                                                         </a>
                                                         <div class="media-body">
                                                             <h5><a href="lesson-details.html">دوره جامع خانواده 1</a></h5>
@@ -116,7 +116,7 @@
                                                 <ul class="cart-dropdown-menu after-none">
                                                     <li class="media media-card">
                                                         <a href="shopping-cart.html" class="media-img">
-                                                            <img class="mr-3" src="images/small-img.jpg" alt="تصویر سبد خرید" />
+                                                            <img class="mr-3" src="{{asset('images/small-img.jpg')}}" alt="تصویر سبد خرید" />
                                                         </a>
                                                         <div class="media-body">
                                                             <h5><a href="shopping-cart.html">دوره جامع خانواده 1</a></h5>
@@ -126,7 +126,7 @@
                                                     </li>
                                                     <li class="media media-card">
                                                         <a href="shopping-cart.html" class="media-img">
-                                                            <img class="mr-3" src="images/small-img.jpg" alt="تصویر سبد خرید" />
+                                                            <img class="mr-3" src="{{asset('images/small-img.jpg')}}" alt="تصویر سبد خرید" />
                                                         </a>
                                                         <div class="media-body">
                                                             <h5><a href="shopping-cart.html">دوره جامع خانواده 1</a></h5>
@@ -158,7 +158,7 @@
                                                     <li>
                                                         <div class="media media-card">
                                                             <a href="course-details.html" class="media-img">
-                                                                <img class="mr-3" src="images/small-img.jpg" alt="تصویر سبد خرید" />
+                                                                <img class="mr-3" src="{{asset('images/small-img.jpg')}}" alt="تصویر سبد خرید" />
                                                             </a>
                                                             <div class="media-body">
                                                                 <h5><a href="course-details.html">دوره جامع خانواده 1</a></h5>
@@ -171,7 +171,7 @@
                                                     <li>
                                                         <div class="media media-card">
                                                             <a href="course-details.html" class="media-img">
-                                                                <img class="mr-3" src="images/small-img.jpg" alt="تصویر سبد خرید" />
+                                                                <img class="mr-3" src="{{asset('images/small-img.jpg')}}" alt="تصویر سبد خرید" />
                                                             </a>
                                                             <div class="media-body">
                                                                 <h5><a href="course-details.html">دوره جامع خانواده 1</a></h5>
@@ -245,14 +245,14 @@
                                             <li>
                                                 <div class="shop-cart-btn">
                                                     <div class="avatar-xs">
-                                                        <img class="rounded-full img-fluid" src="images/small-avatar-1.jpg" alt="تصویر آواتار" />
+                                                        <img class="rounded-full img-fluid" src="{{asset('images/small-avatar-1.jpg')}}" alt="تصویر آواتار" />
                                                     </div>
                                                     <span class="dot-status bg-1"></span>
                                                 </div>
                                                 <ul class="cart-dropdown-menu after-none p-0 notification-dropdown-menu">
                                                     <li class="menu-heading-block d-flex align-items-center">
                                                         <a href="teacher-detail.html" class="avatar-sm flex-shrink-0 d-block">
-                                                            <img class="rounded-full img-fluid" src="images/small-avatar-1.jpg" alt="تصویر آواتار" />
+                                                            <img class="rounded-full img-fluid" src="{{asset('images/small-avatar-1.jpg')}}" alt="تصویر آواتار" />
                                                         </a>
                                                         <div class="ml-2">
                                                             <h4><a href="teacher-detail.html" class="text-black">حسین دیوان بیگی</a></h4>
@@ -549,7 +549,7 @@
         </div>
 
         <div class="logo-box px-4">
-            <a href="{{route('dashboard')}}" class="logo"><img src="images/logo.png" style="width: 30%" alt="لوگو" /></a>
+            <a href="{{route('dashboard')}}" class="logo"><img src="{{asset('images/logo.png')}}" style="width: 30%" alt="لوگو" /></a>
         </div>
         <ul class="generic-list-item off-canvas-menu-list off--canvas-menu-list pt-35px">
             <li class= {{ Request::segment(1)  == 'dashboard' ?  "page-active" : '' }}>
@@ -713,7 +713,7 @@
             <div class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between mb-5">
                 <div class="media media-card align-items-center">
                     <div class="media-img media--img media-img-md rounded-full">
-                        <img class="rounded-full" src="images/small-avatar-1.jpg" alt="تصویر کوچک دانش آموز" />
+                        <img class="rounded-full" src="{{asset('images/small-avatar-1.jpg')}}" alt="تصویر کوچک دانش آموز" />
                     </div>
                     <div class="media-body">
                         <h4 class="section__title fs-30">سلام،حسین دیوان بیگی</h4>
@@ -771,21 +771,21 @@
     </div>
 </div>
 
-<script src="{{'js/jquery-3.4.1.min.js'}}"></script>
-<script src="{{'js/bootstrap.bundle.min.js'}}"></script>
-<script src="{{'js/bootstrap-select.min.js'}}"></script>
-<script src="{{'js/owl.carousel.min.js'}}"></script>
-<script src="{{'js/isotope.js'}}"></script>
-<script src="{{'js/jquery.counterup.min.js'}}"></script>
-<script src="{{'js/fancybox.js'}}"></script>
-<script src="{{'js/chart.js'}}"></script>
-<script src="{{'js/doughnut-chart.js'}}"></script>
-<script src="{{'js/bar-chart.js'}}"></script>
-<script src="{{'js/line-chart.js'}}"></script>
-<script src="{{'js/datedropper.min.js'}}"></script>
-<script src="{{'js/emojionearea.min.js'}}"></script>
-<script src="{{'js/animated-skills.js'}}"></script>
-<script src="{{'js/jquery.MultiFile.min.js'}}"></script>
-<script src="{{'js/main.js'}}"></script>
+<script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('js/bootstrap-select.min.js')}}"></script>
+<script src="{{asset('js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('js/isotope.js')}}"></script>
+<script src="{{asset('js/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('js/fancybox.js')}}"></script>
+<script src="{{asset('js/chart.js')}}"></script>
+<script src="{{asset('js/doughnut-chart.js')}}"></script>
+<script src="{{asset('js/bar-chart.js')}}"></script>
+<script src="{{asset('js/line-chart.js')}}"></script>
+<script src="{{asset('js/datedropper.min.js')}}"></script>
+<script src="{{asset('js/emojionearea.min.js')}}"></script>
+<script src="{{asset('js/animated-skills.js')}}"></script>
+<script src="{{asset('js/jquery.MultiFile.min.js')}}"></script>
+<script src="{{asset('js/main.js')}}"></script>
 </body>
 </html>
