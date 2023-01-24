@@ -35,6 +35,7 @@ Route::group(['perfix' => 'Site'] , function (){
 Route::group(['perfix' => 'Dashboard' ] , function (){
 
     Route::get('dashboard/panel'          , [DashboardController::class   , 'index'])         ->name('dashboard');
+    Route::get('dashboard/menu_panel'     , [MenudashboardController::class   , 'index'])     ->name('menu_panel');
     Route::get('dashboard/bookmark'       , [DashboardController::class   , 'bookmark'])      ->name('dashboard-bookmark');
     Route::get('dashboard/courses'        , [DashboardController::class   , 'courses'])       ->name('dashboard-courses');
     Route::get('dashboard/earnings'       , [DashboardController::class   , 'earnings'])      ->name('dashboard-earnings');

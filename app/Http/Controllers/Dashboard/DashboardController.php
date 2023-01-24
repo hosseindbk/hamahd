@@ -3,13 +3,17 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
+use App\Models\Menu_panel;
 
 class DashboardController extends Controller
 {
     public function index(){
-        return view('Dashboard.panel');
+
+        $manupanels = Menu_panel::all();
+        return view('Dashboard.panel')->with(compact('manupanels'));
     }
 //    public function bookmark(){
 //        return view('Dashboard.bookmark');
