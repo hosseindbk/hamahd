@@ -13,13 +13,13 @@
 
     <link rel="icon" sizes="16x16" href="images/favicon.png" />
 
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/line-awesome.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/bootstrap-select.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/fancybox.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/style.css')}}" />
+    <link rel="stylesheet" href="{{asset('site/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('site/css/line-awesome.css')}}" />
+    <link rel="stylesheet" href="{{asset('site/css/owl.carousel.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('site/css/owl.theme.default.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('site/css/bootstrap-select.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('site/css/fancybox.css')}}" />
+    <link rel="stylesheet" href="{{asset('site/css/style.css')}}" />
 </head>
 <body>
 
@@ -773,21 +773,21 @@
     </div>
 </div>
 
-<script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
-<script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('js/bootstrap-select.min.js')}}"></script>
-<script src="{{asset('js/owl.carousel.min.js')}}"></script>
-<script src="{{asset('js/isotope.js')}}"></script>
-<script src="{{asset('js/jquery.counterup.min.js')}}"></script>
-<script src="{{asset('js/fancybox.js')}}"></script>
-<script src="{{asset('js/chart.js')}}"></script>
-<script src="{{asset('js/doughnut-chart.js')}}"></script>
-<script src="{{asset('js/bar-chart.js')}}"></script>
-<script src="{{asset('js/line-chart.js')}}"></script>
-<script src="{{asset('js/datedropper.min.js')}}"></script>
-<script src="{{asset('js/emojionearea.min.js')}}"></script>
-<script src="{{asset('js/animated-skills.js')}}"></script>
-<script src="{{asset('js/jquery.MultiFile.min.js')}}"></script>
-<script src="{{asset('js/main.js')}}"></script>
+<script src="{{asset('site/js/jquery-3.4.1.min.js')}}"></script>
+<script src="{{asset('site/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('site/js/bootstrap-select.min.js')}}"></script>
+<script src="{{asset('site/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('site/js/isotope.js')}}"></script>
+<script src="{{asset('site/js/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('site/js/fancybox.js')}}"></script>
+<script src="{{asset('site/js/chart.js')}}"></script>
+<script src="{{asset('site/js/doughnut-chart.js')}}"></script>
+<script src="{{asset('site/js/bar-chart.js')}}"></script>
+<script src="{{asset('site/js/line-chart.js')}}"></script>
+<script src="{{asset('site/js/datedropper.min.js')}}"></script>
+<script src="{{asset('site/js/emojionearea.min.js')}}"></script>
+<script src="{{asset('site/js/animated-skills.js')}}"></script>
+<script src="{{asset('site/js/jquery.MultiFile.min.js')}}"></script>
+<script src="{{asset('site/js/main.js')}}"></script>
 </body>
 </html>

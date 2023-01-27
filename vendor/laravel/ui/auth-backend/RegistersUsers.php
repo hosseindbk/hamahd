@@ -20,6 +20,11 @@ trait RegistersUsers
     {
         return view('auth.register');
     }
+    public function showRegistrationuserForm()
+    {
+
+        return view('Site.auth.register');
+    }
 
     /**
      * Handle a registration request for the application.

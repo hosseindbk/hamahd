@@ -5,12 +5,14 @@ namespace Illuminate\Foundation\Auth;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\ValidationException;
 
 trait AuthenticatesUsers
 {
     use RedirectsUsers, ThrottlesLogins;
-
     /**
      * Show the application's login form.
      *
@@ -18,7 +20,18 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        return view('auth.login');
+//dd('salam1');
+        return view('admin.auth.login');
+    }
+    public function showLoginuserForm()
+    {
+//dd('salm');
+        if (Auth::check()){
+            return Redirect::url()->previous();
+        }
+        session(['url' => url()->previous()]);
+        //session()->flash('url' , url()->previous());
+        return view('Site.auth.login');
     }
 
     /**
@@ -29,8 +42,9 @@ trait AuthenticatesUsers
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function login(Request $request)
+    public function panellogin(Request $request)
     {
+
         $this->validateLogin($request);
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
@@ -57,6 +71,38 @@ trait AuthenticatesUsers
         $this->incrementLoginAttempts($request);
 
         return $this->sendFailedLoginResponse($request);
+    }
+
+    public function userlogin(Request $request)
+    {
+        $request->validate([
+            'phone' => 'required|numeric',
+            'password' => 'required',
+        ]);
+
+        if ($request->input('phone') != null && $request->input('password') != null) {
+            $user = User::wherePhone($request->input('phone'))->first();
+            if ($user != null) {
+                if (Hash::check($request->input('password'), $user->password)) {
+                    Auth::loginUsingId($user->id);
+                    alert()->success($user->name.' به وبسایت اتوکالا ' , 'خوش آمدید' );
+                    //dd(url()->previous());
+                    $url  = Session::get('url');
+                    return Redirect::to($url);
+                    //return Redirect::route('indexfilter');
+                } else {
+                    alert()->error('عملیات ناموفق', 'شماره تلفن و یا رمز عبور اشتباه است');
+                    return Redirect::back();
+                }
+            } else {
+
+                alert()->error('عملیات ناموفق', 'شماره تلفن و یا رمز عبور وارد نشده است');
+                return Redirect::back();
+            }
+        } else {
+            alert()->error('عملیات ناموفق', 'شماره تلفن و یا رمز عبور وارد نشده است');
+            return Redirect::back();
+        }
     }
 
     /**

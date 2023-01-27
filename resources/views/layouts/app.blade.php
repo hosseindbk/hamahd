@@ -8,33 +8,33 @@
 
 
     <!-- Scripts -->
-    <script src="{{'js/jquery-3.4.1.min.js'}}"></script>
-    <script src="{{'js/bootstrap.bundle.min.js'}}"></script>
-    <script src="{{'js/bootstrap-select.min.js'}}"></script>
-    <script src="{{'js/owl.carousel.min.js'}}"></script>
-    <script src="{{'js/isotope.js'}}"></script>
-    <script src="{{'js/waypoint.min.js'}}"></script>
-    <script src="{{'js/jquery.counterup.min.js'}}"></script>
-    <script src="{{'js/fancybox.js'}}"></script>
-    <script src="{{'js/datedropper.min.js'}}"></script>
-    <script src="{{'js/emojionearea.min.js'}}"></script>
-    <script src="{{'js/tooltipster.bundle.min.js'}}"></script>
-    <script src="{{'js/jquery.lazy.min.js'}}"></script>
-    <script src="{{'js/main.js'}}"></script>
+    <script src="{{'site/js/jquery-3.4.1.min.js'}}"></script>
+    <script src="{{'site/js/bootstrap.bundle.min.js'}}"></script>
+    <script src="{{'site/js/bootstrap-select.min.js'}}"></script>
+    <script src="{{'site/js/owl.carousel.min.js'}}"></script>
+    <script src="{{'site/js/isotope.js'}}"></script>
+    <script src="{{'site/js/waypoint.min.js'}}"></script>
+    <script src="{{'site/js/jquery.counterup.min.js'}}"></script>
+    <script src="{{'site/js/fancybox.js'}}"></script>
+    <script src="{{'site/js/datedropper.min.js'}}"></script>
+    <script src="{{'site/js/emojionearea.min.js'}}"></script>
+    <script src="{{'site/js/tooltipster.bundle.min.js'}}"></script>
+    <script src="{{'site/js/jquery.lazy.min.js'}}"></script>
+    <script src="{{'site/js/main.js'}}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{'css/bootstrap.min.css'}}">
-    <link rel="stylesheet" href="{{'css/line-awesome.css'}}">
-    <link rel="stylesheet" href="{{'css/owl.carousel.min.css'}}">
-    <link rel="stylesheet" href="{{'css/owl.theme.default.min.css'}}">
-    <link rel="stylesheet" href="{{'css/bootstrap-select.min.css'}}">
-    <link rel="stylesheet" href="{{'css/fancybox.css'}}">
-    <link rel="stylesheet" href="{{'css/tooltipster.bundle.css'}}">
-    <link rel="stylesheet" href="{{'css/style.css'}}">
+    <link rel="stylesheet" href="{{'site/css/bootstrap.min.css'}}">
+    <link rel="stylesheet" href="{{'site/css/line-awesome.css'}}">
+    <link rel="stylesheet" href="{{'site/css/owl.carousel.min.css'}}">
+    <link rel="stylesheet" href="{{'site/css/owl.theme.default.min.css'}}">
+    <link rel="stylesheet" href="{{'site/css/bootstrap-select.min.css'}}">
+    <link rel="stylesheet" href="{{'site/css/fancybox.css'}}">
+    <link rel="stylesheet" href="{{'site/css/tooltipster.bundle.css'}}">
+    <link rel="stylesheet" href="{{'site/css/style.css'}}">
 </head>
 <body>
 @yield('content')

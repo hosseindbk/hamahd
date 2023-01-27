@@ -6,13 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
-use App\Models\Menu_panel;
+use App\Models\Menupanel;
 
 class DashboardController extends Controller
 {
     public function index(){
 
-        $manupanels = Menu_panel::all();
+        $manupanels = Menupanel::all();
         return view('Dashboard.panel')->with(compact('manupanels'));
     }
 //    public function bookmark(){

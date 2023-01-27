@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('header')
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>ثبت نام</title>
+    <title>ورود نام</title>
 @endsection
 @section('content')
     <div class="preloader">

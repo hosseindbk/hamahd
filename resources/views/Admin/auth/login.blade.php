@@ -11,7 +11,7 @@
                         <div class="mt-5 pt-4 p-2 pos-absolute">
                             <div class="clearfix"></div>
                             <img src="{{asset('admin/assets/img/svgs/user.svg')}}" class="ht-100 mb-0" alt="user">
-                            <h5 class="mt-4 text-white">داشبورد مدیریتی اتوکالا</h5>
+                            <h5 class="mt-4 text-white">داشبورد مدیریتی وبسایت هم عهد</h5>
                             <span class="tx-white-6 tx-13 mb-5 mt-xl-0">برای ورود به داشبورد باید نام کاربری و رمز عبور دریافت نمایید</span>
                         </div>
                     </div>
@@ -20,9 +20,9 @@
                             <div class="row row-sm">
                                 <div class="card-body mt-2 mb-2">
                                     <div class="clearfix"></div>
-                                    <form method="POST" action="{{ route('login') }}">
+                                    <form method="POST" action="{{ route('panellogin') }}">
                                         @csrf
-                                        <h5 class="text-right mb-2">ورود به حساب مدیریتی</h5>
+                                        <h5 class="text-right mb-2">ورود به داشبورد مدیریتی</h5>
                                         <div class="form-group text-right">
                                             <label>ایمیل</label>
                                             <input type="email" name="email" class="text-left form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required autocomplete="email">

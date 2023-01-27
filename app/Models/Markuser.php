@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class user_type extends Model
+class Markuser extends Model
 {
     use HasFactory;
-    public $fillable=['title' ,'user_id' ];
+    public $fillable=['user_id','course_id'];
 
 }

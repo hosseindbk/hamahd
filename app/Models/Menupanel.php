@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class submenu_panel extends Model
+class Menupanel extends Model
 {
     use HasFactory;
-    public $fillable=['title' ,'slug' ,'keycheck' ,'namayesh' ,'status' ,'description','menu_id','user_id' ];
+    public $fillable=['title','slug','submenu','keycheck','namayesh','keyword','status','description','user_id'];
 
 }

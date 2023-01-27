@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Menu_panel extends Model
+class Usertype extends Model
 {
     use HasFactory;
-    public $fillable=['title','slug','submenu','keycheck','namayesh','keyword','status','description','user_id'];
+    public $fillable=['title'];
 
 }
