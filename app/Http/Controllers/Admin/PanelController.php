@@ -28,51 +28,17 @@ class PanelController extends Controller
             END) AS status'))
             ->orderBy('id' , 'DESC')
             ->get();
-        $menupanels         = Menupanel::whereStatus(4)->get();
-        $submenupanels      = Submenupanel::whereStatus(4)->get();
-        $comments           = comment::whereApproved(0)->latest()->get();
-        $commentrates       = commentrate::whereApproved(0)->latest()->get();
 
-        $day = jdate()->getDay();
-        $month = jdate()->getMonth();
+        $menupanels = Menupanel::all();
 
-        $dayvisitos  = Visitor::selectRaw('substring(datetime , 6,2 ) month , substring(datetime , 9,2 ) day, count(ip) publish')
-            ->groupBy('day' , 'month')
-            ->having('day' , '=', $day)
-            ->having('month' , '=', $month)
-            ->pluck('publish')->first();
+//        $menupanels         = Menupanel::whereStatus(4)->get();
 
-        $monthvisits = Visitor::selectRaw('substring(datetime , 6,2 ) month , count(*) publish')
-            ->groupBy('month')
-            ->having('month' , '=', $month)
-            ->pluck('publish')->first();
+//        $submenupanels      = Submenupanel::whereStatus(4)->get();
 
-        $month = 12;
-
-        $visitos = Visitor::selectRaw('substring(datetime , 6,2 ) month , count(*) publish')
-            ->groupBy('month')
-            ->pluck('publish');
-        $visitors = $this->CheckCount($visitos , $month);
-
-        $pievisitors = Visitor::selectRaw('page_id , count(*) publish')
-            ->groupBy('page_id')
-            ->pluck('publish');
-
-        $lables = $this->getLastMonths($month);
 
         return view('Admin.panel.index')
 
-            ->with(compact('menupanels'))
-            ->with(compact('submenupanels'))
-            ->with(compact('commentrates'))
-            ->with(compact('dayvisitos'))
-            ->with(compact('pievisitors'))
-            ->with(compact('visitors'))
-            ->with(compact('users'))
-            ->with(compact('comments'))
-            ->with(compact('countusers'))
-            ->with(compact('monthvisits'))
-            ->with(compact('lables'));
+            ->with(compact('users'));
     }
 
     private function getLastMonths($month)

@@ -5,11 +5,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/')->group(function (){
     Route::get('/'              , [App\Http\Controllers\Site\IndexController::class   , 'index'])->name('/');
+    Route::get('course'         , [App\Http\Controllers\Site\CourseController::class  , 'index'])->name('course');
 
 });
+//Route::group(['namespace' => 'Admin' , 'middleware' => ['auth:web' , 'checkAdmin'], 'prefix' => 'admin'],function (){
 
-Route::prefix('panel')->group(function (){
+Route::prefix('panel')->middleware(['auth:web' , 'checkAdmin'])->group(function (){
+
     Route::get('dashboard'              , [App\Http\Controllers\Admin\PanelController::class   , 'index'])->name('/');
+    Route::get('users'                  , [App\Http\Controllers\Admin\UserController::class , 'index']);
 
 });
 

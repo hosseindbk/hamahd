@@ -200,7 +200,7 @@
                     <li><a href="{{route('register')}}">ثبت نام</a></li>
                     <li><a href="{{route('login')}}">وارد شدن</a></li>
                     <li><a href="recover.html">بازیابی</a></li>
-                    <li><a href="{{route('shoppingcart')}}">سبد خرید</a></li>
+                    <li><a href="">سبد خرید</a></li>
                     <li><a href="checkout.html">وارسی</a></li>
                     <li><a href="error.html">صفحه 404</a></li>
                 </ul>

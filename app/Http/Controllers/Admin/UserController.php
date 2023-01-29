@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\userrequest;
-use App\Menudashboard;
-use App\Submenudashboard;
-use App\User;
+use App\Models\Menu_panel;
+use App\Models\Submenupanel;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -15,10 +15,10 @@ class UserController extends Controller
     public function index()
     {
 
-        $this->authorize('user-manage');
+        //$this->authorize('user-manage');
         $users = User::latest()->paginate(25);
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $menudashboards = Menu_panel::whereStatus(4)->get();
+        $submenudashboards = Submenupanel::whereStatus(4)->get();
 
         return view('Admin.users.all')
             ->with(compact('menudashboards'))
@@ -27,8 +27,8 @@ class UserController extends Controller
     }
     public function create()
     {
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $menudashboards = Menu_panel::whereStatus(4)->get();
+        $submenudashboards = Submenupanel::whereStatus(4)->get();
         return view('Admin.users.create')
             ->with(compact('menudashboards'))
             ->with(compact('submenudashboards'));
