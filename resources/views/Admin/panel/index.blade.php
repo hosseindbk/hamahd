@@ -1,6 +1,6 @@
 @extends('Admin.admin')
 @section('title')
-    <title> داشبورد مدیریتی وبسایت اتوکالا</title>
+    <title> داشبورد مدیریتی وبسایت هم عهد</title>
 @endsection
 @section('main')
     <div class="main-content side-content pt-0">
@@ -42,9 +42,9 @@
 {{--                            </div>--}}
 {{--                        </div>--}}
 {{--                    </div>--}}
-                    @foreach($submenudashboards as $submenudashboard)
-                        @if($submenudashboard->title == 'users')
-                            @can($submenudashboard->namayesh)
+                    @foreach($submenupanels as $submenupanel)
+                        @if($submenupanel->title == 'users')
+                            @can($submenupanel->namayesh)
                                 <div class="col-sm-12 col-lg-12 col-xl-12">
                         <div class="card custom-card mg-b-20">
                             <div class="card-body" style="max-height: 500px; overflow: auto;">
@@ -90,8 +90,8 @@
                     </div>
                             @endcan
                         @endif
-                            @if($submenudashboard->title == 'suppliers')
-                                @can($submenudashboard->namayesh)
+                            @if($submenupanel->title == 'suppliers')
+                                @can($submenupanel->namayesh)
                                     <div class="col-sm-12 col-lg-12 col-xl-12">
                         <div class="card custom-card mg-b-20">
                             <div class="card-body" style="max-height: 500px; overflow: auto;">
@@ -141,8 +141,8 @@
                     </div>
                                  @endcan
                             @endif
-                            @if($submenudashboard->title == 'technicalunits')
-                                @can($submenudashboard->namayesh)
+                            @if($submenupanel->title == 'technicalunits')
+                                @can($submenupanel->namayesh)
                                     <div class="col-sm-12 col-lg-12 col-xl-12">
                         <div class="card custom-card mg-b-20">
                             <div class="card-body" style="max-height: 500px; overflow: auto;">
@@ -193,8 +193,8 @@
                     </div>
                                 @endcan
                             @endif
-                            @if($submenudashboard->title == 'comments')
-                                @can($submenudashboard->namayesh)
+                            @if($submenupanel->title == 'comments')
+                                @can($submenupanel->namayesh)
                                     <div class="col-sm-12 col-lg-12 col-xl-12">
                                    <div class="card custom-card mg-b-20">
                                        <div class="card-body" style="max-height: 500px; overflow: auto;">
@@ -262,8 +262,8 @@
                                </div>
                                 @endcan
                             @endif
-                            @if($submenudashboard->title == 'commentrates')
-                                @can($submenudashboard->namayesh)
+                            @if($submenupanel->title == 'commentrates')
+                                @can($submenupanel->namayesh)
                                     <div class="col-sm-12 col-lg-12 col-xl-12">
                                         <div class="card custom-card mg-b-20">
                                             <div class="card-body" style="max-height: 500px; overflow: auto;">
@@ -331,8 +331,8 @@
                                     </div>
                                 @endcan
                             @endif
-                            @if($submenudashboard->title == 'brands')
-                                @can($submenudashboard->namayesh)
+                            @if($submenupanel->title == 'brands')
+                                @can($submenupanel->namayesh)
                                     <div class="col-sm-12 col-lg-12 col-xl-12">
                                         <div class="card custom-card mg-b-20">
                                             <div class="card-body" style="max-height: 500px; overflow: auto;">
@@ -399,8 +399,8 @@
                                     </div>
                                 @endcan
                             @endif
-                            @if($submenudashboard->title == 'offers')
-                                @can($submenudashboard->namayesh)
+                            @if($submenupanel->title == 'offers')
+                                @can($submenupanel->namayesh)
                                     <div class="col-sm-12 col-lg-12 col-xl-12">
                                         <div class="card custom-card mg-b-20">
                                             <div class="card-body" style="max-height: 500px; overflow: auto;">

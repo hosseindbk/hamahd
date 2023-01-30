@@ -1,31 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3f281dc-e80c-4db7-b55c-2c8fc05a93f2" name="Changes" comment="v1.2.1">
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckAdminAuthenticated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckForMaintenanceMode.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckUserLogin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Userrequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Menu_panel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/permission_role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="a3f281dc-e80c-4db7-b55c-2c8fc05a93f2" name="Changes" comment="v1.2.2">
+      <change afterPath="$PROJECT_DIR$/app/Models/Submenu_panel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/Menu_panelFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/MenupanelTable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PanelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/CourseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Menupanel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Permission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/permissionrole.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2023_01_21_094236_create_role_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2023_01_21_094236_create_role_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Submenupanel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/panel/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/panel/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +156,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../autokala" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -210,7 +194,9 @@
       <workItem from="1674364570846" duration="6173000" />
       <workItem from="1674649763101" duration="5074000" />
       <workItem from="1674995428122" duration="1347000" />
-      <workItem from="1674998869410" duration="6796000" />
+      <workItem from="1674998869410" duration="6952000" />
+      <workItem from="1675052820070" duration="4356000" />
+      <workItem from="1675080161713" duration="4870000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0.1">
       <created>1673105255784</created>
@@ -240,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674658681162</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="v1.2.2">
+      <created>1675005974908</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675005974908</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +269,7 @@
     </ignored-roots>
     <MESSAGE value="v1.0.1" />
     <MESSAGE value="v1.2.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.2.1" />
+    <MESSAGE value="v1.2.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.2.2" />
   </component>
 </project>

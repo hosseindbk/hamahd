@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\comment;
 use App\Models\commentrate;
-use App\Models\Menupanel;
-use App\Models\submenupanel;
+use App\Models\Menu_panel;
+use App\Models\Submenu_panel;
 use App\Models\User;
 use App\Models\Visitor;
 use Carbon\Carbon;
@@ -29,7 +29,8 @@ class PanelController extends Controller
             ->orderBy('id' , 'DESC')
             ->get();
 
-        $menupanels = Menupanel::all();
+        $menupanels = Menu_panel::all();
+        $submenupanels = Submenu_panel::all();
 
 //        $menupanels         = Menupanel::whereStatus(4)->get();
 
@@ -38,7 +39,7 @@ class PanelController extends Controller
 
         return view('Admin.panel.index')
 
-            ->with(compact('users'));
+            ->with(compact(['users' , 'menupanels' , 'submenupanels']));
     }
 
     private function getLastMonths($month)

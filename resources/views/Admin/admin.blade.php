@@ -50,36 +50,36 @@
         </div>
         <div class="main-sidebar-body">
             <ul class="nav">
-                    @foreach($menudashboards as $menudashboard)
-                        @if($menudashboard->submenu == 0)
+                    @foreach($menupanels as $menupanel)
+                        @if($menupanel->submenu == 0)
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{url($menudashboard->slug)}}">
+                                <a class="nav-link" href="{{url($menupanel->slug)}}">
                                     <span class="shape1"></span>
                                     <span class="shape2"></span>
-                                    <i class="{{$menudashboard->icon}} sidemenu-icon"></i>
-                                    <span class="sidemenu-label">{{$menudashboard->title}}</span>
+                                    <i class="{{$menupanel->icon}} sidemenu-icon"></i>
+                                    <span class="sidemenu-label">{{$menupanel->title}}</span>
                                 </a>
                             </li>
                         @endif
 
-                            @if($menudashboard->submenu == 1)
+                            @if($menupanel->submenu == 1)
                                 <li class="nav-item">
-                                    @can($menudashboard->namayesh)
+                                    @can($menupanel->namayesh)
                                     <a class="nav-link with-sub" href="">
                                         <span class="shape1"></span>
                                         <span class="shape2"></span>
-                                        <i class="{{$menudashboard->icon}} sidemenu-icon"></i>
-                                        <span class="sidemenu-label">{{$menudashboard->title}}</span>
+                                        <i class="{{$menupanel->icon}} sidemenu-icon"></i>
+                                        <span class="sidemenu-label">{{$menupanel->title}}</span>
                                         <i class="angle fe fe-chevron-left"></i>
                                     </a>
                                     @endcan
                                     <ul class="nav-sub">
-                                        @foreach($submenudashboards as $submenudashboard)
-                                            @if($submenudashboard->menu_id == $menudashboard->id)
-                                                @can($submenudashboard->namayesh)
+                                        @foreach($submenupanels as $submenupanel)
+                                            @if($submenupanel->menu_id == $menupanel->id)
+                                                @can($submenupanel->namayesh)
                                                     <li class="nav-sub-item">
-                                                        <a class="nav-sub-link" href="{{url('admin/'.$submenudashboard->slug)}}">{{$submenudashboard->name}}</a>
+                                                        <a class="nav-sub-link" href="{{url('admin/'.$submenupanel->slug)}}">{{$submenupanel->title}}</a>
                                                     </li>
                                                 @endcan
                                             @endif
@@ -144,7 +144,7 @@
                         <a class="dropdown-item border-top" href="{{url('admin/profile')}}">
                             <i class="fe fe-user"></i> پروفایل من
                         </a>
-                        <a class="dropdown-item" href="{{route('logout')}}">
+                        <a class="dropdown-item" href="{{route('panellogout')}}">
                             <i class="fe fe-power"></i> خروج از سیستم
                         </a>
                     </div>
@@ -227,7 +227,7 @@
         <div class="container">
             <div class="row row-sm">
                 <div class="col-md-12">
-                    <span>کپی رایت © 1400  . طراحی شده توسط <a href="http://bestagroup.ir">Bestagroup</a> کلیه حقوق محفوظ است.</span>
+                    <span>کپی رایت © 1402  . طراحی شده توسط <a href="http://bestagroup.ir">Bestagroup</a> کلیه حقوق محفوظ است.</span>
                 </div>
             </div>
         </div>
