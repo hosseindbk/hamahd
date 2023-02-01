@@ -29,8 +29,8 @@ class PanelController extends Controller
             ->orderBy('id' , 'DESC')
             ->get();
 
-        $menupanels = Menu_panel::all();
-        $submenupanels = Submenu_panel::all();
+        $menupanels     = Menu_panel::all();
+        $submenupanels  = Submenu_panel::all();
 
 //        $menupanels         = Menupanel::whereStatus(4)->get();
 

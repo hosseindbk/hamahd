@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\userrequest;
 use App\Models\Menu_panel;
-use App\Models\Submenupanel;
+use App\Models\Submenu_panel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,19 +16,19 @@ class UserController extends Controller
     {
 
         //$this->authorize('user-manage');
-        $users = User::latest()->paginate(25);
-        $menudashboards = Menu_panel::whereStatus(4)->get();
-        $submenudashboards = Submenupanel::whereStatus(4)->get();
+        $users          = User::latest()->paginate(25);
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         return view('Admin.users.all')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'))
+            ->with(compact('menupanels'))
+            ->with(compact('submenupanels'))
             ->with(compact('users'));
     }
     public function create()
     {
         $menudashboards = Menu_panel::whereStatus(4)->get();
-        $submenudashboards = Submenupanel::whereStatus(4)->get();
+        $submenudashboards = Submenu_panel::whereStatus(4)->get();
         return view('Admin.users.create')
             ->with(compact('menudashboards'))
             ->with(compact('submenudashboards'));

@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\submenudashboardrequest;
-use App\Menudashboard;
-use App\Submenudashboard;
+use App\Models\Menu_panel;
+use App\Models\Submenu_panel;
 use Illuminate\Http\Request;
 
 class SubmenudashboardController extends Controller
@@ -17,13 +17,13 @@ class SubmenudashboardController extends Controller
      */
     public function index()
     {
-        $submenudashs = Submenudashboard::all();
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $submenudashs   = Submenu_panel::all();
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         return view('Admin.submenudashboards.all')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'))
+            ->with(compact('menupanels'))
+            ->with(compact('submenupanels'))
             ->with(compact('submenudashs'));
     }
 

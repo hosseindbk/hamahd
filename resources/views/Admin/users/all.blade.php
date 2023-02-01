@@ -1,6 +1,6 @@
 @extends('Admin.admin')
 @section('title')
-    <title> مدیریت کاربران داشبورد </title>
+    <title> مدیریت کاربران  </title>
     <link href="{{asset('admin/assets/plugins/datatable/dataTables.bootstrap4.min-rtl.css')}} " rel="stylesheet" />
     <link href="{{asset('admin/assets/plugins/datatable/responsivebootstrap4.min.css')}}" rel="stylesheet" />
     <link href="{{asset('admin/assets/plugins/datatable/fileexport/buttons.bootstrap4.min.css')}}" rel="stylesheet" />
@@ -11,10 +11,10 @@
             <div class="inner-body">
                 <div class="page-header">
                     <div>
-                        <h2 class="main-content-title tx-24 mg-b-5">مدیریت کاربران داشبورد</h2>
+                        <h2 class="main-content-title tx-24 mg-b-5">مدیریت کاربران </h2>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{url('admin/panel')}}">صفحه اصلی</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">مدیریت کاربران داشبورد</li>
+                            <li class="breadcrumb-item active" aria-current="page">مدیریت کاربران </li>
                         </ol>
                     </div>
                 </div>
@@ -23,11 +23,11 @@
                     <div class="col-lg-12">
                         <div class="card custom-card overflow-hidden">
                             <div class="card-body">
-                                <div>
-                                    <h6 class="main-content-label mb-1">لیست کاربران داشبورد</h6>
-                                    <a href="{{url('admin/users/create')}}" class="btn btn-primary btn-xs">افزودن کاربران داشبورد</a>
+                                <div class="col-12" style="text-align: center">
+                                        <a href="{{url('admin/users/create')}}" class="btn btn-primary btn-xs">افزودن کاربر جدید </a>
                                 </div>
-
+                            </div>
+                            <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table" id="example1">
                                         <thead>
