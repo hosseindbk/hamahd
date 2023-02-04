@@ -4,14 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\sliderequest;
-use App\Menudashboard;
-use App\Offer;
-use App\Product;
-use App\Slide;
-use App\Status;
-use App\Submenudashboard;
-use App\Supplier;
-use App\Technical_unit;
+use App\Models\Menu_panel;
+use App\Models\Slide;
+use App\Models\Status;
+use App\Models\Submenu_panel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -23,13 +19,14 @@ class SlideController extends Controller
 
     public function index(Request $request)
     {
-        $menudashboards     =   Menudashboard::whereStatus(4)->get();
-        $submenudashboards  =   Submenudashboard::whereStatus(4)->get();
+        $menupanels     =   Menu_panel::whereStatus(4)->get();
+        $submenupanels  =   Submenu_panel::whereStatus(4)->get();
 
         if ($request->ajax()) {
             $data = DB::table('slides')
-                ->select('slides.id', 'slides.image' , 'slides.position' , 'slides.title' , 'slides.status')
+                ->select('slides.id', 'slides.file_link' , 'slides.position' , 'slides.title' , 'slides.status')
                 ->get();
+
             return Datatables::of($data)
 
                 ->editColumn('id', function ($data) {
@@ -57,8 +54,8 @@ class SlideController extends Controller
                         return "اسلاید چپ پایین";
                     }
                 })
-                ->addColumn('image', function ($row) {
-                    return '<img src="'.asset($row->image).'"  width="200" class="img-rounded" align="center" />';
+                ->addColumn('file_link', function ($row) {
+                    return '<img src="'.asset($row->file_link).'"  width="200" class="img-rounded" align="center" />';
 
                 })
                 ->addColumn('action', function ($row) {
@@ -72,82 +69,75 @@ class SlideController extends Controller
                                 </form>';
                     return $actionBtn;
                 })
-                ->rawColumns(['action' , 'image'])
+                ->rawColumns(['action' , 'file_link'])
                 ->make(true);
         }
 
         return view('Admin.slides.all')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'));
+            ->with(compact(['menupanels' , 'submenupanels']));
     }
 
     public function create()
     {
-        $menudashboards     =   Menudashboard::whereStatus(4)->get();
-        $submenudashboards  =   Submenudashboard::whereStatus(4)->get();
+        $menupanels     =   Menu_panel::whereStatus(4)->get();
+        $submenupanels  =   Submenu_panel::whereStatus(4)->get();
 
         return view('Admin.slides.create')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'));
+            ->with(compact(['menupanels' , 'submenupanels']));
     }
 
-    public function store(sliderequest $request , Slide $slides)
+    public function store(Request $request)
     {
         $slides = new Slide();
 
         $slides->title      = $request->input('title');
-        $slides->position   = $request->input('position');
-        $slides->link       = $request->input('link');
-        $slides->type       = $request->input('type');
-        $slides->type_id    = $request->input('type_id');
+//        $slides->position   = $request->input('position');
+//        $slides->link       = $request->input('link');
+//        $slides->type       = $request->input('type');
+//        $slides->type_id    = $request->input('type_id');
         $slides->status     = 4;
         $slides->user_id    = Auth::user()->id;
 
-        if ($request->file('image') != null) {
+        if ($request->file('file_link') != null) {
 
-            $file = $request->file('image');
+            $file = $request->file('file_link');
             $img = Image::make($file);
             $imagePath ="images/slides/";
             $imageName = md5(uniqid(rand(), true)) .'.'. $file->clientExtension();
-            $slides->image = $file->move($imagePath, $imageName);
+            $slides->file_link = $file->move($imagePath, $imageName);
             $img->save($imagePath.$imageName);
             $img->encode('jpg');
         }
 
         $slides->save();
-        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
+//        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
         return redirect(route('slides.index'));
     }
 
     public function edit($id)
     {
         $slides             =   Slide::whereId($id)->get();
-        $menudashboards     =   Menudashboard::whereStatus(4)->get();
-        $submenudashboards  =   Submenudashboard::whereStatus(4)->get();
-        $slide  = Slide::whereId($id)->first();
-        $type_slide = $slide->type;
+        $menupanels     =   Menu_panel::whereStatus(4)->get();
+        $submenupanels  =   Submenu_panel::whereStatus(4)->get();
+//        $slide  = Slide::whereId($id)->first();
+//        $type_slide = $slide->type;
 
-        if ($type_slide == 'supplier'){
-            $suppliers = Supplier::whereSlug($slide->type_id)->get();
-
-        }elseif ($type_slide == 'technical_unit'){
-            $technicals = Technical_unit::whereSlug($slide->type_id)->get();
-        }
-        elseif ($type_slide == 'product'){
-            $products = Product::whereSlug($slide->type_id)->get();
-        }
-        elseif ($type_slide == 'offer'){
-            $offers = Offer::whereSlug($slide->type_id)->get();
-        }
+//        if ($type_slide == 'supplier'){
+//            $suppliers = Supplier::whereSlug($slide->type_id)->get();
+//
+//        }elseif ($type_slide == 'technical_unit'){
+//            $technicals = Technical_unit::whereSlug($slide->type_id)->get();
+//        }
+//        elseif ($type_slide == 'product'){
+//            $products = Product::whereSlug($slide->type_id)->get();
+//        }
+//        elseif ($type_slide == 'offer'){
+//            $offers = Offer::whereSlug($slide->type_id)->get();
+//        }
 
         return view('Admin.slides.edit')
-            ->with(compact('products'))
-            ->with(compact('offers'))
-            ->with(compact('technicals'))
-            ->with(compact('suppliers'))
-            ->with(compact('slides'))
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'));
+            ->with(compact(['menupanels' , 'submenupanels'  , 'slides']));
+
     }
 
     public function update(Request $request , Slide  $slide)

@@ -31,38 +31,48 @@
                 <div class="row row-sm">
                     <div class="col-lg-12 col-md-12">
                         <div class="card custom-card">
-                            <div class="card-body">
-                                <div>
-                                    <h6 class="main-content-label text-center mb-5">ویرایش منو داشبورد</h6>
+                            <div class="card-body" style="background-color: #0000000a;border-radius: 10px 10px 0px 0px;">
+                                <div class="row">
+                                    <div class="col"><a href="{{url()->current()}}" class="btn btn-link btn-xs">ویرایش اطلاعات منو داشبورد</a></div>
                                 </div>
+                            </div>
+                            <div class="card-body">
                                 @foreach($menus as $menu)
-                                    <form action="{{route('menus.update', $menu->id)}}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{route('menudashboards.update', $menu->id)}}" method="POST" enctype="multipart/form-data">
                                         <div class="row row-sm">
                                             {{csrf_field()}}
                                             {{ method_field('PATCH') }}
 
                                             <div class="col-md-12">
-                                                @include('error')
+                                                {{--@include('error')--}}
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <p class="mg-b-10">نام منو</p>
-                                                    <input type="text" name="title" data-required="1" value="{{$menu->title}}"  class="form-control" />
+                                                    <p class="mg-b-10">عنوان  منو داشبورد</p>
+                                                    <input type="text" name="title" data-required="1" value="{{$menu->title}}" class="form-control" />
                                                 </div>
                                             </div>
-                                            <div class="col-md-12">
+                                            <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <p class="mg-b-10">انتخاب وضعیت نمایش</p>
-                                                    <select name="status_id" class="form-control select-lg select2">
-                                                        @foreach($statuses as $status)
-                                                            @if($menu->status == $status->id)
-                                                                <option value="{{$status->id}}">{{$status->title}}</option>
-                                                            @endif
-                                                        @endforeach
-                                                        @foreach($statuses as $status)
-                                                            <option value="{{$status->id}}">{{$status->title}}</option>
-                                                        @endforeach
-                                                    </select>
+                                                    <p class="mg-b-10">ادرس  منو داشبورد</p>
+                                                    <input type="text" name="slug" data-required="1" value="{{$menu->slug}}" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <p class="mg-b-10">ایکون  منو داشبورد</p>
+                                                    <input type="text" name="icon" data-required="1" value="{{$menu->icon}}" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+
+                                                    <p class="mb-2">نمایش/عدم نمایش</p>
+                                                    <label class="custom-switch">
+                                                        <input type="checkbox" name="status" class="custom-switch-input" {{$menu->status == '4' ? 'checked' : ''}}>
+                                                        <span class="custom-switch-indicator"></span>
+                                                    </label>
+
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 mg-b-10 text-center">

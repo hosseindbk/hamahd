@@ -33,38 +33,37 @@
                 <div class="row row-sm">
                     <div class="col-lg-12 col-md-12">
                         <div class="card custom-card">
-                            <div class="card-body">
-                                <div>
-                                    <h6 class="main-content-label text-center mb-5">ورود اطلاعات زیر منو داشبورد</h6>
+                            <div class="card-body" style="background-color: #0000000a;border-radius: 10px 10px 0px 0px;">
+                                <div class="row">
+                                    <div class="col"><a href="{{url()->current()}}" class="btn btn-link btn-xs">ورود اطلاعات زیر منوهای داشبورد</a></div>
                                 </div>
+                            </div>
+                            <div class="card-body">
                                 <form action="{{ route('submenudashboards.store')}}" method="POST">
                                     <div class="row row-sm">
                                         {{csrf_field()}}
                                         <div class="col-md-12">
-                                            @include('error')
+                                           {{-- @include('error')--}}
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <p class="mg-b-10">عنوان زیرمنو داشبورد</p>
                                                 <input type="text" name="title" data-required="1" placeholder="عنوان زیرمنو داشبورد را وارد کنید" class="form-control" />
                                             </div>
+                                        </div>
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <p class="mg-b-10">نام زیرمنو داشبورد</p>
-                                                <input type="text" name="name" data-required="1" placeholder="نام زیرمنو داشبورد را وارد کنید" class="form-control" />
+                                                <p class="mg-b-10">ادرس زیرمنو داشبورد</p>
+                                                <input type="text" name="slug" data-required="1" placeholder="ادرس زیرمنو داشبورد را وارد کنید" class="form-control" />
                                             </div>
                                         </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <p class="mg-b-10">لیبل زیر منو</p>
-                                                <input type="text" name="namayesh" data-required="1" placeholder="لیبل زیر منو را وارد کنید" class="form-control" />
-                                            </div>
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <p class="mg-b-10">انتخاب منو</p>
                                                 <select name="menu_id" class="form-control select-lg select2">
                                                     <option value="">انتخاب منو</option>
-                                                    @foreach($menudashboards as $menudashboard)
-                                                        <option value="{{$menudashboard->id}}">{{$menudashboard->title}}</option>
+                                                    @foreach($menupanels as $menupanel)
+                                                        <option value="{{$menupanel->id}}">{{$menupanel->title}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>

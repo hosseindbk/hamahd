@@ -7,7 +7,7 @@
 @endsection
 @section('main')
 
-    @include('sweet::alert')
+{{--    @include('sweet::alert')--}}
     <div class="main-content side-content pt-0">
         <div class="container-fluid">
             <div class="inner-body">
@@ -63,6 +63,8 @@
             </div>
         </div>
     </div>
+@endsection
+
 @section('end')
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
@@ -75,7 +77,7 @@
                 ajax: "{{ route('slides.index') }}",
                 columns: [
                     {data: 'id'                 , name: 'id'},
-                    {data: 'image'              , name: 'image'},
+                    {data: 'file_link'          , name: 'file_link'},
                     {data: 'position'           , name: 'position'},
                     {data: 'title'              , name: 'title'},
                     {data: 'status'             , name: 'status'},
@@ -91,5 +93,4 @@
 
         });
     </script>
-@endsection
 @endsection

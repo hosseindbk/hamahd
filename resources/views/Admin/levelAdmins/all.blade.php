@@ -1,6 +1,6 @@
 @extends('Admin.admin')
 @section('title')
-    <title> مدیریت کاربران داشبورد </title>
+    <title> مدیریت سطح کاربر داشبورد </title>
     <link href="{{asset('admin/assets/plugins/datatable/dataTables.bootstrap4.min-rtl.css')}} " rel="stylesheet" />
     <link href="{{asset('admin/assets/plugins/datatable/responsivebootstrap4.min.css')}}" rel="stylesheet" />
     <link href="{{asset('admin/assets/plugins/datatable/fileexport/buttons.bootstrap4.min.css')}}" rel="stylesheet" />
@@ -11,10 +11,10 @@
             <div class="inner-body">
                 <div class="page-header">
                     <div>
-                        <h2 class="main-content-title tx-24 mg-b-5">مدیریت کاربران داشبورد</h2>
+                        <h2 class="main-content-title tx-24 mg-b-5">مدیریت سطح کاربر داشبورد</h2>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{url('admin/panel')}}">صفحه اصلی</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">مدیریت کاربران داشبورد</li>
+                            <li class="breadcrumb-item active" aria-current="page">مدیریت سطح کاربر داشبورد</li>
                         </ol>
                     </div>
                 </div>
@@ -22,12 +22,13 @@
                 <div class="row row-sm">
                     <div class="col-lg-12">
                         <div class="card custom-card overflow-hidden">
-                            <div class="card-body">
-                                <div>
-                                    <h6 class="main-content-label mb-1">لیست کاربران داشبورد</h6>
-                                    <a href="{{url('admin/levelAdmins/create')}}" class="btn btn-primary btn-xs">افزودن کاربران داشبورد</a>
+                            <div class="card-body" style="background-color: #0000000a;border-radius: 10px 10px 0px 0px;">
+                                <div class="row">
+                                    <div class="col"><a href="{{url()->current()}}" class="btn btn-link btn-xs">لیست سطح کاربر داشبورد</a></div>
+                                    <div class="col text-left"><a href="{{url('admin/levelAdmins/create')}}" class="btn btn-primary btn-xs">+ افزودن سطح کاربر داشبورد</a></div>
                                 </div>
-
+                            </div>
+                            <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table" id="example1">
                                         <thead>
@@ -50,7 +51,7 @@
                                                         <td>{{$user->id}}</td>
                                                         <td>{{$user->username}}</td>
                                                         <td>{{$user->email}}</td>
-                                                        <td>{{ $role->name }}</td>
+                                                        <td>{{ $role->title }}</td>
                                                         <td>
                                                             @if($user->status == 0)
                                                                 <button class="btn ripple btn-outline-danger">عدم نمایش</button>

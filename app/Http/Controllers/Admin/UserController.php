@@ -16,22 +16,21 @@ class UserController extends Controller
     {
 
         //$this->authorize('user-manage');
-        $users          = User::latest()->paginate(25);
+        $users          = User::latest()->paginate(10);
         $menupanels     = Menu_panel::whereStatus(4)->get();
         $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         return view('Admin.users.all')
-            ->with(compact('menupanels'))
-            ->with(compact('submenupanels'))
-            ->with(compact('users'));
+            ->with(compact(['menupanels' , 'submenupanels', 'users']));
     }
     public function create()
     {
-        $menudashboards = Menu_panel::whereStatus(4)->get();
-        $submenudashboards = Submenu_panel::whereStatus(4)->get();
+        $menupanels         = Menu_panel::whereStatus(4)->get();
+        $submenupanels      = Submenu_panel::whereStatus(4)->get();
+
         return view('Admin.users.create')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'));
+            ->with(compact(['menupanels' , 'submenupanels']));
+
     }
 
     public function store(userrequest $request)
@@ -53,14 +52,13 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        $users = User::whereId($id)->get();
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $users          = User::whereId($id)->get();
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         return view('Admin.users.edit')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'))
-            ->with(compact('users'));
+            ->with(compact(['menupanels' , 'submenupanels', 'users']));
+
     }
 
 

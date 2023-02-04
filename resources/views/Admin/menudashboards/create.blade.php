@@ -33,20 +33,43 @@
                 <div class="row row-sm">
                     <div class="col-lg-12 col-md-12">
                         <div class="card custom-card">
-                            <div class="card-body">
-                                <div>
-                                    <h6 class="main-content-label text-center mb-5">ورود اطلاعات منو داشبورد</h6>
+                            <div class="card-body" style="background-color: #0000000a;border-radius: 10px 10px 0px 0px;">
+                                <div class="row">
+                                    <div class="col"><a href="{{url()->current()}}" class="btn btn-link btn-xs">ورود اطلاعات منو داشبورد</a></div>
                                 </div>
+                            </div>
+                                <div class="card-body">
                                 <form action="{{ route('menudashboards.store')}}" method="POST">
                                     <div class="row row-sm">
                                         {{csrf_field()}}
                                         <div class="col-md-12">
-                                            @include('error')
+                                           {{-- @include('error')--}}
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <p class="mg-b-10">عنوان  منو داشبورد</p>
                                                 <input type="text" name="title" data-required="1" placeholder="عنوان زیرمنو داشبورد را وارد کنید" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <p class="mg-b-10">ادرس  منو داشبورد</p>
+                                                <input type="text" name="slug" data-required="1" placeholder="ادرس زیرمنو داشبورد را وارد کنید" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <p class="mg-b-10">ایکون  منو داشبورد</p>
+                                                <input type="text" name="icon" data-required="1" placeholder="ایکون زیرمنو داشبورد را وارد کنید" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <p class="mg-b-10">زیر  منو داشبورد</p>
+                                                <select name="submenu" id="" class="form-control">
+                                                    <option value="1" selected>دارد</option>
+                                                    <option value="0">ندارد</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mg-b-10 text-center">

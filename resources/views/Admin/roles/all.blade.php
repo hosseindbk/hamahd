@@ -22,11 +22,13 @@
                 <div class="row row-sm">
                     <div class="col-lg-12">
                         <div class="card custom-card overflow-hidden">
-                            <div class="card-body">
-                                <div>
-                                    <h6 class="main-content-label mb-1">لیست نقش های داشبورد</h6>
-                                    <a href="{{url('admin/roles/create')}}" class="btn btn-primary btn-xs">افزودن نقش های داشبورد</a>
+                            <div class="card-body" style="background-color: #0000000a;border-radius: 10px 10px 0px 0px;">
+                                <div class="row">
+                                    <div class="col"><a href="{{url()->current()}}" class="btn btn-link btn-xs">لیست نقش های داشبورد</a></div>
+                                    <div class="col text-left"><a href="{{url('admin/roles/create')}}" class="btn btn-primary btn-xs">+ افزودن نقش داشبورد</a></div>
                                 </div>
+                            </div>
+                            <div class="card-body">
 
                                 <div class="table-responsive">
                                     <table class="table" id="example1">
@@ -35,7 +37,7 @@
                                             <th class="wd-10p"> ردیف </th>
                                             <th class="wd-10p"> نام نقش </th>
                                             <th class="wd-10p"> لیبل نقش </th>
-                                            <th class="wd-10p"> دسترسی نقش </th>
+                                            <th class="wd-10p" > دسترسی نقش </th>
                                             <th class="wd-10p"> تغییر </th>
                                             <th class="wd-10p"> حذف </th>
 
@@ -47,13 +49,13 @@
 
                                                 <td>{{$role->id}}</td>
 
-                                                <td>{{$role->name}}</td>
+                                                <td>{{$role->title}}</td>
 
-                                                <td>{{$role->label}}</td>
+                                                <td>{{$role->slug}}</td>
 
-                                                <td>
-                                                    @foreach(\App\Permission::latest()->get() as $permission)
-                                                        @if(in_array(trim($permission->id) , $role->permissions->pluck('id')->toArray()) ? 'selected' : '')  {{ $permission->label }} -  @endif
+                                                <td style="max-width: 300px;overflow: auto;">
+                                                    @foreach(\App\Models\Permission::latest()->get() as $permission)
+                                                        @if(in_array(trim($permission->id) , $role->permissions->pluck('id')->toArray()) ? 'selected' : '')  {{ $permission->slug }} -  @endif
                                                     @endforeach
                                                 </td>
 

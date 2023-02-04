@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\profilerequest;
-use App\Menudashboard;
-use App\Role;
-use App\Submenudashboard;
-use App\User;
+use App\Models\Menu_panel;
+use App\Models\Role;
+use App\Models\Submenu_panel;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 
 class ProfileController extends Controller
@@ -15,13 +15,11 @@ class ProfileController extends Controller
     {
         $users          = User::all();
         $roles          = Role::where('id' , '>' , 9)->get();
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
         return view('Admin.profile.all')
-            ->with(compact('roles'))
-            ->with(compact('users'))
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'));
+            ->with(compact(['menupanels' , 'submenupanels', 'roles' , 'users']));
+
     }
         public function update(profilerequest $request , User $user)
         {

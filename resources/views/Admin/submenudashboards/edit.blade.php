@@ -33,63 +33,54 @@
                 <div class="row row-sm">
                     <div class="col-lg-12 col-md-12">
                         <div class="card custom-card">
-                            @foreach($submenus as $submenudashboard)
-                            <div class="card-body">
-                                <div>
-                                    <h6 class="main-content-label text-center mb-5">ویرایش اطلاعات زیر منو داشبورد</h6>
+                            @foreach($submenus as $submenupanel)
+                                <div class="card-body" style="background-color: #0000000a;border-radius: 10px 10px 0px 0px;">
+                                    <div class="row">
+                                        <div class="col"><a href="{{url()->current()}}" class="btn btn-link btn-xs">ویرایش اطلاعات زیر منوهای داشبورد</a></div>
+                                    </div>
                                 </div>
-
-                                <form action="{{ route('submenudashboards.update', $submenudashboard->id)}}" method="POST">
+                            <div class="card-body">
+                                <form action="{{ route('submenudashboards.update', $submenupanel->id)}}" method="POST">
                                     {{csrf_field()}}
                                     {{ method_field('PATCH') }}
                                     <div class="row row-sm">
                                         <div class="col-md-12">
-                                            @include('error')
+                                            {{--@include('error')--}}
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <p class="mg-b-10">عنوان زیرمنو داشبورد</p>
-                                                <input type="text" name="title" data-required="1" value="{{$submenudashboard->title}}" class="form-control" />
+                                                <input type="text" name="title" data-required="1" value="{{$submenupanel->title}}"  class="form-control" />
                                             </div>
+                                        </div>
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <p class="mg-b-10">نام زیرمنو داشبورد</p>
-                                                <input type="text" name="name" data-required="1" value="{{$submenudashboard->name}}" class="form-control" />
+                                                <p class="mg-b-10">ادرس زیرمنو داشبورد</p>
+                                                <input type="text" name="slug" data-required="1" value="{{$submenupanel->slug}}"  class="form-control" />
                                             </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <p class="mg-b-10">انتخاب منو</p>
+                                                <select name="menu_id" class="form-control select-lg select2">
+                                                    <option value="">انتخاب منو</option>
+                                                    @foreach($menupanels as $menupanel)
+                                                        <option value="{{$menupanel->id}}" {{$submenupanel->menu_id == $menupanel->id ? 'selected' : ''}}>{{$menupanel->title}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
                                             <div class="form-group">
 
                                                 <p class="mb-2">نمایش/عدم نمایش</p>
                                                 <label class="custom-switch">
-                                                    @if($submenudashboard->status == '0')
-                                                    <input type="checkbox" name="status" class="custom-switch-input">
-                                                    @elseif($submenudashboard->status == '1')
-                                                    <input type="checkbox" name="status" class="custom-switch-input" checked="">
-                                                    @endif
+                                                    <input type="checkbox" name="status" class="custom-switch-input" {{$submenupanel->status == '4' ? 'checked' : ''}}>
                                                         <span class="custom-switch-indicator"></span>
                                                 </label>
 
                                             </div>
                                         </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <p class="mg-b-10">لیبل زیر منو</p>
-                                                <input type="text" name="namayesh" data-required="1" value="{{$submenudashboard->namayesh}}" class="form-control" />
-                                            </div>
-                                            <div class="form-group">
-                                                <p class="mg-b-10">انتخاب منو</p>
-                                                <select name="menu_id" class="form-control select-lg select2">
-                                                    @foreach($menudashboards as $menudashboard)
-                                                        @if($submenudashboard->menu_id == $menudashboard->id)
-                                                            <option value="{{$menudashboard->id}}">{{$menudashboard->title}}</option>
-                                                        @endif
-                                                    @endforeach
-                                                        @foreach($menudashboards as $menudashboard)
-                                                            <option value="{{$menudashboard->id}}">{{$menudashboard->title}}</option>
-                                                        @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
-
                                         <div class="col-lg-12 mg-b-10 text-center">
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-info  btn-lg m-r-20">ذخیره اطلاعات</button>

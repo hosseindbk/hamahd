@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Menudashboard;
-use App\Role;
-use App\Submenudashboard;
+use App\Models\Menu_panel;
+use App\Models\Role;
+use App\Models\Submenu_panel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,14 +17,13 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles = Role::latest()->paginate(25);
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $roles          = Role::latest()->paginate(25);
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         return view('Admin.roles.all')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'))
-            ->with(compact('roles'));
+            ->with(compact(['menupanels' , 'submenupanels', 'roles']));
+
     }
 
     /**
@@ -34,12 +33,11 @@ class RoleController extends Controller
      */
     public function create()
     {
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         return view('Admin.roles.create')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'));
+            ->with(compact(['menupanels' , 'submenupanels']));
     }
 
     /**
@@ -82,13 +80,12 @@ class RoleController extends Controller
     public function edit($id)
     {
         $roles      = role::whereId($id)->get();
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         return view('Admin.roles.edit')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'))
-            ->with(compact('roles'));
+            ->with(compact(['menupanels' , 'submenupanels', 'roles']));
+
     }
 
     /**

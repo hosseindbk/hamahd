@@ -1,6 +1,6 @@
 @extends('Admin.admin')
 @section('title')
-    <title> ویرایش نقش کاربران </title>
+    <title> ایجاد نقش کاربران </title>
     <link href="{{asset('admin/assets/plugins/spectrum-colorpicker/spectrum.css')}}" rel="stylesheet">
     <link href="{{asset('admin/assets/plugins/ion-rangeslider/css/ion.rangeSlider.css')}}" rel="stylesheet">
     <link href="{{asset('admin/assets/plugins/ion-rangeslider/css/ion.rangeSlider.skinFlat.css')}}" rel="stylesheet">
@@ -20,7 +20,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{url('admin/panel')}}">صفحه اصلی</a></li>
                             <li class="breadcrumb-item"><a href="{{url('admin/roles')}}"> مدیریت نقش کاربر</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">ویرایش نقش کاربر</li>
+                            <li class="breadcrumb-item active" aria-current="page">ایجاد نقش کاربر</li>
                         </ol>
                     </div>
                 </div>
@@ -33,23 +33,24 @@
                 <div class="row row-sm">
                     <div class="col-lg-12 col-md-12">
                         <div class="card custom-card">
+                            <div class="card-body" style="background-color: #0000000a;border-radius: 10px 10px 0px 0px;">
+                                <div class="row">
+                                    <div class="col"><a href="{{url()->current()}}" class="btn btn-link btn-xs">ایجاد نقش های داشبورد</a></div>
+                                </div>
+                            </div>
                                 <div class="card-body">
-                                    <div>
-                                        <h6 class="main-content-label text-center mb-5">ویرایش اطلاعات نقش کاربران</h6>
-                                    </div>
-
                                     <form action="{{route('roles.store')}}" method="POST">
                                         {{csrf_field()}}
                                         <div class="row row-sm">
                                             <div class="col-md-12">
-                                                @include('error')
+                                                {{--@include('error')--}}
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">انتخب دسترسی</p>
                                                     <select multiple="multiple" name="permission_id[]" onchange="console.log($(this).children(':selected').length)" class="selectsum2">
-                                                        @foreach(\App\Permission::latest()->get() as $permission)
-                                                            <option value="{{ $permission->id }}">{{ $permission->name }} - {{ $permission->label }}</option>
+                                                        @foreach(\App\Models\Permission::latest()->get() as $permission)
+                                                            <option value="{{ $permission->id }}">{{ $permission->title }} - {{ $permission->slug }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -57,14 +58,14 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">نام نقش</p>
-                                                    <input type="text" name="name" data-required="1" class="form-control" />
+                                                    <input type="text" name="title" data-required="1" class="form-control" />
                                                 </div>
                                             </div>
 
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <p class="mg-b-10">لیبل نقش</p>
-                                                    <input type="text" name="label" data-required="1" class="form-control" />
+                                                    <p class="mg-b-10">ادرس نقش</p>
+                                                    <input type="text" name="slug" data-required="1" class="form-control" />
                                                 </div>
                                             </div>
 
@@ -84,7 +85,7 @@
     </div>
 </div>
 
-
+@endsection
 @section('end')
     <script src="{{asset('admin/assets/plugins/select2/js/select2.min.js')}}"></script>
     <script src="{{asset('admin/assets/js/select2.js')}}"></script>
@@ -104,4 +105,4 @@
     <script src="{{asset('admin/assets/plugins/telephoneinput/telephoneinput.js')}}"></script>
     <script src="{{asset('admin/assets/plugins/telephoneinput/inttelephoneinput.js')}}"></script>
 @endsection
-@endsection
+

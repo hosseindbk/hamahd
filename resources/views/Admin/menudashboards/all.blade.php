@@ -22,12 +22,13 @@
                 <div class="row row-sm">
                     <div class="col-lg-12">
                         <div class="card custom-card overflow-hidden">
-                            <div class="card-body">
-                                <div>
-                                    <h6 class="main-content-label mb-1">لیست منوهای داشبورد</h6>
-                                    <a href="{{url('admin/menudashboards/create')}}" class="btn btn-primary btn-xs">افزودن منو داشبورد</a>
+                            <div class="card-body" style="background-color: #0000000a;border-radius: 10px 10px 0px 0px;">
+                                <div class="row">
+                                    <div class="col"><a href="{{url()->current()}}" class="btn btn-link btn-xs">لیست منوهای داشبورد</a></div>
+                                    <div class="col text-left"><a href="{{url('admin/menudashboards/create')}}" class="btn btn-primary btn-xs">+ افزودن منو داشبورد</a></div>
                                 </div>
-
+                            </div>
+                            <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table" id="example1">
                                         <thead>

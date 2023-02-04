@@ -40,20 +40,20 @@
                                         <div class="col-md-6">
                                             <p> نام اسلاید : {{$slide->title}} </p>
                                             <p> موقعیت اسلاید :
-                                            @if($slide->position == 1)
-                                                اسلاید اصلی
-                                                @elseif($slide->position == 2)
-                                                اسلاید سمت چپ بالا
-                                                @elseif($slide->position == 3)
-                                                اسلاید سمت چپ پایین
-                                                @endif
+{{--                                            @if($slide->position == 1)--}}
+{{--                                                اسلاید اصلی--}}
+{{--                                                @elseif($slide->position == 2)--}}
+{{--                                                اسلاید سمت چپ بالا--}}
+{{--                                                @elseif($slide->position == 3)--}}
+{{--                                                اسلاید سمت چپ پایین--}}
+{{--                                                @endif--}}
                                             </p>
 
                                         </div>
                                         <div class="col-md-6">
                                             <div style="width: 250px;float: left;border: 2px solid #dad8d8;border-radius: 15px;">
-                                                <img src="{{asset($slide->image)}}" class="img-responsive" style="padding: 20px;" alt="">
-                                                @if($slide->image != null)
+                                                <img src="{{asset($slide->file_link)}}" class="img-responsive" style="padding: 20px;" alt="">
+                                                @if($slide->file_link != null)
                                                     <div style="background: #efefef;text-align: center;padding: 5px;border-radius: 0px 0px 15px 15px;">
                                                         <form action="{{ route('slides.destroy'  , $slide->id) }}" method="post">
                                                             {{ method_field('delete') }}
@@ -89,28 +89,28 @@
                                             {{ method_field('PATCH') }}
 
                                             <div class="col-md-12">
-                                                @include('error')
+{{--                                                @include('error')--}}
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">نام اسلاید</p>
                                                     <input type="text" name="title" value="{{$slide->title}}"  class="form-control" />
                                                 </div>
-                                                <div class="form-group">
-                                                    <p class="mg-b-10">لینک اسلاید</p>
-                                                    <input type="text" name="link" value="{{$slide->link}}" class="form-control" />
-                                                </div>
+{{--                                                <div class="form-group">--}}
+{{--                                                    <p class="mg-b-10">لینک اسلاید</p>--}}
+{{--                                                    <input type="text" name="link" value="{{$slide->link}}" class="form-control" />--}}
+{{--                                                </div>--}}
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <p class="mg-b-10">انتخاب مکان اسلاید</p>
-                                                    <select name="position" class="form-control select-lg select2" id="position">
-                                                        <option value="">مکان اسلاید</option>
-                                                        <option value="1" {{$slide->position == 1 ? 'selected' : ''}}>اسلاید اصلی</option>
-                                                        <option value="2" {{$slide->position == 2 ? 'selected' : ''}}>اسلاید تبلیغاتی چپ بالا</option>
-                                                        <option value="3" {{$slide->position == 3 ? 'selected' : ''}}>اسلاید تبلیغاتی چپ پایین</option>
-                                                    </select>
-                                                </div>
+{{--                                                <div class="form-group">--}}
+{{--                                                    <p class="mg-b-10">انتخاب مکان اسلاید</p>--}}
+{{--                                                    <select name="position" class="form-control select-lg select2" id="position">--}}
+{{--                                                        <option value="">مکان اسلاید</option>--}}
+{{--                                                        <option value="1" {{$slide->position == 1 ? 'selected' : ''}}>اسلاید اصلی</option>--}}
+{{--                                                        <option value="2" {{$slide->position == 2 ? 'selected' : ''}}>اسلاید تبلیغاتی چپ بالا</option>--}}
+{{--                                                        <option value="3" {{$slide->position == 3 ? 'selected' : ''}}>اسلاید تبلیغاتی چپ پایین</option>--}}
+{{--                                                    </select>--}}
+{{--                                                </div>--}}
                                                 <div class="form-group">
                                                     <p class="mg-b-10">انتخاب وضعیت نمایش</p>
                                                     <select name="status_id" class="form-control select-lg select2">
@@ -120,49 +120,49 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <p class="mg-b-10">انتخاب نوع اسلاید</p>
-                                                    <select name="type" class="form-control select-lg select2" id="type">
-                                                        <option value="">انتخاب کنید</option>
-                                                        <option value="external"  {{$slide->type == 'external' ? 'selected' : ''}}  >لینک خارجی</option>
-                                                        <option value="technical" {{$slide->type == 'technical'? 'selected' : ''}}  >تعمیرگاه</option>
-                                                        <option value="supplier"  {{$slide->type == 'supplier' ? 'selected' : ''}}  >فروشگاه</option>
-                                                        <option value="product"   {{$slide->type == 'product'  ? 'selected' : ''}}  >کالا</option>
-                                                        <option value="offer"     {{$slide->type == 'offer'    ? 'selected' : ''}}  >آگهی</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <p class="mg-b-10">ارتباط اسلاید</p>
-                                                    <select name="type_id" class="form-control select-lg select2" id="type_id">
-                                                        @if($slide->type == 'supplier')
-                                                            @foreach($suppliers as $supplier)
-                                                                <option value="{{ $supplier->id }}">{{ $supplier->title }}</option>
-                                                            @endforeach
-                                                        @elseif($slide->type == 'technical')
-                                                            @foreach($technicals as $technical_unit)
-                                                                <option value="{{ $technical_unit->id }}">{{ $technical_unit->title }}</option>
-                                                            @endforeach
-                                                        @elseif($slide->type == 'product')
-                                                            @foreach($products as $product)
-                                                                <option value="{{ $product->id }}">{{ $product->title }}</option>
-                                                            @endforeach
-                                                        @elseif($slide->type == 'offer')
-                                                            @foreach($offers as $offer)
-                                                                <option value="{{ $offer->id }}">{{ $offer->title }}</option>
-                                                            @endforeach
-                                                        @endif
-                                                    </select>
-                                                </div>
+{{--                                                <div class="form-group">--}}
+{{--                                                    <p class="mg-b-10">انتخاب نوع اسلاید</p>--}}
+{{--                                                    <select name="type" class="form-control select-lg select2" id="type">--}}
+{{--                                                        <option value="">انتخاب کنید</option>--}}
+{{--                                                        <option value="external"  {{$slide->type == 'external' ? 'selected' : ''}}  >لینک خارجی</option>--}}
+{{--                                                        <option value="technical" {{$slide->type == 'technical'? 'selected' : ''}}  >تعمیرگاه</option>--}}
+{{--                                                        <option value="supplier"  {{$slide->type == 'supplier' ? 'selected' : ''}}  >فروشگاه</option>--}}
+{{--                                                        <option value="product"   {{$slide->type == 'product'  ? 'selected' : ''}}  >کالا</option>--}}
+{{--                                                        <option value="offer"     {{$slide->type == 'offer'    ? 'selected' : ''}}  >آگهی</option>--}}
+{{--                                                    </select>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="form-group">--}}
+{{--                                                    <p class="mg-b-10">ارتباط اسلاید</p>--}}
+{{--                                                    <select name="type_id" class="form-control select-lg select2" id="type_id">--}}
+{{--                                                        @if($slide->type == 'supplier')--}}
+{{--                                                            @foreach($suppliers as $supplier)--}}
+{{--                                                                <option value="{{ $supplier->id }}">{{ $supplier->title }}</option>--}}
+{{--                                                            @endforeach--}}
+{{--                                                        @elseif($slide->type == 'technical')--}}
+{{--                                                            @foreach($technicals as $technical_unit)--}}
+{{--                                                                <option value="{{ $technical_unit->id }}">{{ $technical_unit->title }}</option>--}}
+{{--                                                            @endforeach--}}
+{{--                                                        @elseif($slide->type == 'product')--}}
+{{--                                                            @foreach($products as $product)--}}
+{{--                                                                <option value="{{ $product->id }}">{{ $product->title }}</option>--}}
+{{--                                                            @endforeach--}}
+{{--                                                        @elseif($slide->type == 'offer')--}}
+{{--                                                            @foreach($offers as $offer)--}}
+{{--                                                                <option value="{{ $offer->id }}">{{ $offer->title }}</option>--}}
+{{--                                                            @endforeach--}}
+{{--                                                        @endif--}}
+{{--                                                    </select>--}}
+{{--                                                </div>--}}
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <p class="mg-b-10">انتخب استان</p>
-                                                    <select multiple="multiple" name="state_id[]" onchange="console.log($(this).children(':selected').length)" class="selectsum2">
-                                                        @foreach(\App\State::all() as $state)
-                                                            <option value="{{ $state->id }}" {{ in_array(trim($state->id) , $slide->stateslide->pluck('id')->toArray()) ? 'selected' : ''  }}>{{ $state->title }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
+{{--                                                <div class="form-group">--}}
+{{--                                                    <p class="mg-b-10">انتخب استان</p>--}}
+{{--                                                    <select multiple="multiple" name="state_id[]" onchange="console.log($(this).children(':selected').length)" class="selectsum2">--}}
+{{--                                                        @foreach(\App\State::all() as $state)--}}
+{{--                                                            <option value="{{ $state->id }}" {{ in_array(trim($state->id) , $slide->stateslide->pluck('id')->toArray()) ? 'selected' : ''  }}>{{ $state->title }}</option>--}}
+{{--                                                        @endforeach--}}
+{{--                                                    </select>--}}
+{{--                                                </div>--}}
 
                                             </div>
                                             <div class="col-md-12">
@@ -192,7 +192,7 @@
         </div>
 </div>
 
-
+@endsection
 @section('end')
     <script src="{{asset('admin/assets/plugins/select2/js/select2.min.js')}}"></script>
     <script src="{{asset('admin/assets/js/select2.js')}}"></script>
@@ -219,34 +219,34 @@
                 console.error( error );
             } );
     </script>
-    <script>
-        $(function(){
-            $('#type').change(function(){
-                $("#type_id option").remove();
-                var id = $('#type').val();
-                $.ajax({
-                    url : '{{ route( 'slidetype' ) }}',
-                    data: {
-                        "_token": "{{ csrf_token() }}",
-                        "id": id
-                    },
-                    type: 'post',
-                    dataType: 'json',
-                    success: function( result )
-                    {
-                        $.each( result, function(k, v) {
-                            $('#type_id').append($('<option>', {value:k, text:v}));
-                        });
-                    },
-                    error: function()
-                    {
-                        //handle errors
-                        alert('error...');
-                    }
-                });
-            });
-        });
-    </script>
+{{--    <script>--}}
+{{--        $(function(){--}}
+{{--            $('#type').change(function(){--}}
+{{--                $("#type_id option").remove();--}}
+{{--                var id = $('#type').val();--}}
+{{--                $.ajax({--}}
+{{--                    url : '{{ route( 'slidetype' ) }}',--}}
+{{--                    data: {--}}
+{{--                        "_token": "{{ csrf_token() }}",--}}
+{{--                        "id": id--}}
+{{--                    },--}}
+{{--                    type: 'post',--}}
+{{--                    dataType: 'json',--}}
+{{--                    success: function( result )--}}
+{{--                    {--}}
+{{--                        $.each( result, function(k, v) {--}}
+{{--                            $('#type_id').append($('<option>', {value:k, text:v}));--}}
+{{--                        });--}}
+{{--                    },--}}
+{{--                    error: function()--}}
+{{--                    {--}}
+{{--                        //handle errors--}}
+{{--                        alert('error...');--}}
+{{--                    }--}}
+{{--                });--}}
+{{--            });--}}
+{{--        });--}}
+{{--    </script>--}}
 
 @endsection
-@endsection
+

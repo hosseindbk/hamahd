@@ -40,7 +40,7 @@
                                 <div class="main-content-body tab-pane p-4 border-top-0 active" id="edit">
                                     <div class="card-body border">
                                         <div class="mb-4 main-content-label">اطلاعات شخصی</div>
-                                        <form class="form-horizontal" method="post" action="{{route('profiles.update' , Auth::user()->id)}}">
+                                        <form class="form-horizontal" method="post" action="{{route('profile.update' , Auth::user()->id)}}">
                                             {{csrf_field()}}
                                             {{ method_field('PATCH') }}
                                             <div class="form-group ">
@@ -80,7 +80,7 @@
                                                         <label class="form-label">موبایل</label>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <input type="text" name="mobile" class="form-control" value="{{Auth::user()->mobile}}">
+                                                        <input type="text" name="mobile" class="form-control" value="{{Auth::user()->phone}}">
                                                     </div>
                                                 </div>
                                             </div>

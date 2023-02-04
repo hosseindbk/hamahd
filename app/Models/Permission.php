@@ -9,9 +9,11 @@ use Illuminate\Database\Eloquent\Model;
 class permission extends Model
 {
     use HasFactory;
+
+    public $fillable=['title','slug','user_id'];
+
     public function roles(){
         return $this->belongsToMany(Role::class);
     }
-    public $fillable=['title','slug','user_id'];
 
 }

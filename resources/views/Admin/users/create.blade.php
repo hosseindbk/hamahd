@@ -41,7 +41,7 @@
                                     <div class="row row-sm">
                                         {{csrf_field()}}
                                         <div class="col-md-12">
-                                            @include('error')
+{{--                                            @include('error')--}}
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">

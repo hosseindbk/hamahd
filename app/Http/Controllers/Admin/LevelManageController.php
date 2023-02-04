@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Menudashboard;
-use App\Role;
-use App\Submenudashboard;
-use App\User;
+use App\Models\Menu_panel;
+use App\Models\Role;
+use App\Models\Submenu_panel;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,23 +13,20 @@ class LevelManageController extends Controller
 {
     public function index()
     {
-        $roles = Role::latest()->with('users')->paginate(20);
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $roles          = Role::latest()->with('users')->paginate(20);
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         return view('Admin.levelAdmins.all')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'))
-            ->with(compact('roles'));
+            ->with(compact(['menupanels' , 'submenupanels', 'roles']));
     }
 
     public function create()
     {
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $menupanels = Menu_panel::whereStatus(4)->get();
+        $submenupanels = Submenu_panel::whereStatus(4)->get();
         return view('Admin.levelAdmins.create')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'));
+            ->with(compact(['menupanels' , 'submenupanels']));
     }
 
     public function store(Request $request)
@@ -47,14 +44,13 @@ class LevelManageController extends Controller
 
     public function edit($id)
     {
-        $user = User::whereId($id)->get();
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $user           = User::whereId($id)->get();
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         return view('Admin.levelAdmins.edit')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'))
-            ->with(compact('user'));
+            ->with(compact(['menupanels' , 'submenupanels', 'user']));
+
     }
 
     public function update(Request $request , User $user)

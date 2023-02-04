@@ -22,9 +22,7 @@ class SubmenudashboardController extends Controller
         $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         return view('Admin.submenudashboards.all')
-            ->with(compact('menupanels'))
-            ->with(compact('submenupanels'))
-            ->with(compact('submenudashs'));
+            ->with(compact(['menupanels' , 'submenupanels', 'submenudashs']));
     }
 
     /**
@@ -35,12 +33,12 @@ class SubmenudashboardController extends Controller
     public function create()
     {
 
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         return view('Admin.submenudashboards.create')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'));
+            ->with(compact(['menupanels' , 'submenupanels']));
+
     }
 
     /**
@@ -49,17 +47,18 @@ class SubmenudashboardController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(submenudashboardrequest $request )
+    public function store(Request $request )
     {
-        $submenudashboards = new Submenudashboard();
+        $submenupanels = new Submenu_panel();
 
-        $submenudashboards->title = $request->input('title');
-        $submenudashboards->name = $request->input('name');
-        $submenudashboards->namayesh = $request->input('namayesh');
-        $submenudashboards->menu_id = $request->input('menu_id');
+        $submenupanels->title       = $request->input('title');
+        $submenupanels->slug        = $request->input('slug');
+        $submenupanels->namayesh    = $request->input('namayesh');
+        $submenupanels->menu_id     = $request->input('menu_id');
+        $submenupanels->user_id     = auth()->user()->id;
 
-        $submenudashboards->save();
-        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
+        $submenupanels->save();
+/*        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');*/
         return redirect(route('submenudashboards.index'));
     }
 
@@ -82,13 +81,11 @@ class SubmenudashboardController extends Controller
      */
     public function edit($id)
     {
-        $submenus = Submenudashboard::whereId($id)->get();
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $submenus           = Submenu_panel::whereId($id)->get();
+        $menupanels         = Menu_panel::whereStatus(4)->get();
+        $submenupanels      = Submenu_panel::whereStatus(4)->get();
         return view('Admin.submenudashboards.edit')
-            ->with(compact('submenus'))
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'));
+            ->with(compact(['menupanels' , 'submenupanels', 'submenus']));
 
     }
 
@@ -99,22 +96,23 @@ class SubmenudashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(submenudashboardrequest $request, Submenudashboard $submenudashboard)
+    public function update(Request $request , $id)
     {
-        $submenudashboard->title = $request->input('title');
-        $submenudashboard->name = $request->input('name');
-        $submenudashboard->namayesh = $request->input('namayesh');
+        $submenupanel = Submenu_panel::findOrfail($id);
+        $submenupanel->title        = $request->input('title');
+        $submenupanel->slug         = $request->input('slug');
+        $submenupanel->namayesh     = $request->input('namayesh');
 
         if($request->input('status') == 'on'){
-            $submenudashboard->status = 1;
+            $submenupanel->status = 4;
         }
 
         if($request->input('status') == null) {
-            $submenudashboard->status = 0;
+            $submenupanel->status = 0;
         }
 
-        $submenudashboard->update();
-        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
+        $submenupanel->update();
+//        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
         return redirect(route('submenudashboards.index'));
     }
 

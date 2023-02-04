@@ -33,25 +33,26 @@
                 <div class="row row-sm">
                     <div class="col-lg-12 col-md-12">
                         <div class="card custom-card">
+                            <div class="card-body" style="background-color: #0000000a;border-radius: 10px 10px 0px 0px;">
+                                <div class="row">
+                                    <div class="col"><a href="{{url()->current()}}" class="btn btn-link btn-xs">ویرایش نقش های داشبورد</a></div>
+                                </div>
+                            </div>
                             @foreach($roles as $role)
                                 <div class="card-body">
-                                    <div>
-                                        <h6 class="main-content-label text-center mb-5">ویرایش اطلاعات نقش کاربران</h6>
-                                    </div>
-
                                     <form action="{{ route('roles.update', $role->id)}}" method="POST">
                                         {{csrf_field()}}
                                         {{ method_field('PATCH') }}
                                         <div class="row row-sm">
                                             <div class="col-md-12">
-                                                @include('error')
+                                               {{-- @include('error')--}}
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">انتخب دسترسی</p>
                                                     <select multiple="multiple" name="permission_id[]" onchange="console.log($(this).children(':selected').length)" class="selectsum2">
-                                                        @foreach(\App\Permission::latest()->get() as $permission)
-                                                            <option value="{{ $permission->id }}" {{ in_array(trim($permission->id) , $role->permissions->pluck('id')->toArray()) ? 'selected' : ''  }}>{{ $permission->label }}</option>
+                                                        @foreach(\App\Models\Permission::latest()->get() as $permission)
+                                                            <option value="{{ $permission->id }}" {{ in_array(trim($permission->id) , $role->permissions->pluck('id')->toArray()) ? 'selected' : ''  }}>{{ $permission->slug }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -59,14 +60,14 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">نام نقش</p>
-                                                    <input type="text" name="name" data-required="1" value="{{$role->name}}" class="form-control" />
+                                                    <input type="text" name="title" data-required="1" value="{{$role->title}}" class="form-control" />
                                                 </div>
                                             </div>
 
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">لیبل نقش</p>
-                                                    <input type="text" name="label" data-required="1" value="{{$role->label}}" class="form-control" />
+                                                    <input type="text" name="slug" data-required="1" value="{{$role->slug}}" class="form-control" />
                                                 </div>
                                             </div>
 

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Menudashboard;
-use App\Permission;
-use App\Submenudashboard;
+use App\Models\Menu_panel;
+use App\Models\Permission;
+use App\Models\Submenu_panel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,13 +17,12 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        $permissions = Permission::latest()->paginate(25);
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $permissions    = Permission::latest()->paginate(25);
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
         return view('Admin.permissions.all')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'))
-            ->with(compact('permissions'));
+            ->with(compact(['menupanels' , 'submenupanels', 'permissions']));
+
     }
 
     /**
@@ -33,11 +32,11 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
         return view('Admin.permissions.create')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'));
+            ->with(compact(['menupanels' , 'submenupanels']));
+
     }
 
     /**
@@ -78,12 +77,11 @@ class PermissionController extends Controller
     public function edit($id)
     {
         $permissions = Permission::whereId($id)->get();
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
         return view('Admin.permissions.edit')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'))
-            ->with(compact('permissions'));
+            ->with(compact(['menupanels' , 'submenupanels', 'permissions']));
+
     }
 
     /**

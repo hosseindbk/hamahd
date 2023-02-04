@@ -33,61 +33,63 @@
                 <div class="row row-sm">
                     <div class="col-lg-12 col-md-12">
                         <div class="card custom-card">
-                            <div class="card-body">
-                                <div>
-                                    <h6 class="main-content-label text-center mb-5">ورود اطلاعات اسلاید</h6>
+                            <div class="card-body" style="background-color: #0000000a;border-radius: 10px 10px 0px 0px;">
+                                <div class="row">
+                                    <div class="col"><a href="{{url()->current()}}" class="btn btn-link btn-xs">ورود اطلاعات سلاید</a></div>
                                 </div>
+                            </div>
+                            <div class="card-body">
                                 <form action="{{ route('slides.store')}}" method="POST" enctype="multipart/form-data">
                                     <div class="row row-sm">
                                         {{csrf_field()}}
                                         <div class="col-md-12">
-                                            @include('error')
+{{--                                            @include('error')--}}
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <p class="mg-b-10">عنوان اسلاید</p>
                                                 <input type="text" name="title" placeholder="عنوان اسلاید را وارد کنید" class="form-control" />
                                             </div>
-                                            <div class="form-group">
-                                            <p class="mg-b-10">لینک اسلاید</p>
-                                            <input type="text" name="link" placeholder="لینک اسلاید را وارد کنید" class="form-control" />
-                                            </div>
+{{--                                            <div class="form-group">--}}
+{{--                                            <p class="mg-b-10">لینک اسلاید</p>--}}
+{{--                                            <input type="text" name="file_link" placeholder="لینک اسلاید را وارد کنید" class="form-control" />--}}
+{{--                                            </div>--}}
                                         </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <p class="mg-b-10">انتخاب موقعیت اسلاید</p>
-                                                <select name="position" class="form-control select-lg select2" id="position">
-                                                    <option value="1">اسلاید اصلی</option>
-                                                    <option value="2">اسلاید تبلیغاتی چپ بالا</option>
-                                                    <option value="3">اسلاید تبلیغاتی چپ پایین</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <p class="mg-b-10">انتخاب نوع اسلاید</p>
-                                                <select name="type" class="form-control select-lg select2" id="type">
-                                                    <option value="">انتخاب کنید</option>
-                                                    <option value="external">لینک خارجی</option>
-                                                    <option value="technical">تعمیرگاه</option>
-                                                    <option value="supplier">فروشگاه</option>
-                                                    <option value="product">کالا</option>
-                                                    <option value="offer">آگهی</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                    <p class="mg-b-10">ارتباط اسلاید</p>
-                                                    <select name="type_id" class="form-control select-lg select2" id="type_id">
+{{--                                        <div class="col-md-3">--}}
+{{--                                            <div class="form-group">--}}
+{{--                                                <p class="mg-b-10">انتخاب موقعیت اسلاید</p>--}}
+{{--                                                <select name="position" class="form-control select-lg select2" id="position">--}}
+{{--                                                    <option value="1">اسلاید اصلی</option>--}}
+{{--                                                    <option value="2">اسلاید تبلیغاتی چپ بالا</option>--}}
+{{--                                                    <option value="3">اسلاید تبلیغاتی چپ پایین</option>--}}
+{{--                                                </select>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-md-3">--}}
+{{--                                            <div class="form-group">--}}
+{{--                                                <p class="mg-b-10">انتخاب نوع اسلاید</p>--}}
+{{--                                                <select name="type" class="form-control select-lg select2" id="type">--}}
+{{--                                                    <option value="">انتخاب کنید</option>--}}
+{{--                                                    <option value="external">لینک خارجی</option>--}}
+{{--                                                    <option value="technical">تعمیرگاه</option>--}}
+{{--                                                    <option value="supplier">فروشگاه</option>--}}
+{{--                                                    <option value="product">کالا</option>--}}
+{{--                                                    <option value="offer">آگهی</option>--}}
+{{--                                                </select>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-md-3">--}}
+{{--                                            <div class="form-group">--}}
+{{--                                                    <p class="mg-b-10">ارتباط اسلاید</p>--}}
+{{--                                                    <select name="type_id" class="form-control select-lg select2" id="type_id">--}}
 
-                                                    </select>
-                                            </div>
-                                        </div>
+{{--                                                    </select>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <p class="mg-b-10">تصویر اسلاید</p>
-                                                <input type="file" name="image" class="dropify" data-height="200">
+                                                <input type="file" name="file_link" class="dropify" data-height="200">
                                             </div>
                                             <div>
                                                 <p class="text-danger font-weight-bold">سایز تصاویر اسلاید اصلی 1024x512 پیکسل </p>
@@ -136,34 +138,34 @@
                 console.error( error );
             } );
     </script>
-    <script>
-        $(function(){
-            $('#type').change(function(){
-                $("#type_id option").remove();
-                var id = $('#type').val();
+{{--    <script>--}}
+{{--        $(function(){--}}
+{{--            $('#type').change(function(){--}}
+{{--                $("#type_id option").remove();--}}
+{{--                var id = $('#type').val();--}}
 
-                $.ajax({
-                    url : '{{ route( 'slidetype' ) }}',
-                    data: {
-                        "_token": "{{ csrf_token() }}",
-                        "id": id
-                    },
-                    type: 'post',
-                    dataType: 'json',
-                    success: function( result )
-                    {
-                        $.each( result, function(k, v) {
-                            $('#type_id').append($('<option>', {value:k, text:v}));
-                        });
-                    },
-                    error: function()
-                    {
-                        //handle errors
-                        alert('error...');
-                    }
-                });
-            });
-        });
-    </script>
+{{--                $.ajax({--}}
+{{--                    url : '{{ route( 'slidetype' ) }}',--}}
+{{--                    data: {--}}
+{{--                        "_token": "{{ csrf_token() }}",--}}
+{{--                        "id": id--}}
+{{--                    },--}}
+{{--                    type: 'post',--}}
+{{--                    dataType: 'json',--}}
+{{--                    success: function( result )--}}
+{{--                    {--}}
+{{--                        $.each( result, function(k, v) {--}}
+{{--                            $('#type_id').append($('<option>', {value:k, text:v}));--}}
+{{--                        });--}}
+{{--                    },--}}
+{{--                    error: function()--}}
+{{--                    {--}}
+{{--                        //handle errors--}}
+{{--                        alert('error...');--}}
+{{--                    }--}}
+{{--                });--}}
+{{--            });--}}
+{{--        });--}}
+{{--    </script>--}}
 
 @endsection

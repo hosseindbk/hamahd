@@ -2,14 +2,388 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3f281dc-e80c-4db7-b55c-2c8fc05a93f2" name="Changes" comment="v1.2.2">
-      <change afterPath="$PROJECT_DIR$/app/Models/Submenu_panel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/Menu_panelFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/MenupanelTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/datatables.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/slides/5c6d60a2017a79a60c68928e031273a4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/slides/e5de3b5787dd23a4564b12b3a4b309df.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/slides/f441d02c3e4b5f2bdd2671df0e6c00e2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/provides.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/AbstractColor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/AbstractDecoder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/AbstractDriver.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/AbstractEncoder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/AbstractFont.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/AbstractShape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Commands/AbstractCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Commands/Argument.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Commands/ChecksumCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Commands/CircleCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Commands/EllipseCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Commands/ExifCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Commands/IptcCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Commands/LineCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Commands/OrientateCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Commands/PolygonCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Commands/PsrResponseCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Commands/RectangleCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Commands/ResponseCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Commands/StreamCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Commands/TextCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Constraint.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Exception/ImageException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Exception/InvalidArgumentException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Exception/MissingDependencyException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Exception/NotFoundException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Exception/NotReadableException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Exception/NotSupportedException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Exception/NotWritableException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Exception/RuntimeException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Facades/Image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/File.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Filters/DemoFilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Filters/FilterInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Color.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/BackupCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/BlurCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/BrightnessCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/ColorizeCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/ContrastCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/CropCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/DestroyCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/FillCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/FitCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/FlipCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/GammaCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/GetSizeCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/GreyscaleCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/HeightenCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/InsertCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/InterlaceCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/InvertCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/LimitColorsCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/MaskCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/OpacityCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/PickColorCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/PixelCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/PixelateCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/ResetCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/ResizeCanvasCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/ResizeCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/RotateCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/SharpenCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/TrimCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Commands/WidenCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Driver.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Encoder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Font.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Shapes/CircleShape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Shapes/EllipseShape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Shapes/LineShape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Shapes/PolygonShape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Gd/Shapes/RectangleShape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/ImageManager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/ImageManagerStatic.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/ImageServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/ImageServiceProviderLaravel4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/ImageServiceProviderLaravelRecent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/ImageServiceProviderLeague.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/ImageServiceProviderLumen.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Color.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/BackupCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/BlurCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/BrightnessCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/ColorizeCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/ContrastCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/CropCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/DestroyCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/ExifCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/FillCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/FitCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/FlipCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/GammaCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/GetSizeCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/GreyscaleCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/HeightenCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/InsertCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/InterlaceCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/InvertCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/LimitColorsCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/MaskCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/OpacityCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/PickColorCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/PixelCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/PixelateCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/ResetCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/ResizeCanvasCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/ResizeCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/RotateCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/SharpenCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/TrimCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Commands/WidenCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Decoder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Driver.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Encoder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Font.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Shapes/CircleShape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Shapes/EllipseShape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Shapes/LineShape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Shapes/PolygonShape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Imagick/Shapes/RectangleShape.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Point.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Response.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/Intervention/Image/Size.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/intervention/image/src/config/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravelcollective/html/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravelcollective/html/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravelcollective/html/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravelcollective/html/readme-ptbr.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravelcollective/html/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravelcollective/html/src/Componentable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravelcollective/html/src/Eloquent/FormAccessible.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravelcollective/html/src/FormBuilder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravelcollective/html/src/FormFacade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravelcollective/html/src/HtmlBuilder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravelcollective/html/src/HtmlFacade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravelcollective/html/src/HtmlServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/laravelcollective/html/src/helpers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/.github/stale.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/.github/workflows/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/.github/workflows/run-tests.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/.github/workflows/static.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/.github/workflows/style-checker.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/phpcs.xml.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/phpstan-baseline.neon" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/phpstan.neon.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/psalm.baseline.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/psalm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Manager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Pagination/Cursor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Pagination/CursorInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Pagination/DoctrinePaginatorAdapter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Pagination/IlluminatePaginatorAdapter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Pagination/PagerfantaPaginatorAdapter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Pagination/PaginatorInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Pagination/PhalconFrameworkPaginatorAdapter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Pagination/ZendFrameworkPaginatorAdapter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/ParamBag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Resource/Collection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Resource/Item.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Resource/NullResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Resource/Primitive.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Resource/ResourceAbstract.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Resource/ResourceInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Scope.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/ScopeFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/ScopeFactoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Serializer/ArraySerializer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Serializer/DataArraySerializer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Serializer/JsonApiSerializer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Serializer/Serializer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/Serializer/SerializerAbstract.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/league/fractal/src/TransformerAbstract.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/ButtonsServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/Contracts/DataTableButtons.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/Contracts/DataTableHtmlBuilder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/Contracts/DataTableScope.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/Exports/DataTablesCollectionExport.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/Generators/DataTablesHtmlCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/Generators/DataTablesMakeCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/Generators/DataTablesScopeCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/Generators/stubs/builder.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/Generators/stubs/datatables.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/Generators/stubs/html.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/Generators/stubs/scopes.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/Html/DataTableHtml.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/Services/DataTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/Services/DataTablesExportHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/Transformers/DataArrayTransformer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/config/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/resources/assets/buttons.server-side.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons/src/resources/views/print.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-editor/.styleci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-editor/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-editor/CONDUCT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-editor/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-editor/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-editor/UPGRADE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-editor/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-editor/src/DataTablesEditor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-editor/src/DataTablesEditorException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-editor/src/EditorServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-editor/src/Generators/DataTablesEditorCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-editor/src/Generators/stubs/editor.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-fractal/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-fractal/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-fractal/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-fractal/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-fractal/config/datatables-fractal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-fractal/src/Commands/TransformerMakeCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-fractal/src/Commands/stubs/transformer.inc.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-fractal/src/Commands/stubs/transformer.stub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-fractal/src/FractalServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-fractal/src/Transformers/FractalTransformer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/CONDUCT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/UPGRADE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Builder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Button.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Column.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/ColumnDefinition.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/ColumnDefinitions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Columns/Action.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Columns/Checkbox.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Columns/Index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Editor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/BelongsTo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/Boolean.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/Checkbox.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/Date.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/DateTime.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/Field.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/File.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/Hidden.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/Image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/Number.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/Options.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/Password.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/Radio.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/ReadOnlyField.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/Select.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/Select2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/Text.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/TextArea.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/Fields/Time.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/FormOptions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Editor/HasEvents.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/HasAuthorizations.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/HasEditor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/HasOptions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/HasTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/HasAjax.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/HasCallbacks.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/HasColumns.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/HasFeatures.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/HasInternationalisation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Languages/Aria.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Languages/AutoFill.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Languages/Paginate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Languages/Select.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Plugins/AutoFill.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Plugins/Buttons.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Plugins/ColReorder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Plugins/FixedColumns.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Plugins/FixedHeader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Plugins/KeyTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Plugins/Responsive.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Plugins/RowGroup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Plugins/RowReorder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Plugins/Scroller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Plugins/SearchPanes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Options/Plugins/Select.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/Parameters.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/Html/SearchPane.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/HtmlServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/resources/config/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/resources/views/editor.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/resources/views/function.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/resources/views/options.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html/src/resources/views/script.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/CONDUCT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/UPGRADE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/sonar-project.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/ApiResourceDataTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/CollectionDataTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/Contracts/DataTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/Contracts/Formatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/DataTableAbstract.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/DataTables.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/DataTablesServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/EloquentDataTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/Exceptions/Exception.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/Facades/DataTables.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/Processors/DataProcessor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/Processors/RowProcessor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/QueryDataTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/Utilities/Config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/Utilities/Helper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/Utilities/Request.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/config/datatables.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/helper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle/src/lumen.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/yajra/laravel-datatables/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PanelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Submenupanel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LevelManageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LevelManageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenudashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenudashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlideController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlideController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SubmenudashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SubmenudashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Permission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/panel/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/panel/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/levelAdmins/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/levelAdmins/all.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/levelAdmins/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/levelAdmins/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/levelAdmins/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/levelAdmins/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/menudashboards/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/menudashboards/all.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/menudashboards/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/menudashboards/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/menudashboards/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/menudashboards/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/permissions/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/permissions/all.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/permissions/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/permissions/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/permissions/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/permissions/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/profile/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/profile/all.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/roles/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/roles/all.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/roles/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/roles/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/roles/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/roles/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/slides/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/slides/all.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/slides/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/slides/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/slides/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/slides/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/submenudashboards/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/submenudashboards/all.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/submenudashboards/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/submenudashboards/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/submenudashboards/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/submenudashboards/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +514,15 @@
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/beberlei/assert" />
       <path value="$PROJECT_DIR$/vendor/morilog/jalali" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-fractal" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-buttons" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-editor" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables" />
+      <path value="$PROJECT_DIR$/vendor/league/fractal" />
+      <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
     </include_path>
   </component>
   <component name="ProjectId" id="2Joq1XDIjXPQX8zDAxK9ZXUKmnr" />
@@ -158,7 +541,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -197,6 +580,8 @@
       <workItem from="1674998869410" duration="6952000" />
       <workItem from="1675052820070" duration="4356000" />
       <workItem from="1675080161713" duration="4870000" />
+      <workItem from="1675344725661" duration="12621000" />
+      <workItem from="1675524530235" duration="6109000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0.1">
       <created>1673105255784</created>
