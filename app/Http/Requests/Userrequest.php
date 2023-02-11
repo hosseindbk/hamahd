@@ -23,8 +23,18 @@ class Userrequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        if($this->method() == 'POST') {
+            return [
+
+                'email'     => 'required|email',
+                'password'  => 'required',
+
+            ];
+        }else {
+            return [
+
+
+            ];
+        }
     }
 }

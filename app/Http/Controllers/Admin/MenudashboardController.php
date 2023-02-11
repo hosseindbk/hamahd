@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Menu_panel;
 use App\Models\Submenu_panel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MenudashboardController extends Controller
 {
@@ -39,10 +40,19 @@ class MenudashboardController extends Controller
         $menudashboard->slug         = $request->input('slug');
         $menudashboard->icon         = $request->input('icon');
         $menudashboard->submenu      = $request->input('submenu');
+        $menudashboard->user_id      = Auth::user()->id;
+        $menudashboard->status       = 4;
 
-        $menudashboard->save();
+        $result = $menudashboard->save();
+        if ($result == true) {
+            alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
+        }
+        else {
+            alert()->error('عملیات ناموفق', 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید');
+        }
+        return response()->json(['data'=>'success' , 'status' => 'good']);
 
-        return redirect(route('menudashboards.index'));
+//        return redirect(route('menudashboards.index'));
 
     }
 
@@ -58,22 +68,31 @@ class MenudashboardController extends Controller
 
     public function update(Request $request , $id)
     {
-        $submenudashboard = Submenu_panel::findOrfaild($id);
-        $submenudashboard->title        = $request->input('title');
-        $submenudashboard->slug         = $request->input('slug');
-        $submenudashboard->icon         = $request->input('icon');
-        $submenudashboard->submenu      = $request->input('submenu');
+        $menudashboard = menu_panel::findOrfail($id);
+        $menudashboard->title        = $request->input('title');
+        $menudashboard->slug         = $request->input('slug');
+        $menudashboard->icon         = $request->input('icon');
+        $menudashboard->status       = $request->input('status');
 
         if($request->input('status') == 'on'){
-            $submenudashboard->status = 1;
+            $menudashboard->status = 4;
         }
 
         if($request->input('status') == null) {
-            $submenudashboard->status = 0;
+            $menudashboard->status = 0;
         }
 
-        $submenudashboard->update();
-        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
+        $result = $menudashboard->update();
+
+        if ($result == true) {
+            alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
+        }
+        else {
+            alert()->error('عملیات ناموفق', 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید');
+        }
+//        return response()->json(['data'=>'success' , 'status' => 'good']);
+
+//        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
         return redirect(route('menudashboards.index'));
     }
 

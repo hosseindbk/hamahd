@@ -14,8 +14,12 @@
     <link rel="stylesheet" href="{{asset('admin/assets/css-rtl/skins.css')}}">
     <link rel="stylesheet" href="{{asset('admin/assets/css-rtl/colors/color.css')}}" id="theme" type="text/css" media="all">
     <link rel="stylesheet" href="{{asset('admin/assets/css-rtl/sidemenu/sidemenu.css')}}">
-    <link rel="stylesheet" href="{{asset('site/css/vendor/sweetalert.css')}}">
+    <script src="{{asset('admin/assets/js/sweetalert.min.js')}}"></script>
+
+    {{--    <link rel="stylesheet" href="{{asset('site/css/vendor/sweetalert.css')}}">--}}
 {{--    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>--}}
+
+    {{--    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>--}}
 {{--    <link rel="stylesheet" href="{{asset('admin/assets/css-rtl/dark-style.css')}}">--}}
 {{--    <link rel="stylesheet" href="{{asset('admin/assets/css-rtl/colors/default.css')}}">--}}
 {{--    <link rel="stylesheet" href="{{asset('admin/assets/plugins/select2/css/select2.min.css')}}">--}}
@@ -25,6 +29,7 @@
     </head>
 
 <body class="main-body leftmenu">
+@include('sweetalert::alert')
 
 <!-- Loader -->
 
@@ -65,7 +70,7 @@
 
                             @if($menupanel->submenu == 1)
                                 <li class="nav-item">
-                                    @can($menupanel->namayesh)
+{{--                                    @can($menupanel->namayesh)--}}
                                     <a class="nav-link with-sub" href="">
                                         <span class="shape1"></span>
                                         <span class="shape2"></span>
@@ -73,15 +78,15 @@
                                         <span class="sidemenu-label">{{$menupanel->title}}</span>
                                         <i class="angle fe fe-chevron-left"></i>
                                     </a>
-                                    @endcan
+{{--                                    @endcan--}}
                                     <ul class="nav-sub">
                                         @foreach($submenupanels as $submenupanel)
                                             @if($submenupanel->menu_id == $menupanel->id)
-                                                @can($submenupanel->namayesh)
+{{--                                                @can($submenupanel->namayesh)--}}
                                                     <li class="nav-sub-item">
                                                         <a class="nav-sub-link" href="{{url('admin/'.$submenupanel->slug)}}">{{$submenupanel->title}}</a>
                                                     </li>
-                                                @endcan
+{{--                                                @endcan--}}
                                             @endif
                                         @endforeach
                                     </ul>

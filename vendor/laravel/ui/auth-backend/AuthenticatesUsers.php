@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\ValidationException;
+use App\Http\Requests\Userrequest;
 
 trait AuthenticatesUsers
 {
@@ -42,7 +43,7 @@ trait AuthenticatesUsers
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function panellogin(Request $request)
+    public function panellogin(Userrequest $request)
     {
 
         $this->validateLogin($request);
@@ -73,19 +74,13 @@ trait AuthenticatesUsers
         return $this->sendFailedLoginResponse($request);
     }
 
-    public function userlogin(Request $request)
+    public function userlogin(Userrequest $request)
     {
-        $request->validate([
-            'phone' => 'required|numeric',
-            'password' => 'required',
-        ]);
-
-        if ($request->input('phone') != null && $request->input('password') != null) {
-            $user = User::wherePhone($request->input('phone'))->first();
+         $user = User::whereEmail($request->input('email'))->first();
             if ($user != null) {
                 if (Hash::check($request->input('password'), $user->password)) {
                     Auth::loginUsingId($user->id);
-                    alert()->success($user->name.' به وبسایت اتوکالا ' , 'خوش آمدید' );
+                    alert()->success($user->name.' به وبسایت هم عهد ' , 'خوش آمدید' );
                     //dd(url()->previous());
                     $url  = Session::get('url');
                     return Redirect::to($url);
@@ -99,10 +94,7 @@ trait AuthenticatesUsers
                 alert()->error('عملیات ناموفق', 'شماره تلفن و یا رمز عبور وارد نشده است');
                 return Redirect::back();
             }
-        } else {
-            alert()->error('عملیات ناموفق', 'شماره تلفن و یا رمز عبور وارد نشده است');
-            return Redirect::back();
-        }
+
     }
 
     /**

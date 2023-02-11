@@ -64,7 +64,7 @@
                                                 <td>
                                                     @if($submenudashboard->status == 0)
                                                         <button class="btn ripple btn-outline-danger">عدم نمایش</button>
-                                                    @elseif($submenudashboard->status == 1)
+                                                    @elseif($submenudashboard->status == 4)
                                                         <button class="btn ripple btn-outline-success">درحال نمایش</button>
                                                     @endif
                                                 </td>

@@ -58,11 +58,9 @@
                                                 <td class="left">{{$menudashboard->description}}</td>
 
                                                 <td>
-                                                     @if($menudashboard->status == 0)
-                                                         <button class="btn ripple btn-outline-danger">عدم نمایش</button>
-                                                     @elseif($menudashboard->status == 1)
-                                                         <button class="btn ripple btn-outline-success">درحال نمایش</button>
-                                                     @endif
+                                                    <button class="btn ripple {{$menudashboard->status == 0 ? 'btn-outline-danger' : 'btn-outline-success'}} ">
+                                                        {{$menudashboard->status == 0 ? 'عدم نمایش' : 'درحال نمایش'}}
+                                                    </button>
                                                 </td>
                                                 <td>
                                                     <div class="btn-icon-list">

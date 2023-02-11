@@ -38,30 +38,30 @@
                             </div>
                             <div class="card-body">
                                 @foreach($menus as $menu)
-                                    <form action="{{route('menudashboards.update', $menu->id)}}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{route('menudashboards.update', $menu->id)}}" method="POST">
                                         <div class="row row-sm">
                                             {{csrf_field()}}
                                             {{ method_field('PATCH') }}
-
+{{--                                            <input type="hidden" name="menu_id" id="menu_id" data-required="1" value="{{$menu->id}}" class="form-control" />--}}
                                             <div class="col-md-12">
                                                 {{--@include('error')--}}
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">عنوان  منو داشبورد</p>
-                                                    <input type="text" name="title" data-required="1" value="{{$menu->title}}" class="form-control" />
+                                                    <input type="text" name="title" id="title" data-required="1" value="{{$menu->title}}" class="form-control" />
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">ادرس  منو داشبورد</p>
-                                                    <input type="text" name="slug" data-required="1" value="{{$menu->slug}}" class="form-control" />
+                                                    <input type="text" name="slug" id="slug" data-required="1" value="{{$menu->slug}}" class="form-control" />
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">ایکون  منو داشبورد</p>
-                                                    <input type="text" name="icon" data-required="1" value="{{$menu->icon}}" class="form-control" />
+                                                    <input type="text" name="icon" id="icon" data-required="1" value="{{$menu->icon}}" class="form-control" />
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
@@ -69,7 +69,7 @@
 
                                                     <p class="mb-2">نمایش/عدم نمایش</p>
                                                     <label class="custom-switch">
-                                                        <input type="checkbox" name="status" class="custom-switch-input" {{$menu->status == '4' ? 'checked' : ''}}>
+                                                        <input type="checkbox" name="status" id="status" class="custom-switch-input" {{$menu->status == '4' ? 'checked' : ''}}>
                                                         <span class="custom-switch-indicator"></span>
                                                     </label>
 
@@ -90,22 +90,49 @@
             </div>
         </div>
     </div>
-    </div>
 
-
+@endsection
 @section('end')
     <script src="{{asset('admin/assets/js/select2.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/jquery-ui/ui/widgets/datepicker.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/jquery.maskedinput/jquery.maskedinput.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/spectrum-colorpicker/spectrum.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/ion-rangeslider/js/ion.rangeSlider.min.js')}}"></script>
-    <script src="{{asset('admin/assets/js/form-elements.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/fileuploads/js/fileupload.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/fileuploads/js/file-upload.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.ui.widget.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.fileupload.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.iframe-transport.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.fancy-fileupload.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/fancyuploder/fancy-uploader.js')}}"></script>
+{{--    <script src="{{asset('admin/assets/plugins/jquery-ui/ui/widgets/datepicker.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/jquery.maskedinput/jquery.maskedinput.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/spectrum-colorpicker/spectrum.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/ion-rangeslider/js/ion.rangeSlider.min.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/js/form-elements.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/fileuploads/js/fileupload.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/fileuploads/js/file-upload.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.ui.widget.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.fileupload.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.iframe-transport.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.fancy-fileupload.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/fancyuploder/fancy-uploader.js')}}"></script>--}}
+    <script>
+        jQuery(document).ready(function(){
+            jQuery('#submit').click(function(e){
+                e.preventDefault();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    }
+                });
+                jQuery.ajax({
+                    url: "{{ route('menudashboards.update' , $menu->id) }}",
+                    method: 'PATCH',
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        // menu_id     : jQuery('#menu_id').val(),
+                        title       : jQuery('#title').val(),
+                        slug        : jQuery('#slug').val(),
+                        icon        : jQuery('#icon').val(),
+                        status      : jQuery('#status').val()
+                    },
+                    success : function(data) {
+                        console.log(data);
+                        setInterval('location.reload()', 1000);
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
-@endsection
+

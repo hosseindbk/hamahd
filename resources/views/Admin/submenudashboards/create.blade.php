@@ -48,19 +48,19 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <p class="mg-b-10">عنوان زیرمنو داشبورد</p>
-                                                <input type="text" name="title" data-required="1" placeholder="عنوان زیرمنو داشبورد را وارد کنید" class="form-control" />
+                                                <input type="text" name="title" id="title" data-required="1" placeholder="عنوان زیرمنو داشبورد را وارد کنید" class="form-control" />
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <p class="mg-b-10">ادرس زیرمنو داشبورد</p>
-                                                <input type="text" name="slug" data-required="1" placeholder="ادرس زیرمنو داشبورد را وارد کنید" class="form-control" />
+                                                <input type="text" name="slug" id="slug" data-required="1" placeholder="ادرس زیرمنو داشبورد را وارد کنید" class="form-control" />
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <p class="mg-b-10">انتخاب منو</p>
-                                                <select name="menu_id" class="form-control select-lg select2">
+                                                <select name="menu_id" id="menu_id" class="form-control select-lg select2">
                                                     <option value="">انتخاب منو</option>
                                                     @foreach($menupanels as $menupanel)
                                                         <option value="{{$menupanel->id}}">{{$menupanel->title}}</option>
@@ -71,7 +71,7 @@
 
                                         <div class="col-lg-12 mg-b-10 text-center">
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-info  btn-lg m-r-20">ذخیره اطلاعات</button>
+                                                <button type="button" id="submit" class="btn btn-info  btn-lg m-r-20">ذخیره اطلاعات</button>
                                             </div>
                                         </div>
                                     </div>
@@ -85,24 +85,50 @@
     </div>
 </div>
 
-
+@endsection
 @section('end')
     <script src="{{asset('admin/assets/plugins/select2/js/select2.min.js')}}"></script>
     <script src="{{asset('admin/assets/js/select2.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/perfect-scrollbar/perfect-scrollbar.min-rtl.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/jquery-ui/ui/widgets/datepicker.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/bootstrap-daterangepicker/moment.min.js')}}"></script>
-    <script src="{{asset('admin/assets/js/advanced-form-elements.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/sumoselect/jquery.sumoselect.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/fileuploads/js/fileupload.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/fileuploads/js/file-upload.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.ui.widget.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.fileupload.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.iframe-transport.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.fancy-fileupload.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/fancyuploder/fancy-uploader.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/telephoneinput/telephoneinput.js')}}"></script>
-    <script src="{{asset('admin/assets/plugins/telephoneinput/inttelephoneinput.js')}}"></script>
+{{--    <script src="{{asset('admin/assets/plugins/perfect-scrollbar/perfect-scrollbar.min-rtl.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/jquery-ui/ui/widgets/datepicker.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/bootstrap-daterangepicker/moment.min.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/js/advanced-form-elements.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/sumoselect/jquery.sumoselect.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/bootstrap-daterangepicker/daterangepicker.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/fileuploads/js/fileupload.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/fileuploads/js/file-upload.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.ui.widget.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.fileupload.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.iframe-transport.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/fancyuploder/jquery.fancy-fileupload.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/fancyuploder/fancy-uploader.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/telephoneinput/telephoneinput.js')}}"></script>--}}
+{{--    <script src="{{asset('admin/assets/plugins/telephoneinput/inttelephoneinput.js')}}"></script>--}}
+    <script>
+        jQuery(document).ready(function(){
+            jQuery('#submit').click(function(e){
+                e.preventDefault();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    }
+                });
+                jQuery.ajax({
+                    url: "{{ route('submenudashboards.store') }}",
+                    method: 'POST',
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        title   : jQuery('#title').val(),
+                        slug    : jQuery('#slug').val(),
+                        menu_id : jQuery('#menu_id').val()
+                    },
+                    success : function(data) {
+                        console.log(data);
+                        setInterval('location.reload()', 1000);
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
-@endsection
+

@@ -10,11 +10,7 @@ use Illuminate\Http\Request;
 
 class SubmenudashboardController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $submenudashs   = Submenu_panel::all();
@@ -25,11 +21,6 @@ class SubmenudashboardController extends Controller
             ->with(compact(['menupanels' , 'submenupanels', 'submenudashs']));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
 
@@ -41,14 +32,9 @@ class SubmenudashboardController extends Controller
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request )
     {
+
         $submenupanels = new Submenu_panel();
 
         $submenupanels->title       = $request->input('title');
@@ -57,28 +43,19 @@ class SubmenudashboardController extends Controller
         $submenupanels->menu_id     = $request->input('menu_id');
         $submenupanels->user_id     = auth()->user()->id;
 
-        $submenupanels->save();
-/*        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');*/
-        return redirect(route('submenudashboards.index'));
+        $result = $submenupanels->save();
+                if ($result == true) {
+            alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
+        }
+        else {
+            alert()->error('عملیات ناموفق', 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید');
+        }
+        return response()->json(['data'=>'success' , 'status' => 'good']);
+
+
+//        return redirect(route('submenudashboards.index'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $submenus           = Submenu_panel::whereId($id)->get();
@@ -89,13 +66,6 @@ class SubmenudashboardController extends Controller
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request , $id)
     {
         $submenupanel = Submenu_panel::findOrfail($id);
@@ -111,21 +81,23 @@ class SubmenudashboardController extends Controller
             $submenupanel->status = 0;
         }
 
-        $submenupanel->update();
-//        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
-        return redirect(route('submenudashboards.index'));
+        $result = $submenupanel->update();
+        if ($result == true) {
+            alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
+        }
+        else {
+            alert()->error('عملیات ناموفق', 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید');
+        }        return redirect(route('submenudashboards.index'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Submenudashboard $submenudashboard)
     {
-        $submenudashboard->delete();
-        alert()->success('عملیات موفق', 'اطلاعات با موفقیت پاک شد');
-        return redirect(route('submenudashboards.index'));
+        $result = $submenudashboard->delete();
+        if ($result == true) {
+            alert()->success('عملیات موفق', 'اطلاعات با موفقیت پاک شد');
+        }
+        else {
+            alert()->error('عملیات ناموفق', 'اطلاعات پاک نشد، لطفا مجددا تلاش نمایید');
+        }        return redirect(route('submenudashboards.index'));
     }
 }

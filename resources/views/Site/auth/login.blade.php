@@ -28,6 +28,7 @@
                             <h3 class="card-title text-center fs-24 lh-35 pb-4">وارد حساب کاربری خود شوید!</h3>
                             <div class="section-block"></div>
                             <form method="post" action="{{route('login')}}" class="pt-4">
+                                @csrf
                                 <div class="d-flex flex-wrap align-items-center pb-4">
                                     <button class="btn theme-btn flex-grow-1 mx-2 mb-2"><i class="la la-google mr-2"></i>گوگل</button>
                                     <button class="btn theme-btn flex-grow-1 mx-2 mb-2 yahoo-bg"><i class="la la-yahoo mr-2"></i>یاهو</button>
@@ -38,9 +39,9 @@
                                 </div>
                                 <div class="section-block mb-3"></div>
                                 <div class="input-box">
-                                    <label class="label-text">ایمیل یا نام کاربری</label>
+                                    <label class="label-text">ایمیل </label>
                                     <div class="form-group">
-                                        <input class="form-control form--control" type="text" name="name" placeholder="ایمیل یا نام کاربری" />
+                                        <input class="form-control form--control" type="text" name="email" placeholder="ایمیل " />
                                         <span class="la la-user input-icon"></span>
                                     </div>
                                 </div>
@@ -78,7 +79,7 @@
                                     </div>
                                     <button class="btn theme-btn" type="submit">ورود به حساب کاربری <i class="la la-arrow-left icon ml-1"></i></button>
                                     <button class="btn theme-btn" type="submit">بازگشت </button>
-                                    <p class="fs-14 pt-2">حساب کاربری ندارید؟ <a href="sign-up.html" class="text-color hover-underline">ثبت نام</a></p>
+                                    <p class="fs-14 pt-2">حساب کاربری ندارید؟ <a href="{{route('register')}}" class="text-color hover-underline">ثبت نام</a></p>
                                 </div>
                             </form>
                         </div>

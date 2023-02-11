@@ -50,14 +50,14 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">نام دسترسی</p>
-                                                    <input type="text" name="name" data-required="1" value="{{$permission->title}}" class="form-control" />
+                                                    <input type="text" name="title" data-required="1" value="{{$permission->title}}" class="form-control" />
                                                 </div>
                                             </div>
 
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <p class="mg-b-10">ادرس دسترسی</p>
-                                                    <input type="text" name="label" data-required="1" value="{{$permission->slug}}" class="form-control" />
+                                                    <input type="text" name="slug" data-required="1" value="{{$permission->slug}}" class="form-control" />
                                                 </div>
                                             </div>
 

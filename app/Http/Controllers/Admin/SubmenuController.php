@@ -3,168 +3,100 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\submenurequest;
-use App\Menu;
-use App\Menudashboard;
-use App\Supplier;
-use App\Submenudashboard;
-use Carbon\Carbon;
+use App\Models\Submenu;
+use App\Models\Menu_panel;
+use App\Models\Submenu_panel;
 use Illuminate\Http\Request;
-use Intervention\Image\Facades\Image;
 
 class SubmenuController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $submenus      = Supplier::all();
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+        $submenus        = Submenu::all();
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         return view('Admin.submenus.all')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'))
-            ->with(compact('submenus'));
+            ->with(compact(['menupanels' , 'submenupanels', 'submenus']));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        $menus      = menu::whereStatus(4)->whereSubmenu(1)->get();
-        $menudashboards = Menudashboard::whereStatus(4)->get();
-        $submenudashboards = Submenudashboard::whereStatus(4)->get();
+
+        $menupanels     = Menu_panel::whereStatus(4)->get();
+        $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         return view('Admin.submenus.create')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'))
-            ->with(compact('menus'));
+            ->with(compact(['menupanels' , 'submenupanels']));
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(submenurequest $request)
+
+    public function store(Request $request )
     {
-        $submenus = new Supplier();
+        $submenus = new Submenu();
 
-        $submenus->title = $request->input('title');
-        $submenus->menu_id = $request->input('menu_id');
-        $submenus->description = $request->input('description');
-        $submenus->text = $request->input('text');
+        $submenus->title       = $request->input('title');
+        $submenus->slug        = $request->input('slug');
+        $submenus->namayesh    = $request->input('namayesh');
+        $submenus->menu_id     = $request->input('menu_id');
+        $submenus->user_id     = auth()->user()->id;
 
-        if ($request->file('images') != null) {
-            $year = Carbon::now()->year;
-            $imagePath ="images/submenu/{$year}/";
-            $file = $request->file('images');
-
-            $img = Image::make($file);
-
-            $orginalimageName = $file->getClientOriginalName();
-            $imageName = md5(uniqid(rand(), true)) . $orginalimageName;
-
-            $submenus->images = $file->move($imagePath, $imageName);
-            $img->save($imagePath.$imageName);
+        $result = $submenus->save();
+        if ($result == true) {
+            alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
         }
-        $submenus->save();
-        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
+        else {
+            alert()->error('عملیات ناموفق', 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید');
+        }
         return redirect(route('submenus.index'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        $submenus           = Supplier::whereId($id)->get();
-        $menus              = Menu::whereStatus(4)->whereSubmenu('1')->get();
-        $menudashboards     = Menudashboard::whereStatus(4)->get();
-        $submenudashboards  = Submenudashboard::whereStatus(4)->get();
-
-
+        $submenus           = Submenu::whereId($id)->get();
+        $menupanels         = Menu_panel::whereStatus(4)->get();
+        $submenupanels      = Submenu_panel::whereStatus(4)->get();
         return view('Admin.submenus.edit')
-            ->with(compact('menudashboards'))
-            ->with(compact('submenudashboards'))
-            ->with(compact('menus'))
-            ->with(compact('submenus'));
+            ->with(compact(['menupanels' , 'submenupanels', 'submenus']));
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(submenurequest $request, Supplier $submenu)
+    public function update(Request $request , $id)
     {
-        $submenu->title = $request->input('title');
-
-        $submenu->menu_id = $request->input('menu_id');
-
-        $submenu->description = $request->input('description');
-        $submenu->text = $request->input('text');
-
+        $submenupanel = Submenu::findOrfail($id);
+        $submenupanel->title        = $request->input('title');
+        $submenupanel->slug         = $request->input('slug');
+        $submenupanel->namayesh     = $request->input('namayesh');
 
         if($request->input('status') == 'on'){
-            $submenu->status = 1;
+            $submenupanel->status = 4;
         }
 
         if($request->input('status') == null) {
-            $submenu->status = 0;
+            $submenupanel->status = 0;
         }
-        if ($request->file('images') != null) {
-            $year = Carbon::now()->year;
-            $imagePath ="images/submenu/{$year}/";
-            $file = $request->file('images');
 
-            $img = Image::make($file);
-
-            $orginalimageName = $file->getClientOriginalName();
-            $imageName = md5(uniqid(rand(), true)) . $orginalimageName;
-
-            $submenu->images = $file->move($imagePath, $imageName);
-            $img->save($imagePath.$imageName);
+        $result = $submenupanel->update();
+        if ($result == true) {
+            alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
         }
-        $submenu->update();
-        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
+        else {
+            alert()->error('عملیات ناموفق', 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید');
+        }
         return redirect(route('submenus.index'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Supplier $submenu)
+    public function destroy(Submenu $submenu)
     {
-        $submenu->delete();
-        alert()->success('عملیات موفق', 'اطلاعات با موفقیت پاک شد');
-        return redirect(route('submenus.index'));
+        $result = $submenu->delete();
+        if ($result == true) {
+            alert()->success('عملیات موفق', 'اطلاعات با موفقیت پاک شد');
+        }
+        else {
+            alert()->error('عملیات ناموفق', 'اطلاعات پاک نشد، لطفا مجددا تلاش نمایید');
+        }        return redirect(route('submenus.index'));
     }
 }

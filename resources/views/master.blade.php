@@ -76,8 +76,13 @@
                             </button>
                         </div>
                         <ul class="generic-list-item d-flex flex-wrap align-items-center fs-14 border-right border-right-gray pl-3 ml-3">
+                            @if(Auth()->check())
+                                <li class="d-flex align-items-center pr-3 mr-3 border-left border-left-gray">کاربر عزیز : {{auth()->user()->name}}</li>
+                                <li class="d-flex align-items-center"><i class="la la-user mr-1"></i><a href="{{route('logout')}}">خروج</a></li>
+                            @else
                             <li class="d-flex align-items-center pr-3 mr-3 border-left border-left-gray"><i class="la la-sign-in mr-1"></i><a href="{{route('login')}}">ورود</a></li>
                             <li class="d-flex align-items-center"><i class="la la-user mr-1"></i><a href="{{route('register')}}"> ثبت نام</a></li>
+                            @endif
                         </ul>
                     </div><!-- end header-widget -->
                 </div><!-- end col-lg-6 -->

@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'b7316810ece13127778709564e55555f2979f144',
+    'reference' => 'a6d2f2e6962df5f1061fcb30ee44c2ee4db4368a',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -29,12 +29,30 @@
       ),
       'reference' => '459f2781e1a08d52ee56b0b1444086e038561e3f',
     ),
+    'cocur/slugify' => 
+    array (
+      'pretty_version' => 'v4.3.0',
+      'version' => '4.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '652234ef5f1be844a2ae1c36ad1b4c88b05160f9',
+    ),
     'cordoval/hamcrest-php' => 
     array (
       'replaced' => 
       array (
         0 => '*',
       ),
+    ),
+    'cviebrock/eloquent-sluggable' => 
+    array (
+      'pretty_version' => '9.0.0',
+      'version' => '9.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3100e37682491424dd13eaeb3ec33cbbad186992',
     ),
     'davedevelopment/hamcrest-php' => 
     array (
@@ -434,7 +452,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'b7316810ece13127778709564e55555f2979f144',
+      'reference' => 'a6d2f2e6962df5f1061fcb30ee44c2ee4db4368a',
     ),
     'laravel/pint' => 
     array (
@@ -870,6 +888,15 @@
       array (
       ),
       'reference' => 'a1acf96007170234a8399586a6e2ab8feba109d1',
+    ),
+    'realrashid/sweet-alert' => 
+    array (
+      'pretty_version' => 'v5.1.0',
+      'version' => '5.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'fb837beaa52568fb3106d311ff3c7a7b8e543608',
     ),
     'rhumsaa/uuid' => 
     array (

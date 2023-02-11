@@ -4,11 +4,11 @@
     <section class="hero-area">
         <div class="hero-slider owl-action-styled">
             @foreach($slides as $slide)
-            <div class="hero-slider-item" style="background-image: url({{$slide->image}})">
+            <div class="hero-slider-item" style="background-image: url({{str_replace("\ ", '/', asset($slide->file_link))}})">
                 <div class="container">
                     <div class="hero-content">
                         <div class="section-heading">
-                            <h2 class="section__title text-white fs-65 lh-80 pb-3">{{$slide->title1}}</h2>
+                            <h2 class="section__title text-white fs-65 lh-80 pb-3">{{$slide->title}}</h2>
                             <p class="section__desc text-white pb-4">{{$slide->title2}}</p>
                         </div>
 

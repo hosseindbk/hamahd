@@ -7,14 +7,11 @@ use App\Models\Permission;
 use App\Models\Submenu_panel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PermissionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $permissions    = Permission::latest()->paginate(25);
@@ -25,11 +22,7 @@ class PermissionController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         $menupanels     = Menu_panel::whereStatus(4)->get();
@@ -39,41 +32,25 @@ class PermissionController extends Controller
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $this->validate($request , [
-            'name' => 'required',
-            'label' => 'required'
-        ]);
 
-        Permission::create($request->all());
-        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
-        return redirect(route('permissions.index'));
+    public function store(Request $request, Permission $permission)
+    {
+
+        $permission = new Permission();
+        $permission->title = $request->input('title');
+        $permission->slug = $request->input('slug');
+        $permission->user_id = Auth::user()->id;
+        $result = $permission->save();
+        if ($result == true) {
+            alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
+        }
+        else {
+            alert()->error('عملیات ناموفق', 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید');
+        }
+        return response()->json(['data'=>'success' , 'status' => 'good']);
+//        return redirect(route('permissions.index'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Permission  $permission
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Permission $permission)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Permission  $permission
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $permissions = Permission::whereId($id)->get();
@@ -84,32 +61,29 @@ class PermissionController extends Controller
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Permission  $permission
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Permission $permission)
     {
-        $permission->name = $request->input('name');
-        $permission->label = $request->input('label');
-        $permission->update();
-        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
-        return redirect(route('permissions.index'));
+        $permission->title = $request->input('title');
+        $permission->slug = $request->input('slug');
+        $permission->user_id = Auth::user()->id;
+        $result = $permission->update();
+        if ($result == true) {
+            alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
+        }
+        else {
+            alert()->error('عملیات ناموفق', 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید');
+        }         return redirect(route('permissions.index'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Permission  $permission
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Permission $permission)
     {
-        $permission->delete();
-        alert()->success('عملیات موفق', 'اطلاعات با موفقیت پاک شد');
+        $result = $permission->delete();
+        if ($result == true) {
+            alert()->success('عملیات موفق', 'اطلاعات با موفقیت پاک شد');
+        }
+        else {
+            alert()->error('عملیات ناموفق', 'اطلاعات پاک نشد، لطفا مجددا تلاش نمایید');
+        }
         return back();
     }
 }

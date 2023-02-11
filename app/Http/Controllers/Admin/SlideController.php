@@ -107,9 +107,17 @@ class SlideController extends Controller
             $slides->file_link = $file->move($imagePath, $imageName);
             $img->save($imagePath.$imageName);
             $img->encode('jpg');
+
         }
 
-        $slides->save();
+        $result = $slides->save();
+
+        if ($result == true) {
+            alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
+        }
+        else {
+            alert()->error('عملیات ناموفق', 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید');
+        }
 //        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
         return redirect(route('slides.index'));
     }
@@ -143,11 +151,11 @@ class SlideController extends Controller
     public function update(Request $request , Slide  $slide)
     {
         $slide->title           = $request->input('title');
-        $slide->position        = $request->input('position');
-        $slide->link            = $request->input('link');
+//        $slide->position        = $request->input('position');
+//        $slide->link            = $request->input('link');
         $slide->status          = $request->input('status_id');
-        $slide->type            = $request->input('type');
-        $slide->type_id         = $request->input('type_id');
+//        $slide->type            = $request->input('type');
+//        $slide->type_id         = $request->input('type_id');
         if ($request->file('image') != null) {
             $file = $request->file('image');
             $img = Image::make($file);
@@ -159,7 +167,7 @@ class SlideController extends Controller
         }
 
         $slide->update();
-        $slide->stateslide()->sync($request->input('state_id'));
+//        $slide->stateslide()->sync($request->input('state_id'));
         return redirect(route('slides.index'));
     }
 
