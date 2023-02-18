@@ -4,9 +4,9 @@
     <link href="{{asset('admin/assets/plugins/spectrum-colorpicker/spectrum.css')}}" rel="stylesheet">
     <link href="{{asset('admin/assets/plugins/ion-rangeslider/css/ion.rangeSlider.css')}}" rel="stylesheet">
     <link href="{{asset('admin/assets/plugins/ion-rangeslider/css/ion.rangeSlider.skinFlat.css')}}" rel="stylesheet">
-    <link href="{{asset('admin/assets/plugins/sumoselect/sumoselect-rtl.css')}}" rel="stylesheet">
+{{--    <link href="{{asset('admin/assets/plugins/sumoselect/sumoselect-rtl.css')}}" rel="stylesheet">
     <link href="{{asset('admin/assets/plugins/fileuploads/css/fileupload.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('admin/assets/plugins/fancyuploder/fancy_fileupload.css')}}" rel="stylesheet" />
+    <link href="{{asset('admin/assets/plugins/fancyuploder/fancy_fileupload.css')}}" rel="stylesheet" />--}}
     <link href="{{asset('admin/assets/plugins/select2/css/select2.min.css')}}" rel="stylesheet">
     <link href="{{asset('admin/assets/css-rtl/colors/default.css')}}" rel="stylesheet">
 @endsection
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form action="{{ route('submenudashboards.store')}}" method="POST">
+                                <form action="{{ route('submenudashboards.store')}}" method="POST" id="form">
                                     <div class="row row-sm">
                                         {{csrf_field()}}
                                         <div class="col-md-12">
@@ -113,20 +113,33 @@
                         'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                     }
                 });
-                jQuery.ajax({
-                    url: "{{ route('submenudashboards.store') }}",
-                    method: 'POST',
-                    data: {
-                        "_token": "{{ csrf_token() }}",
-                        title   : jQuery('#title').val(),
-                        slug    : jQuery('#slug').val(),
-                        menu_id : jQuery('#menu_id').val()
+                swal({
+                        title: "Are you sure to delete this  of ?",
+                        text: "Delete Confirmation?",
+                        type: "warning",
+                        showCancelButton: false,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Delete",
+                        closeOnConfirm: false
                     },
-                    success : function(data) {
-                        console.log(data);
-                        setInterval('location.reload()', 1000);
-                    }
-                });
+                    jQuery.ajax({
+                        url: "{{ route('submenudashboards.store') }}",
+                        method: 'POST',
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                            title   : jQuery('#title').val(),
+                            slug    : jQuery('#slug').val(),
+                            menu_id : jQuery('#menu_id').val()
+                        },
+                        success: function (data) {
+                            if(data.success == true){
+                                swal(data.subject, data.message, data.flag);
+                                $('#form')[0].reset();
+                            } else {
+                                swal(data.subject, data.message, data.flag);
+                            }
+                        },
+                    }));
             });
         });
     </script>

@@ -4,8 +4,8 @@
     <link href="{{asset('admin/assets/plugins/spectrum-colorpicker/spectrum.css')}}" rel="stylesheet">
     <link href="{{asset('admin/assets/plugins/ion-rangeslider/css/ion.rangeSlider.css')}}" rel="stylesheet">
     <link href="{{asset('admin/assets/plugins/ion-rangeslider/css/ion.rangeSlider.skinFlat.css')}}" rel="stylesheet">
-    <link href="{{asset('admin/assets/plugins/fileuploads/css/fileupload.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('admin/assets/plugins/fancyuploder/fancy_fileupload.css')}}" rel="stylesheet" />
+{{--    <link href="{{asset('admin/assets/plugins/fileuploads/css/fileupload.css')}}" rel="stylesheet" type="text/css"/>--}}
+{{--    <link href="{{asset('admin/assets/plugins/fancyuploder/fancy_fileupload.css')}}" rel="stylesheet" />--}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 @section('main')
@@ -64,20 +64,18 @@
                                                     <input type="text" name="icon" id="icon" data-required="1" value="{{$menu->icon}}" class="form-control" />
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <div class="form-group">
-
-                                                    <p class="mb-2">نمایش/عدم نمایش</p>
-                                                    <label class="custom-switch">
-                                                        <input type="checkbox" name="status" id="status" class="custom-switch-input" {{$menu->status == '4' ? 'checked' : ''}}>
-                                                        <span class="custom-switch-indicator"></span>
-                                                    </label>
-
+                                                    <p class="mg-b-10">نمایش/عدم نمایش</p>
+                                                    <select name="status" id="status" class="form-control">
+                                                        <option value="4" {{$menu->status == '4' ? 'selected' : ''}}>نمایش</option>
+                                                        <option value="0" {{$menu->status == '0' ? 'selected' : ''}}>عدم نمایش</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 mg-b-10 text-center">
                                                 <div class="form-group">
-                                                    <button type="submit" class="btn btn-info  btn-lg m-r-20">ذخیره اطلاعات</button>
+                                                    <button type="button" id="submit" class="btn btn-info  btn-lg m-r-20">ذخیره اطلاعات</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -93,8 +91,8 @@
 
 @endsection
 @section('end')
-    <script src="{{asset('admin/assets/js/select2.js')}}"></script>
-{{--    <script src="{{asset('admin/assets/plugins/jquery-ui/ui/widgets/datepicker.js')}}"></script>--}}
+    <script src="{{asset('admin/assets/plugins/select2/js/select2.min.js')}}"></script>
+    <script src="{{asset('admin/assets/js/select2.js')}}"></script>{{--    <script src="{{asset('admin/assets/plugins/jquery-ui/ui/widgets/datepicker.js')}}"></script>--}}
 {{--    <script src="{{asset('admin/assets/plugins/jquery.maskedinput/jquery.maskedinput.js')}}"></script>--}}
 {{--    <script src="{{asset('admin/assets/plugins/spectrum-colorpicker/spectrum.js')}}"></script>--}}
 {{--    <script src="{{asset('admin/assets/plugins/ion-rangeslider/js/ion.rangeSlider.min.js')}}"></script>--}}
@@ -126,9 +124,11 @@
                         icon        : jQuery('#icon').val(),
                         status      : jQuery('#status').val()
                     },
-                    success : function(data) {
-                        console.log(data);
-                        setInterval('location.reload()', 1000);
+                    success: function (data) {
+                        swal(data.subject, data.message, data.flag);
+                    },
+                    error: function (data) {
+                        swal(data.subject, data.message, data.flag);
                     }
                 });
             });

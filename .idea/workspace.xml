@@ -2,180 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3f281dc-e80c-4db7-b55c-2c8fc05a93f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Galleryclipmanage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Gallerymusicmanage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Gallerypicmanage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Galleryclip.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Gallerymusic.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Gallerypic.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Subcategory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/sluggable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/sweetalert.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2023_02_11_192145_create_categories_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2023_02_11_192156_create_subcategories_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/admin/assets/js/sweetalert.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/sweetalert/sweetalert.all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/gallerypics/all.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/gallerypics/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/gallerypics/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/gallerypics/image.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/menus/all.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/menus/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/menus/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/submenus/all.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/submenus/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/submenus/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/sweetalert/alert.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/Bridge/Laravel/SlugifyFacade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/Bridge/Laravel/SlugifyServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/Bridge/Latte/SlugifyHelper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/Bridge/League/SlugifyServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/Bridge/Nette/SlugifyExtension.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/Bridge/Plum/SlugifyConverter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/Bridge/Symfony/CocurSlugifyBundle.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/Bridge/Symfony/CocurSlugifyExtension.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/Bridge/Symfony/Configuration.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/Bridge/Twig/SlugifyExtension.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/Bridge/ZF2/Module.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/Bridge/ZF2/SlugifyService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/Bridge/ZF2/SlugifyViewHelper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/Bridge/ZF2/SlugifyViewHelperFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/RuleProvider/DefaultRuleProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/RuleProvider/FileRuleProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/RuleProvider/RuleProviderInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/Slugify.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/src/SlugifyInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/.github/FUNDING.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/.github/ISSUE_TEMPLATE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/.github/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/.github/jetbrains.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/.github/workflows/tests.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/.php_cs.dist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/.semver" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/CONTRIBUTING.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/ROUTE-MODEL-BINDING.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/SCOPE-HELPERS.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/TODO.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/UPGRADING.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/resources/config/sluggable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/src/ServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/src/Services/SlugService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/src/Sluggable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/src/SluggableObserver.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/src/SluggableScopeHelpers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/BaseTests.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/EventTests.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Listeners/AbortSlugging.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Listeners/DoNotAbortSlugging.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/Author.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/Post.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostNotSluggable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostShortConfig.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostShortConfigWithScopeHelpers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithCustomCallableMethod.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithCustomEngine.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithCustomEngine2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithCustomEngineOptions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithCustomMethod.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithCustomSeparator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithCustomSource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithCustomSuffix.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithEmptySeparator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithFirstUniqueSuffix.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithForeignRuleset.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithIdSource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithIdSourceOnSaved.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithIncludeTrashed.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithMaxLength.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithMaxLengthSplitWords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithMultipleSlugs.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithMultipleSlugsAndCustomSlugKey.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithMultipleSlugsAndHelperTrait.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithMultipleSources.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithNoSource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithOnUpdate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithRelation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithReservedSlug.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithSoftDeleting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithSoftDeletingIncludeTrashed.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Models/PostWithUniqueSlugConstraints.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/OnUpdateTests.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/ScopeHelperTests.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/SoftDeleteTests.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/StaticTests.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/TestCase.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/TestServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/UniqueTests.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/database/migrations/2013_11_04_163552_posts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/database/migrations/2015_08_17_185144_authors.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/.github/FUNDING.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/.github/ISSUE_TEMPLATE/1_Bug_report.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/.github/SECURITY.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/.github/lock.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/CODE_OF_CONDUCT.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/CONTRIBUTING.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/ISSUE_TEMPLATE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/resources/js/sweetalert.all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/resources/views/alert.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/src/Console/PublishCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/src/Facades/Alert.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/src/Storage/AlertSessionStore.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/src/Storage/SessionStore.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/src/SweetAlertServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/src/ToSweetAlert.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/src/Toaster.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/src/config/sweetalert.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/realrashid/sweet-alert/src/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenudashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenudashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlideController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlideController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SubmenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SubmenuController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SubmenudashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SubmenudashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Userrequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Userrequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2023_01_21_065958_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2023_01_21_065958_create_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/menudashboards/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/menudashboards/all.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/menudashboards/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/menudashboards/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/menudashboards/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/menudashboards/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/permissions/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/permissions/all.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/permissions/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/permissions/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/permissions/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/permissions/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/slides/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/slides/all.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/submenudashboards/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/submenudashboards/all.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/submenudashboards/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/submenudashboards/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Site/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Site/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Site/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/submenudashboards/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/submenudashboards/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/AuthenticatesUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/ui/auth-backend/AuthenticatesUsers.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,6 +29,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -384,7 +233,9 @@
       <workItem from="1675344725661" duration="12621000" />
       <workItem from="1675524530235" duration="6395000" />
       <workItem from="1675888766352" duration="6690000" />
-      <workItem from="1675944625091" duration="20611000" />
+      <workItem from="1675944625091" duration="20788000" />
+      <workItem from="1676580063593" duration="4895000" />
+      <workItem from="1676652258684" duration="13783000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0.1">
       <created>1673105255784</created>
@@ -435,7 +286,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675541404470</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="v1.4.4">
+      <created>1676148036155</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676148036155</updated>
+    </task>
+    <task id="LOCAL-00009" summary="v1.4.4">
+      <created>1676148107175</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676148107175</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,6 +338,7 @@
     <MESSAGE value="v1.2.1" />
     <MESSAGE value="v1.2.2" />
     <MESSAGE value="v1.4.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.4.2" />
+    <MESSAGE value="v1.4.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.4.4" />
   </component>
 </project>
