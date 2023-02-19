@@ -7,30 +7,56 @@ use App\Models\Role;
 use App\Models\Submenu_panel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Yajra\DataTables\Facades\DataTables;
 
 class RoleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function index(Request $request)
     {
         $roles          = Role::latest()->paginate(25);
         $menupanels     = Menu_panel::whereStatus(4)->get();
         $submenupanels  = Submenu_panel::whereStatus(4)->get();
+
+        if ($request->ajax()) {
+            $data = Role::all();
+
+            return Datatables::of($data)
+                ->editColumn('id', function ($data) {
+                    return ($data->id);
+                })
+                ->editColumn('title', function ($data) {
+                    return ($data->title);
+                })
+                ->editColumn('slug', function ($data) {
+                    return ($data->slug);
+                })
+                ->editColumn('permission', function ($data) {
+                    $permis = '';
+                    foreach(\App\Models\Permission::latest()->get() as $permission)
+                    {
+                        if (in_array(trim($permission->id), $data->permissions->pluck('id')->toArray()) ? 'selected' : '')
+                        $permis .= ' | '. $permission->slug ;
+                    }
+
+                    return $permis;
+                })
+                ->addColumn('action', function ($data) {
+                    $actionBtn = '<a href="' . route('roles.edit', $data->id) . '" class="btn ripple btn-outline-info btn-icon" style="float: right;margin: 0 5px;"><i class="fe fe-edit-2"></i></a>
+                    <button type="button" id="submit" data-toggle="modal" data-target="#myModal'.$data->id.'" class="btn ripple btn-outline-danger btn-icon " style="float: right;"><i class="fe fe-trash-2 "></i></button>';
+
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
 
         return view('Admin.roles.all')
             ->with(compact(['menupanels' , 'submenupanels', 'roles']));
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         $menupanels     = Menu_panel::whereStatus(4)->get();
@@ -40,12 +66,6 @@ class RoleController extends Controller
             ->with(compact(['menupanels' , 'submenupanels']));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $this->validate($request , [
@@ -53,30 +73,34 @@ class RoleController extends Controller
             'name' => 'required',
             'label' => 'required'
         ]);
-
+        try{
         $role = Role::create($request->all());
         $role->permissions()->sync($request->input('permission_id'));
-        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
-        return redirect(route('roles.index'));
+            if ($role == true) {
+                $success = true;
+                $flag    = 'success';
+                $subject = 'عملیات موفق';
+                $message = 'اطلاعات با موفقیت ثبت شد';
+            }
+            else {
+                $success = false;
+                $flag    = 'error';
+                $subject = 'عملیات نا موفق';
+                $message = 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید';
+            }
+
+        } catch (\Exception $e) {
+
+            $success = false;
+            $flag    = 'error';
+            $subject = 'خطا در ارتباط با سرور';
+            //$message = strchr($e);
+            $message = 'اطلاعات ثبت نشد،لطفا بعدا مجدد تلاش نمایید ';
+        }
+
+        return response()->json(['success'=>$success , 'subject' => $subject, 'flag' => $flag, 'message' => $message]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Role  $role
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Role $role)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Role  $role
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $roles      = role::whereId($id)->get();
@@ -88,13 +112,6 @@ class RoleController extends Controller
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Role  $role
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Role $role)
     {
         $this->validate($request , [
@@ -102,23 +119,58 @@ class RoleController extends Controller
             'name' => 'required',
             'label' => 'required'
         ]);
-
+        try{
         $role->update($request->all());
         $role->permissions()->sync($request->input('permission_id'));
-        alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
-        return redirect(route('roles.index'));
+            if ($role == true) {
+                $success = true;
+                $flag    = 'success';
+                $subject = 'عملیات موفق';
+                $message = 'اطلاعات با موفقیت ثبت شد';
+            }
+            else {
+                $success = false;
+                $flag    = 'error';
+                $subject = 'عملیات نا موفق';
+                $message = 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید';
+            }
+
+        } catch (\Exception $e) {
+
+            $success = false;
+            $flag    = 'error';
+            $subject = 'خطا در ارتباط با سرور';
+            //$message = strchr($e);
+            $message = 'اطلاعات ثبت نشد،لطفا بعدا مجدد تلاش نمایید ';
+        }
+
+        return response()->json(['success'=>$success , 'subject' => $subject, 'flag' => $flag, 'message' => $message]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Role  $role
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Role $role)
     {
+        try {
         $role->delete();
-        alert()->success('عملیات موفق', 'اطلاعات با موفقیت پاک شد');
-        return back();
+        if ($role == true) {
+            $success = true;
+            $flag    = 'success';
+            $subject = 'عملیات موفق';
+            $message = 'اطلاعات با موفقیت پاک شد';
+        }else{
+            $success = false;
+            $flag    = 'error';
+            $subject = 'عملیات ناموفق';
+            $message = 'اطلاعات پاک نشد، لطفا مجددا تلاش نمایید';
+        }
+
+    } catch (\Exception $e) {
+
+        $success = false;
+        $flag    = 'error';
+        $subject = 'خطا در ارتباط با سرور';
+        $message = 'اطلاعات پاک نشد،لطفا بعدا مجدد تلاش نمایید ';
+        }
+
+        return response()->json(['success'=>$success , 'subject' => $subject, 'flag' => $flag, 'message' => $message]);
     }
 }

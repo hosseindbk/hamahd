@@ -45,6 +45,7 @@ Route::prefix('admin')->middleware(['auth:web' , 'checkAdmin'])->group(function 
     Route::delete('menudashboards'          , [App\Http\Controllers\Admin\MenudashboardController::class , 'deletemenudashboards'])->name('deletemenudashboards');
     Route::delete('submenudashboards'       , [App\Http\Controllers\Admin\SubmenudashboardController::class , 'deletesubmenudashboards'])->name('deletesubmenudashboards');
     Route::delete('permissions'             , [App\Http\Controllers\Admin\PermissionController::class , 'deletepermissions'])->name('deletepermissions');
+    Route::delete('roles'                   , [App\Http\Controllers\Admin\RoleController::class , 'deleteroles'])->name('deleteroles');
 
 });
 
