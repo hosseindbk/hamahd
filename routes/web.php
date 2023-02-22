@@ -42,10 +42,12 @@ Route::prefix('admin')->middleware(['auth:web' , 'checkAdmin'])->group(function 
     Route::resource('gallerypicmanage'    , App\Http\Controllers\Admin\GallerypicmanageController::class);
     Route::resource('gallerymusicmanage'  , App\Http\Controllers\Admin\GallerymusicmanageController::class);
     Route::resource('galleryclipmanage'   , App\Http\Controllers\Admin\GalleryclipmanageController::class);
+
     Route::delete('menudashboards'          , [App\Http\Controllers\Admin\MenudashboardController::class , 'deletemenudashboards'])->name('deletemenudashboards');
     Route::delete('submenudashboards'       , [App\Http\Controllers\Admin\SubmenudashboardController::class , 'deletesubmenudashboards'])->name('deletesubmenudashboards');
     Route::delete('permissions'             , [App\Http\Controllers\Admin\PermissionController::class , 'deletepermissions'])->name('deletepermissions');
     Route::delete('roles'                   , [App\Http\Controllers\Admin\RoleController::class , 'deleteroles'])->name('deleteroles');
+    Route::delete('deleteadminlevel'        , [App\Http\Controllers\Admin\RoleController::class , 'deleteadminlevel'])->name('deleteadminlevel');
 
 });
 

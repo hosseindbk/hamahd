@@ -70,12 +70,13 @@ class RoleController extends Controller
     {
         $this->validate($request , [
             'permission_id' => 'required',
-            'name' => 'required',
-            'label' => 'required'
+            'title' => 'required',
+            'slug' => 'required'
         ]);
         try{
         $role = Role::create($request->all());
-        $role->permissions()->sync($request->input('permission_id'));
+
+        $role->permissions()->sync($request->input('permission_id') , false);
             if ($role == true) {
                 $success = true;
                 $flag    = 'success';
@@ -116,12 +117,12 @@ class RoleController extends Controller
     {
         $this->validate($request , [
             'permission_id' => 'required',
-            'name' => 'required',
-            'label' => 'required'
+            'title' => 'required',
+            'slug' => 'required'
         ]);
         try{
         $role->update($request->all());
-        $role->permissions()->sync($request->input('permission_id'));
+        $role->permissions()->sync($request->input('permission_id') , false);
             if ($role == true) {
                 $success = true;
                 $flag    = 'success';
@@ -147,10 +148,11 @@ class RoleController extends Controller
         return response()->json(['success'=>$success , 'subject' => $subject, 'flag' => $flag, 'message' => $message]);
     }
 
-    public function destroy(Role $role)
+    public function deleteroles(Request $request)
     {
         try {
-        $role->delete();
+            $roles = Role::findOrfail($request->input('id'));
+            $role = $roles->delete();
         if ($role == true) {
             $success = true;
             $flag    = 'success';

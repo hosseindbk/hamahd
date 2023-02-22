@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a3f281dc-e80c-4db7-b55c-2c8fc05a93f2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LevelManageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LevelManageController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/roles/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/roles/all.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/levelAdmins/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/levelAdmins/all.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/roles/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/roles/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/roles/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/roles/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,7 +175,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../xampp/htdocs/autokala" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -225,7 +228,8 @@
       <workItem from="1675944625091" duration="20788000" />
       <workItem from="1676580063593" duration="4895000" />
       <workItem from="1676652258684" duration="13999000" />
-      <workItem from="1676829205821" duration="5297000" />
+      <workItem from="1676829205821" duration="5333000" />
+      <workItem from="1676994977454" duration="10780000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0.1">
       <created>1673105255784</created>
@@ -304,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676751300242</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="v1.6.4">
+      <created>1676838263711</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1676838263711</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,6 +355,7 @@
     <MESSAGE value="v1.4.2" />
     <MESSAGE value="v1.4.4" />
     <MESSAGE value="v1.5.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.5.4" />
+    <MESSAGE value="v1.6.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.6.4" />
   </component>
 </project>
