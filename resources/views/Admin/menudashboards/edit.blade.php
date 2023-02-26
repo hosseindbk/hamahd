@@ -92,7 +92,8 @@
 @endsection
 @section('end')
     <script src="{{asset('admin/assets/plugins/select2/js/select2.min.js')}}"></script>
-    <script src="{{asset('admin/assets/js/select2.js')}}"></script>{{--    <script src="{{asset('admin/assets/plugins/jquery-ui/ui/widgets/datepicker.js')}}"></script>--}}
+    <script src="{{asset('admin/assets/js/select2.js')}}"></script>
+    {{--    <script src="{{asset('admin/assets/plugins/jquery-ui/ui/widgets/datepicker.js')}}"></script>--}}
 {{--    <script src="{{asset('admin/assets/plugins/jquery.maskedinput/jquery.maskedinput.js')}}"></script>--}}
 {{--    <script src="{{asset('admin/assets/plugins/spectrum-colorpicker/spectrum.js')}}"></script>--}}
 {{--    <script src="{{asset('admin/assets/plugins/ion-rangeslider/js/ion.rangeSlider.min.js')}}"></script>--}}

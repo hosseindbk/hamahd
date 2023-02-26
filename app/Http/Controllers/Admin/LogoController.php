@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\sliderequest;
 use App\Models\Menu_panel;
-use App\Models\Slide;
+use App\Models\Logo;
 use App\Models\Status;
 use App\Models\Submenu_panel;
 use Illuminate\Http\Request;
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 use Yajra\DataTables\Facades\DataTables;
 
-class SlideController extends Controller
+class LogoController extends Controller
 {
 
     public function index(Request $request)
@@ -23,8 +23,8 @@ class SlideController extends Controller
         $submenupanels  =   Submenu_panel::whereStatus(4)->get();
 
         if ($request->ajax()) {
-            $data = DB::table('slides')
-                ->select('slides.id', 'slides.file_link' , 'slides.position' , 'slides.title' , 'slides.status')
+            $data = DB::table('logos')
+                ->select('logos.id', 'logos.file_link' , 'logos.title')
                 ->get();
 
             return Datatables::of($data)
@@ -35,32 +35,13 @@ class SlideController extends Controller
                 ->editColumn('title', function ($data) {
                     return ($data->title);
                 })
-                ->editColumn('status', function ($data) {
-                    if ($data->status == "0") {
-                        return "عدم نمایش";
-                    }
-                    elseif ($data->status == "4") {
-                        return "در حال نمایش";
-                    }
-                })
-                ->editColumn('position', function ($data) {
-                    if ($data->position == "1") {
-                        return "اسلاید اصلی";
-                    }
-                    elseif ($data->position == "2") {
-                        return "اسلاید چپ بالا";
-                    }
-                    elseif ($data->position == "3") {
-                        return "اسلاید چپ پایین";
-                    }
-                })
                 ->addColumn('file_link', function ($row) {
                     return '<img src="'.asset($row->file_link).'"  width="200" class="img-rounded" align="center" />';
 
                 })
                 ->addColumn('action', function ($row) {
-                    $actionBtn = '<a href="' . route('slides.edit', $row->id) . '" class="btn ripple btn-outline-info btn-sm">Edit</a>
-                                <form action="' . route('slides.destroy' ,$row->id) .'" method="post"  style="display: inline;">
+                    $actionBtn = '<a href="' . route('logos.edit', $row->id) . '" class="btn ripple btn-outline-info btn-sm">Edit</a>
+                                <form action="' . route('logos.destroy' ,$row->id) .'" method="post"  style="display: inline;">
                                     '.csrf_field().'
                                     '.method_field("DELETE").'
                                          <button type="submit" class="btn ripple btn-outline-danger btn-sm">
@@ -73,7 +54,7 @@ class SlideController extends Controller
                 ->make(true);
         }
 
-        return view('Admin.slides.all')
+        return view('Admin.logos.all')
             ->with(compact(['menupanels' , 'submenupanels']));
     }
 
@@ -82,16 +63,16 @@ class SlideController extends Controller
         $menupanels     =   Menu_panel::whereStatus(4)->get();
         $submenupanels  =   Submenu_panel::whereStatus(4)->get();
 
-        return view('Admin.slides.create')
+        return view('Admin.logos.create')
             ->with(compact(['menupanels' , 'submenupanels']));
     }
 
         public function imgupload(Request $request)
     {
 
-        $slides = new Slide();
-        $slides->status     = 1;
-        $slides->user_id    = Auth::user()->id;
+        $logos = new Logo();
+        $logos->status     = 1;
+        $logos->user_id    = Auth::user()->id;
 
         if ($request->file('files')) {
 
@@ -99,13 +80,13 @@ class SlideController extends Controller
             $img = Image::make($file);
             $imagePath ="images/slides/";
             $imageName = md5(uniqid(rand(), true)) .'.'. $file->clientExtension();
-            $slides->file_link = $file->storeAs($imagePath, $imageName);
+            $logos->file_link = $file->storeAs($imagePath, $imageName);
             $img->save($imagePath.$imageName);
             $img->encode('jpg');
 
         }
 
-        $result = $slides->save();
+        $result = $logos->save();
         try{
 
             if ($result == true) {
@@ -135,7 +116,7 @@ class SlideController extends Controller
 
     public function edit($id)
     {
-        $slides             =   Slide::whereId($id)->get();
+        $logos          =   Logo::whereId($id)->get();
         $menupanels     =   Menu_panel::whereStatus(4)->get();
         $submenupanels  =   Submenu_panel::whereStatus(4)->get();
 //        $slide  = Slide::whereId($id)->first();
@@ -155,90 +136,32 @@ class SlideController extends Controller
 //        }
 
         return view('Admin.slides.edit')
-            ->with(compact(['menupanels' , 'submenupanels'  , 'slides']));
+            ->with(compact(['menupanels' , 'submenupanels'  , 'logos']));
 
     }
 
-    public function update(Request $request , Slide  $slide)
+    public function update(Request $request , Logo  $logo)
     {
-        $slide->title           = $request->input('title');
-//        $slide->position        = $request->input('position');
-//        $slide->link            = $request->input('link');
-        $slide->status          = $request->input('status_id');
-//        $slide->type            = $request->input('type');
-//        $slide->type_id         = $request->input('type_id');
+        $logo->title           = $request->input('title');
         if ($request->file('image') != null) {
             $file = $request->file('image');
             $img = Image::make($file);
             $imagePath ="images/slides/";
             $imageName = md5(uniqid(rand(), true)) .'.'. $file->clientExtension();
-            $slide->image = $file->move($imagePath, $imageName);
+            $logo->image = $file->move($imagePath, $imageName);
             $img->save($imagePath.$imageName);
             $img->encode('jpg');
         }
 
-        $slide->update();
-//        $slide->stateslide()->sync($request->input('state_id'));
+        $logo->update();
         return redirect(route('slides.index'));
     }
 
     public function destroy($id)
     {
-        $slide = Slide::findOrfail($id);
-        $slide->delete();
+        $logos = Logo::findOrfail($id);
+        $logos->delete();
         return redirect(route('slides.index'));
-    }
-
-    public function slidetype(Request $request){
-
-        if ($request->input('id') == 'external'){
-
-           $output[] = 'external';
-
-            return $output;
-        }elseif ($request->input('id') == 'technical'){
-            $cities = Technical_unit::whereStatus(4)->get();
-            $output = [];
-
-            foreach($cities as $City )
-            {
-                $output[$City->slug] = $City->title;
-            }
-
-            return $output;
-        }elseif ($request->input('id') == 'supplier'){
-            $cities = Supplier::whereStatus(4)->get();
-            $output = [];
-
-            foreach($cities as $City )
-            {
-                $output[$City->slug] = $City->title;
-            }
-
-            return $output;
-        }elseif ($request->input('id') == 'offer'){
-            $cities = Offer::whereStatus(4)->get();
-            $output = [];
-
-            foreach($cities as $City )
-            {
-                $output[$City->slug] = $City->title;
-            }
-
-            return $output;
-        }
-        elseif ($request->input('id') == 'product'){
-            $cities = Product::whereStatus(4)->get();
-            $output = [];
-
-            foreach($cities as $City )
-            {
-                $output[$City->slug] = $City->title;
-            }
-
-            return $output;
-        }
-
     }
 
 }

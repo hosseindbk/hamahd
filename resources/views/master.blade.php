@@ -96,7 +96,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2">
                         <div class="logo-box">
-                            <a href="{{route('/')}}" class="logo"><img src="images/logo.png" alt="لوگو" style="width: 30%"></a>
+                            <a href="{{route('/')}}" class="logo"><img src="{{asset($logos['file_link'])}}" alt="{{$logos['title']}}" style="width: 30%"></a>
                             <div class="user-btn-action">
                                 <div class="search-menu-toggle icon-element icon-element-sm shadow-sm mr-2" data-toggle="tooltip" data-placement="top" title="جستجو کردن">
                                     <i class="la la-search"></i>
@@ -373,7 +373,7 @@
             <div class="col-lg-3 responsive-column-half">
                 <div class="footer-item">
                     <a href="{{route('/')}}">
-                        <img src="images/logo.png" alt="لوگوی پاورقی" class="footer__logo" style="width: 30%">
+                        <img src="{{asset($logos['file_link'])}}" alt="{{$logos['title']}}" class="footer__logo" style="width: 30%">
                     </a>
                     <ul class="generic-list-item pt-4">
                         <li><a href="tel:+1631237884">021-23456789</a></li>

@@ -147,10 +147,10 @@
                                                             @elseif(Auth::user()->status == 2)
                                                                 <button class="btn ripple btn-primary" disabled>در حال بررسی</button>
                                                             @elseif(Auth::user()->status == 3)
-                                                                <button class="btn ripple btn-success" disabled>تایید مدیر </button>
+                                                                <button class="btn ripple btn-success" disabled>تایید مدیر سیستم </button>
                                                             @elseif(Auth::user()->status == 4)
-                                                                <button class="btn ripple btn-light" disabled>معلق شده</button>
-                                                            @elseif(Auth::user()->status == 5)
+                                                                <button class="btn ripple btn-light" disabled>فعال</button>
+                                                            @elseif(Auth::user()->status == 0)
                                                                 <button class="btn ripple btn-danger" disabled >غیر فعال شده</button>
                                                             @endif
                                                         </div>
@@ -256,7 +256,7 @@
 
 <a href="#top" id="back-to-top"><i class="fe fe-arrow-up"></i></a>
 
-<script src="assets/plugins/select2/js/select2.min.js"></script>
+<script src="{{asset('admin/assets/plugins/select2/js/select2.min.js')}}"></script>
 
 <!-- Internal Gallery js-->
 <script src="{{asset('admin/assets/plugins/gallery/picturefill.js')}}"></script>

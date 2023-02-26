@@ -1,6 +1,6 @@
 @extends('Admin.admin')
 @section('title')
-    <title> ایجاد اسلاید </title>
+    <title> ایجاد برند </title>
     <link href="{{asset('admin/assets/plugins/spectrum-colorpicker/spectrum.css')}}" rel="stylesheet">
     <link href="{{asset('admin/assets/plugins/ion-rangeslider/css/ion.rangeSlider.css')}}" rel="stylesheet">
     <link href="{{asset('admin/assets/plugins/ion-rangeslider/css/ion.rangeSlider.skinFlat.css')}}" rel="stylesheet">
@@ -15,11 +15,11 @@
             <div class="inner-body">
                 <div class="page-header">
                     <div>
-                        <h2 class="main-content-title tx-24 mg-b-5">مدیریت اسلاید</h2>
+                        <h2 class="main-content-title tx-24 mg-b-5">مدیریت برند</h2>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{url('admin/panel')}}">صفحه اصلی</a></li>
-                            <li class="breadcrumb-item"><a href="{{url('admin/slides')}}">مدیریت اسلاید</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">ایجاد اسلاید</li>
+                            <li class="breadcrumb-item"><a href="{{url('admin/logomanage')}}">مدیریت برند</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">ایجاد برند</li>
                         </ol>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form action="{{ route('slides.store')}}" method="POST" enctype="multipart/form-data" id="form">
+                                <form action="{{ route('logomanage.store')}}" method="POST" enctype="multipart/form-data" id="form">
 {{--                                    <div class="row row-sm">--}}
                                         {{csrf_field()}}
 {{--                                        <div class="col-md-12">--}}
@@ -46,27 +46,27 @@
 {{--                                        </div>--}}
 {{--                                        <div class="col-md-3">--}}
 {{--                                            <div class="form-group">--}}
-{{--                                                <p class="mg-b-10">عنوان اسلاید</p>--}}
-{{--                                                <input type="text" name="title" id="title" placeholder="عنوان اسلاید را وارد کنید" class="form-control" />--}}
+{{--                                                <p class="mg-b-10">عنوان برند</p>--}}
+{{--                                                <input type="text" name="title" id="title" placeholder="عنوان برند را وارد کنید" class="form-control" />--}}
 {{--                                            </div>--}}
 {{--                                            <div class="form-group">--}}
-{{--                                            <p class="mg-b-10">لینک اسلاید</p>--}}
-{{--                                            <input type="text" name="file_link" placeholder="لینک اسلاید را وارد کنید" class="form-control" />--}}
+{{--                                            <p class="mg-b-10">لینک برند</p>--}}
+{{--                                            <input type="text" name="file_link" placeholder="لینک برند را وارد کنید" class="form-control" />--}}
 {{--                                            </div>--}}
 {{--                                        </div>--}}
 {{--                                        <div class="col-md-3">--}}
 {{--                                            <div class="form-group">--}}
-{{--                                                <p class="mg-b-10">انتخاب موقعیت اسلاید</p>--}}
+{{--                                                <p class="mg-b-10">انتخاب موقعیت برند</p>--}}
 {{--                                                <select name="position" class="form-control select-lg select2" id="position">--}}
-{{--                                                    <option value="1">اسلاید اصلی</option>--}}
-{{--                                                    <option value="2">اسلاید تبلیغاتی چپ بالا</option>--}}
-{{--                                                    <option value="3">اسلاید تبلیغاتی چپ پایین</option>--}}
+{{--                                                    <option value="1">برند اصلی</option>--}}
+{{--                                                    <option value="2">برند تبلیغاتی چپ بالا</option>--}}
+{{--                                                    <option value="3">برند تبلیغاتی چپ پایین</option>--}}
 {{--                                                </select>--}}
 {{--                                            </div>--}}
 {{--                                        </div>--}}
 {{--                                        <div class="col-md-3">--}}
 {{--                                            <div class="form-group">--}}
-{{--                                                <p class="mg-b-10">انتخاب نوع اسلاید</p>--}}
+{{--                                                <p class="mg-b-10">انتخاب نوع برند</p>--}}
 {{--                                                <select name="type" class="form-control select-lg select2" id="type">--}}
 {{--                                                    <option value="">انتخاب کنید</option>--}}
 {{--                                                    <option value="external">لینک خارجی</option>--}}
@@ -79,7 +79,7 @@
 {{--                                        </div>--}}
 {{--                                        <div class="col-md-3">--}}
 {{--                                            <div class="form-group">--}}
-{{--                                                    <p class="mg-b-10">ارتباط اسلاید</p>--}}
+{{--                                                    <p class="mg-b-10">ارتباط برند</p>--}}
 {{--                                                    <select name="type_id" class="form-control select-lg select2" id="type_id">--}}
 
 {{--                                                    </select>--}}
@@ -89,12 +89,12 @@
 
 {{--                                        <div class="col-md-12">--}}
 {{--                                            <div class="form-group">--}}
-{{--                                                <p class="mg-b-10">تصویر اسلاید</p>--}}
+{{--                                                <p class="mg-b-10">تصویر برند</p>--}}
 {{--                                                <input type="file" name="file_link" id="file_link" class="dropify" data-height="200">--}}
 {{--                                            </div>--}}
 {{--                                            <div>--}}
-{{--                                                <p class="text-danger font-weight-bold">سایز تصاویر اسلاید اصلی 1024x512 پیکسل </p>--}}
-{{--                                                <p class="text-danger font-weight-bold">سایز تصاویر اسلاید سمت چپ 856x428 پیکسل </p>--}}
+{{--                                                <p class="text-danger font-weight-bold">سایز تصاویر برند اصلی 1024x512 پیکسل </p>--}}
+{{--                                                <p class="text-danger font-weight-bold">سایز تصاویر برند سمت چپ 856x428 پیکسل </p>--}}
 {{--                                            </div>--}}
 {{--                                        </div>--}}
 {{--                                        <div class="col-lg-12 mg-b-10 text-center">--}}

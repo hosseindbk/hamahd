@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
+use App\Models\Logo;
 use App\Models\Slide;
 use App\Models\Submenu;
 use Illuminate\Http\Request;
@@ -15,9 +16,11 @@ class IndexController extends Controller
         $menus      = Menu::select('id' , 'title' , 'slug' , 'submenu')->whereStatus('4')->get();
         $submenus   = Submenu::select('title' , 'slug' , 'menu_id')->whereStatus('4')->get();
         $slides     = Slide::select('title' , 'file_link')->whereStatus('4')->get();
+        $logos     = Logo::select('title' , 'file_link')->first();
 
         return view('Site.index')
             ->with(compact('menus'))
+            ->with(compact('logos'))
             ->with(compact('slides'))
             ->with(compact('submenus'));
     }

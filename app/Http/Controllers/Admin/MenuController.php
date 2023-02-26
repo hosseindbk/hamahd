@@ -8,16 +8,54 @@ use App\Models\Menu_panel;
 use App\Models\Menu;
 use App\Models\Submenu_panel;
 use Illuminate\Support\Facades\Auth;
+use Yajra\DataTables\Facades\DataTables;
 
 
 class MenuController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $menus          = Menu::all();
         $menupanels     = Menu_panel::whereStatus(4)->get();
         $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
+        if ($request->ajax()) {
+            $data = Menu::select('id', 'title', 'slug', 'status' , 'submenu')
+                ->get();
+
+            return Datatables::of($data)
+                ->editColumn('id', function ($data) {
+                    return ($data->id);
+                })
+                ->editColumn('title', function ($data) {
+                    return ($data->title);
+                })
+                ->editColumn('slug', function ($data) {
+                    return ($data->slug);
+                })
+                ->editColumn('status', function ($data) {
+                    if ($data->status == "0") {
+                        return "عدم نمایش";
+                    } elseif ($data->status == "4") {
+                        return "در حال نمایش";
+                    }
+                })
+                ->editColumn('submenu', function ($data) {
+                    if ($data->submenu == 1) {
+                        return "دارد";
+                    } else {
+                        return "ندارد";
+                    }
+                })
+                ->addColumn('action', function ($data) {
+                    $actionBtn = '<a href="' . route('menus.edit', $data->id) . '" class="btn ripple btn-outline-info btn-icon" style="float: right;margin: 0 5px;"><i class="fe fe-edit-2"></i></a>
+                    <button type="button" id="submit" data-toggle="modal" data-target="#myModal'.$data->id.'" class="btn ripple btn-outline-danger btn-icon " style="float: right;"><i class="fe fe-trash-2 "></i></button>';
+
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
 
         return view('Admin.menus.all')
             ->with(compact(['menupanels' , 'submenupanels', 'menus']));
@@ -35,21 +73,39 @@ class MenuController extends Controller
 
     public function store(Request $request)
     {
-        $menu = new Menu();
 
-        $menu->title        = $request->input('title');
-        $menu->submenu      = $request->input('submenu');
-        $menu->status       = 4;
-        $menu->user_id      = Auth::user()->id;
+        try{
+            $menu = new Menu();
 
-        $result = $menu->save();
-        if ($result == true) {
-            alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
+            $menu->title        = $request->input('title');
+            $menu->submenu      = $request->input('submenu');
+            $menu->status       = 4;
+            $menu->user_id      = Auth::user()->id;
+
+            $result = $menu->save();
+            if ($result == true) {
+                $success = true;
+                $flag    = 'success';
+                $subject = 'عملیات موفق';
+                $message = 'اطلاعات با موفقیت ثبت شد';
+            }
+            else {
+                $success = false;
+                $flag    = 'error';
+                $subject = 'عملیات نا موفق';
+                $message = 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید';
+            }
+
+        } catch (\Exception $e) {
+
+            $success = false;
+            $flag    = 'error';
+            $subject = 'خطا در ارتباط با سرور';
+            //$message = strchr($e);
+            $message = 'اطلاعات ثبت نشد،لطفا بعدا مجدد تلاش نمایید ';
         }
-        else {
-            alert()->error('عملیات ناموفق', 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید');
-        }
-        return redirect(route('menus.index'));
+
+        return response()->json(['success'=>$success , 'subject' => $subject, 'flag' => $flag, 'message' => $message]);
 
     }
 
@@ -65,38 +121,62 @@ class MenuController extends Controller
 
     public function update(Request $request , $id)
     {
+        try{
         $menu = Menu::findOrfail($id);
         $menu->title        = $request->input('title');
         $menu->submenu      = $request->input('submenu');
-
-        if($request->input('status') == 'on'){
-            $menu->status = 4;
-        }
-
-        if($request->input('status') == null) {
-            $menu->status = 0;
-        }
+        $menu->status       = $request->input('status');
 
         $result = $menu->update();
-        if ($result == true) {
-            alert()->success('عملیات موفق', 'اطلاعات با موفقیت ثبت شد');
+            if ($result == true) {
+                $success = true;
+                $flag    = 'success';
+                $subject = 'عملیات موفق';
+                $message = 'اطلاعات با موفقیت ثبت شد';
+            }
+            else {
+                $success = false;
+                $flag    = 'error';
+                $subject = 'عملیات نا موفق';
+                $message = 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید';
+            }
+
+        } catch (\Exception $e) {
+
+            $success = false;
+            $flag    = 'error';
+            $subject = 'خطا در ارتباط با سرور';
+            //$message = strchr($e);
+            $message = 'اطلاعات ثبت نشد،لطفا بعدا مجدد تلاش نمایید ';
         }
-        else {
-            alert()->error('عملیات ناموفق', 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید');
-        }
-        return redirect(route('menus.index'));
+
+        return response()->json(['success'=>$success , 'subject' => $subject, 'flag' => $flag, 'message' => $message]);
     }
-    public function destroy(Request $request , $id)
+    public function deletemenus(Request $request)
     {
-        $menu = Menu::findOrfail($id);
-        $result = $menu->delete();
-        if ($result == true) {
-            alert()->success('عملیات موفق', 'اطلاعات با موفقیت پاک شد');
+        try {
+            $menu = Menu::findOrfail($request->input('id'));
+            $result = $menu->delete();
+            if ($result == true) {
+                $success = true;
+                $flag = 'success';
+                $subject = 'عملیات موفق';
+                $message = 'اطلاعات با موفقیت پاک شد';
+            } else {
+                $success = false;
+                $flag = 'error';
+                $subject = 'عملیات ناموفق';
+                $message = 'اطلاعات پاک نشد، لطفا مجددا تلاش نمایید';
+            }
+
+        } catch (\Exception $e) {
+
+            $success = false;
+            $flag = 'error';
+            $subject = 'خطا در ارتباط با سرور';
+            $message = 'اطلاعات پاک نشد،لطفا بعدا مجدد تلاش نمایید ';
         }
-        else {
-            alert()->error('عملیات ناموفق', 'اطلاعات پاک نشد، لطفا مجددا تلاش نمایید');
-        }
-        return redirect(route('menus.index'));
+        return response()->json(['success' => $success, 'subject' => $subject, 'flag' => $flag, 'message' => $message]);
     }
 
 }
