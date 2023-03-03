@@ -29,20 +29,22 @@ Route::prefix('/')->group(function (){
 Route::prefix('admin')->middleware(['auth:web' , 'checkAdmin'])->group(function (){
 
     Route::get('panel'                      , [App\Http\Controllers\Admin\PanelController::class   , 'index'])->name('/');
-    Route::resource('users'               , App\Http\Controllers\Admin\UserController::class);
-    Route::resource('slides'              , App\Http\Controllers\Admin\SlideController::class);
-    Route::resource('permissions'         , App\Http\Controllers\Admin\PermissionController::class);
-    Route::resource('roles'               , App\Http\Controllers\Admin\RoleController::class);
-    Route::resource('levelAdmins'         , App\Http\Controllers\Admin\LevelManageController::class);
-    Route::resource('profile'             , App\Http\Controllers\Admin\ProfileController::class);
-    Route::resource('menudashboards'      , App\Http\Controllers\Admin\MenudashboardController::class);
-    Route::resource('submenudashboards'   , App\Http\Controllers\Admin\SubmenudashboardController::class);
-    Route::resource('submenus'            , App\Http\Controllers\Admin\SubmenuController::class);
-    Route::resource('menus'               , App\Http\Controllers\Admin\MenuController::class);
-    Route::resource('gallerypicmanage'    , App\Http\Controllers\Admin\GallerypicmanageController::class);
-    Route::resource('gallerymusicmanage'  , App\Http\Controllers\Admin\GallerymusicmanageController::class);
-    Route::resource('galleryclipmanage'   , App\Http\Controllers\Admin\GalleryclipmanageController::class);
-    Route::resource('logomanage'          , App\Http\Controllers\Admin\LogoController::class);
+    Route::resource('gallerypicmanage'    , App\Http\Controllers\Admin\GallerypicController::class);
+//    Route::resource('gallerymusic'        , App\Http\Controllers\Admin\GallerymusicController::class);
+//    Route::resource('galleryclip'         , App\Http\Controllers\Admin\GalleryclipController::class);
+    Route::resource('users'                     , App\Http\Controllers\Admin\UserController::class);
+    Route::resource('slides'                    , App\Http\Controllers\Admin\SlideController::class);
+    Route::resource('permissions'               , App\Http\Controllers\Admin\PermissionController::class);
+    Route::resource('roles'                     , App\Http\Controllers\Admin\RoleController::class);
+    Route::resource('levelAdmins'               , App\Http\Controllers\Admin\LevelManageController::class);
+    Route::resource('profile'                   , App\Http\Controllers\Admin\ProfileController::class);
+    Route::resource('menudashboards'            , App\Http\Controllers\Admin\MenudashboardController::class);
+    Route::resource('submenudashboards'         , App\Http\Controllers\Admin\SubmenudashboardController::class);
+    Route::resource('submenus'                  , App\Http\Controllers\Admin\SubmenuController::class);
+    Route::resource('menus'                     , App\Http\Controllers\Admin\MenuController::class);
+    Route::resource('logomanage'                , App\Http\Controllers\Admin\LogoController::class);
+    Route::resource('originalcategorysitemanage', App\Http\Controllers\Admin\OriginalcategorysiteController::class);
+    Route::resource('subcategorysitemanage'     , App\Http\Controllers\Admin\SubcategorysiteController::class);
 
     Route::delete('menudashboards'          , [App\Http\Controllers\Admin\MenudashboardController::class    , 'deletemenudashboards'])   ->name('deletemenudashboards');
     Route::delete('submenudashboards'       , [App\Http\Controllers\Admin\SubmenudashboardController::class , 'deletesubmenudashboards'])->name('deletesubmenudashboards');

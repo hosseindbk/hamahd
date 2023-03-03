@@ -5,23 +5,22 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Menu_panel;
-use App\Models\Menu;
+use App\Models\Original_category;
 use App\Models\Submenu_panel;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
 
 
-class MenuController extends Controller
+class OriginalcategorysiteController extends Controller
 {
     public function index(Request $request)
     {
-        $menus          = Menu::all();
+        $menus          = Original_category::all();
         $menupanels     = Menu_panel::whereStatus(4)->get();
         $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         if ($request->ajax()) {
-            $data = Menu::select('id', 'title', 'slug', 'status' , 'submenu', 'priority')
-                ->orderBy('priority')->get();
+            $data = Original_category::select('id', 'title', 'slug', 'icon' , 'status')->get();
 
             return Datatables::of($data)
                 ->editColumn('title', function ($data) {
@@ -30,8 +29,8 @@ class MenuController extends Controller
                 ->editColumn('slug', function ($data) {
                     return ($data->slug);
                 })
-                ->editColumn('priority', function ($data) {
-                    return ($data->priority);
+                ->editColumn('icon', function ($data) {
+                    return ($data->icon);
                 })
                 ->editColumn('status', function ($data) {
                     if ($data->status == "0") {
@@ -40,15 +39,8 @@ class MenuController extends Controller
                         return "در حال نمایش";
                     }
                 })
-                ->editColumn('submenu', function ($data) {
-                    if ($data->submenu == 1) {
-                        return "دارد";
-                    } else {
-                        return "ندارد";
-                    }
-                })
                 ->addColumn('action', function ($data) {
-                    $actionBtn = '<a href="' . route('menus.edit', $data->id) . '" class="btn ripple btn-outline-info btn-icon" style="float: right;margin: 0 5px;"><i class="fe fe-edit-2"></i></a>
+                    $actionBtn = '<a href="' . route('originalcategorysitemanage.edit', $data->id) . '" class="btn ripple btn-outline-info btn-icon" style="float: right;margin: 0 5px;"><i class="fe fe-edit-2"></i></a>
                     <button type="button" id="submit" data-toggle="modal" data-target="#myModal'.$data->id.'" class="btn ripple btn-outline-danger btn-icon " style="float: right;"><i class="fe fe-trash-2 "></i></button>';
 
                     return $actionBtn;
@@ -57,7 +49,7 @@ class MenuController extends Controller
                 ->make(true);
         }
 
-        return view('Admin.menus.all')
+        return view('Admin.originalcategorysite.all')
             ->with(compact(['menupanels' , 'submenupanels', 'menus']));
     }
 
@@ -67,7 +59,7 @@ class MenuController extends Controller
         $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
 
-        return view('Admin.menus.create')
+        return view('Admin.originalcategorysite.create')
             ->with(compact(['menupanels' , 'submenupanels']));
     }
 
@@ -75,17 +67,16 @@ class MenuController extends Controller
     {
 
         try{
-            $menucount = Menu::orderBy('priority' , 'DESC')->first('priority');
 
-            $menu = new Menu();
+            $Original_category = new Original_category();
 
-            $menu->title        = $request->input('title');
-            $menu->submenu      = $request->input('submenu');
-            $menu->status       = 4;
-            $menu->priority     = $menucount['priority'] + 1;
-            $menu->user_id      = Auth::user()->id;
+            $Original_category->title        = $request->input('title');
+            $Original_category->icon         = $request->input('icon');
+            $Original_category->description  = $request->input('description');
+            $Original_category->status       = 4;
+            $Original_category->user_id      = Auth::user()->id;
 
-            $result = $menu->save();
+            $result = $Original_category->save();
             if ($result == true) {
                 $success = true;
                 $flag    = 'success';

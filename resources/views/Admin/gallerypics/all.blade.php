@@ -1,9 +1,7 @@
 @extends('Admin.admin')
 @section('title')
-    <title> مدیریت اسلایدها </title>
+    <title> مدیریت گالری تصاویر </title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-{{--    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">--}}
-{{--    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">--}}
     <link rel="stylesheet" href="{{asset('admin/assets/plugins/datatable/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/assets/plugins/datatable/dataTables.bootstrap4.min-rtl.css')}}">
     <link rel="stylesheet" href="{{asset('admin/assets/plugins/datatable/responsivebootstrap4.min.css')}}">
@@ -17,10 +15,10 @@
             <div class="inner-body">
                 <div class="page-header">
                     <div>
-                        <h2 class="main-content-title tx-24 mg-b-5">مدیریت اسلایدها</h2>
+                        <h2 class="main-content-title tx-24 mg-b-5">مدیریت گالری تصاویر</h2>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{url('admin/panel')}}">صفحه اصلی</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">مدیریت اسلایدها</li>
+                            <li class="breadcrumb-item active" aria-current="page">مدیریت گالری تصاویر</li>
                         </ol>
                     </div>
                 </div>
@@ -30,8 +28,8 @@
                         <div class="card custom-card overflow-hidden">
                             <div class="card-body" style="background-color: #0000000a;border-radius: 10px 10px 0px 0px;">
                                 <div class="row">
-                                    <div class="col"><a href="{{url()->current()}}" class="btn btn-link btn-xs">لیست اسلایدهای سایت</a></div>
-                                    <div class="col text-left"><a href="{{url('admin/slides/create')}}" class="btn btn-primary btn-xs">+ افزودن اسلاید سایت</a></div>
+                                    <div class="col"><a href="{{url()->current()}}" class="btn btn-link btn-xs">لیست گالری تصاویر سایت</a></div>
+                                    <div class="col text-left"><a href="{{url('admin/gallerypicmanage/create')}}" class="btn btn-primary btn-xs">+ افزودن گالری تصاویر سایت</a></div>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -72,8 +70,6 @@
 @endsection
 
 @section('end')
-{{--    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>--}}
-{{--    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>--}}
     <script src="{{asset('admin/assets/plugins/datatable/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('admin/assets/plugins/datatable/dataTables.bootstrap4.min.js')}}"></script>
     <script src="{{asset('admin/assets/plugins/datatable/dataTables.responsive.min.js')}}"></script>
@@ -84,23 +80,16 @@
             var table = $('.yajra-datatable').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('slides.index') }}",
+                ajax: "{{ route('gallerypicmanage.index') }}",
                 columns: [
                     {data: 'id'                 , name: 'id'},
-                    {data: 'file_link'          , name: 'file_link'},
-                    {data: 'position'           , name: 'position'},
-                    {data: 'title'              , name: 'title'},
-                    {data: 'status'             , name: 'status'},
-
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: true,
-                        searchable: true
-                    },
+                    {data: 'file_link'          , name: 'file_link' },
+                    {data: 'position'           , name: 'position'  },
+                    {data: 'title'              , name: 'title'     },
+                    {data: 'status'             , name: 'status'    },
+                    {data: 'action'             , name: 'action'    },
                 ]
             });
-
         });
     </script>
 @endsection

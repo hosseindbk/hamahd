@@ -26,7 +26,7 @@
                             <div class="card-body" style="background-color: #0000000a;border-radius: 10px 10px 0px 0px;">
                                 <div class="row">
                                     <div class="col"><a href="{{url()->current()}}" class="btn btn-link btn-xs">لیست منوهای سایت</a></div>
-                                    <div class="col text-left"><a href="{{url('admin/menus/create')}}" class="btn btn-primary btn-xs">+ افزودن منو سایت</a></div>
+                                    <div class="col text-left"><a href="{{url('admin/originalcategorysitemanage/create')}}" class="btn btn-primary btn-xs">+ افزودن دسته بندی سایت</a></div>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -45,10 +45,9 @@
                                     <table id="sample1" class="table table-striped table-bordered yajra-datatable">
                                         <thead>
                                         <tr>
-                                            <th class="wd-10p"> اولویت نمایش </th>
                                             <th class="wd-10p"> نام صفحه </th>
                                             <th class="wd-10p"> آدرس صفحه </th>
-                                            <th class="wd-10p"> زیر منو </th>
+                                            <th class="wd-10p"> نماد </th>
                                             <th class="wd-10p"> وضعیت </th>
                                             <th class="wd-10p"> تغییر </th>
                                         </tr>
@@ -98,12 +97,11 @@
             var table = $('.yajra-datatable').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('menus.index') }}",
+                ajax: "{{ route('originalcategorysitemanage.index') }}",
                 columns: [
-                    {data: 'priority'       , name: 'priority'},
                     {data: 'title'          , name: 'title'},
                     {data: 'slug'           , name: 'slug'},
-                    {data: 'submenu'        , name: 'submenu'},
+                    {data: 'icon'           , name: 'icon'},
                     {data: 'status'         , name: 'status'},
                     {data: 'action'         , name: 'action'},
                 ]

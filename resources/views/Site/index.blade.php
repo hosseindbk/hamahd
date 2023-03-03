@@ -22,36 +22,18 @@
     <section class="feature-area pb-90px">
         <div class="container">
             <div class="row feature-content-wrap">
-                <div class="col-lg-4 responsive-column-half">
+                @foreach($categories as $category)
+                <div class="{{$category->col_style}} responsive-column-half">
                     <div class="info-box">
                         <div class="info-overlay"></div>
                         <div class="icon-element mx-auto shadow-sm">
-                            <i class="la la-file-audio" style="color: #389ec5"></i>
+                            <i class="{{$category->icon}}" style="color: #389ec5"></i>
                         </div>
-                        <a href="{{route('categories')}}"><h3 class="info__title">صوتی</h3></a>
-                        <p class="info__text">مجموعه فایل های صوتی<br> استاد محمد باقر حیدری کاشانی</p>
+                        <a href="{{route($category->route)}}"><h3 class="info__title">{{$category->title}}</h3></a>
+                        <p class="info__text">{{$category->long_title}}</p>
                     </div>
                 </div>
-                <div class="col-lg-4 responsive-column-half">
-                    <div class="info-box">
-                        <div class="info-overlay"></div>
-                        <div class="icon-element mx-auto shadow-sm">
-                            <i class="la la-film" style="color: #389ec5"></i>
-                        </div>
-                        <a href="{{route('faq')}}"> <h3 class="info__title">تصویری</h3></a>
-                         <p class="info__text">مجموعه فایل های تصویری<br> استاد محمد باقر حیدری کاشانی</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 responsive-column-half">
-                    <div class="info-box">
-                        <div class="info-overlay"></div>
-                        <div class="icon-element mx-auto shadow-sm">
-                            <i class="la la-book" style="color: #389ec5"></i>
-                        </div>
-                        <h3 class="info__title">نوشتاری </h3>
-                        <p class="info__text">مجموعه فایل های نوشتاری<br> استاد محمد باقر حیدری کاشانی</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
