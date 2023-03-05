@@ -86,16 +86,16 @@ class SlideController extends Controller
             ->with(compact(['menupanels' , 'submenupanels']));
     }
 
-        public function imgupload(Request $request)
+        public function store(Request $request)
     {
 
         $slides = new Slide();
         $slides->status     = 1;
         $slides->user_id    = Auth::user()->id;
 
-        if ($request->file('files')) {
+        if ($request->file('file_link')) {
 
-            $file = $request->file('files');
+            $file = $request->file('file_link');
             $img = Image::make($file);
             $imagePath ="images/slides/";
             $imageName = md5(uniqid(rand(), true)) .'.'. $file->clientExtension();

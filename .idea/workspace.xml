@@ -2,25 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3f281dc-e80c-4db7-b55c-2c8fc05a93f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OriginalcategorysiteController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Original_category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2023_03_02_183914_create_original_categories_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/originalcategorysite/all.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/originalcategorysite/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/originalcategorysite/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/New folder/167a59ba8f1a34bab63885dc05d9f940.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/New folder/8dae7c2fd046ac5d8637bb0dd3f9454a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/New folder/ec34d9ad61fe318a7f84223d018947c8.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Galleryclipmanage.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Gallerymusicmanage.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Gallerypicmanage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GallerypicController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/gallerypics/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/gallerypics/all.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/gallerypics/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/gallerypics/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/menus/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/menus/all.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Site/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MediaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MediaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlideController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlideController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/slides/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/slides/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +176,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../xampp/htdocs/autokala" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -250,6 +239,8 @@
       <workItem from="1677383604677" duration="127000" />
       <workItem from="1677387931376" duration="2265000" />
       <workItem from="1677774720680" duration="9743000" />
+      <workItem from="1677873204636" duration="141000" />
+      <workItem from="1677935821868" duration="15629000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0.1">
       <created>1673105255784</created>
@@ -349,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677383667920</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="v1.9.4">
+      <created>1677873322098</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1677873322098</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,6 +390,7 @@
     <MESSAGE value="v1.6.4" />
     <MESSAGE value="v1.7.4" />
     <MESSAGE value="v1.8.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.8.4" />
+    <MESSAGE value="v1.9.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.9.4" />
   </component>
 </project>

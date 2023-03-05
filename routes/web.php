@@ -55,7 +55,8 @@ Route::prefix('admin')->middleware(['auth:web' , 'checkAdmin'])->group(function 
     Route::delete('deletemenus'             , [App\Http\Controllers\Admin\MenuController::class             , 'deletemenus'])            ->name('deletemenus');
     Route::delete('deletesubmenus'          , [App\Http\Controllers\Admin\SubmenuController::class          , 'deletesubmenus'])         ->name('deletesubmenus');
 
-    Route::post('slides/img'                , [App\Http\Controllers\Admin\SlideController::class , 'imgupload'])                         ->name('img');
+    Route::post('slides/img'                , [App\Http\Controllers\Admin\MediaController::class , 'imgupload'])                         ->name('img');
+    Route::post('gallerypicmanage/img'      , [App\Http\Controllers\Admin\MediaController::class , 'imgupload'])                         ->name('img');
 
 });
 
