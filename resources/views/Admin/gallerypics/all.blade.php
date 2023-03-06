@@ -50,7 +50,6 @@
                                         <tr>
                                             <th class="wd-10p"> سریال </th>
                                             <th class="wd-10p"> تصویر </th>
-                                            <th class="wd-10p"> موقعیت </th>
                                             <th class="wd-10p"> نام </th>
                                             <th class="wd-10p"> وضعیت </th>
                                             <th class="wd-10p">ویرایش / حذف </th>
@@ -84,7 +83,6 @@
                 columns: [
                     {data: 'id'                 , name: 'id'},
                     {data: 'file_link'          , name: 'file_link' },
-                    {data: 'position'           , name: 'position'  },
                     {data: 'title'              , name: 'title'     },
                     {data: 'status'             , name: 'status'    },
                     {data: 'action'             , name: 'action'    },

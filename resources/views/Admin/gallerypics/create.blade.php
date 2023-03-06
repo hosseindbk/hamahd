@@ -206,7 +206,7 @@
                         closeOnConfirm: false
                     },
                     jQuery.ajax({
-                        url: "{{ route('slides.store') }}",
+                        url: "{{ route('gallerypicmanage.store') }}",
                         method: 'POST',
                         data: formData,
 

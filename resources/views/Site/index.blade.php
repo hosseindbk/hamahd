@@ -24,14 +24,16 @@
             <div class="row feature-content-wrap">
                 @foreach($categories as $category)
                 <div class="{{$category->col_style}} responsive-column-half">
-                    <div class="info-box">
-                        <div class="info-overlay"></div>
-                        <div class="icon-element mx-auto shadow-sm">
-                            <i class="{{$category->icon}}" style="color: #389ec5"></i>
+                    <a href="{{route($category->route)}}" class="text-secondary">
+                        <div class="info-box">
+                            <div class="info-overlay"></div>
+                            <div class="icon-element mx-auto shadow-sm">
+                                <i class="{{$category->icon}}" style="color: #389ec5"></i>
+                            </div>
+                            <h3 class="info__title">{{$category->title}}</h3>
+                            <p class="info__text">{{$category->long_title}}</p>
                         </div>
-                        <a href="{{route($category->route)}}"><h3 class="info__title">{{$category->title}}</h3></a>
-                        <p class="info__text">{{$category->long_title}}</p>
-                    </div>
+                    </a>
                 </div>
                 @endforeach
             </div>

@@ -30,8 +30,9 @@ class GallerypicController extends Controller
                 ->editColumn('slug', function ($data) {
                     return ($data->slug);
                 })
-                ->editColumn('file_link', function ($data) {
-                    return ($data->file_link);
+                ->addColumn('file_link', function ($row) {
+                    return '<img src="'.asset($row->file_link).'"  width="200" class="img-rounded" align="center" />';
+
                 })
                 ->editColumn('status', function ($data) {
                     if ($data->status == "0") {
@@ -40,20 +41,14 @@ class GallerypicController extends Controller
                         return "در حال نمایش";
                     }
                 })
-                ->editColumn('submenu', function ($data) {
-                    if ($data->submenu == 1) {
-                        return "دارد";
-                    } else {
-                        return "ندارد";
-                    }
-                })
+
                 ->addColumn('action', function ($data) {
                     $actionBtn = '<a href="' . route('menus.edit', $data->id) . '" class="btn ripple btn-outline-info btn-icon" style="float: right;margin: 0 5px;"><i class="fe fe-edit-2"></i></a>
                     <button type="button" id="submit" data-toggle="modal" data-target="#myModal'.$data->id.'" class="btn ripple btn-outline-danger btn-icon " style="float: right;"><i class="fe fe-trash-2 "></i></button>';
 
                     return $actionBtn;
                 })
-                ->rawColumns(['action'])
+                ->rawColumns(['action', 'file_link'])
                 ->make(true);
         }
 
@@ -77,24 +72,24 @@ class GallerypicController extends Controller
 
     public function store(Request $request)
     {
-        $slides = new Slide();
-        $slides->title      = $request->input('title');
-        $slides->status     = 1;
-        $slides->user_id    = Auth::user()->id;
+        $gallerypics = new Gallerypic();
+        $gallerypics->title      = $request->input('title');
+        $gallerypics->status     = 1;
+        $gallerypics->user_id    = Auth::user()->id;
 
         if ($request->file('file_link')) {
 
             $file = $request->file('file_link');
             $img = Image::make($file);
-            $imagePath ="images/slides";
+            $imagePath ="images/gallerypic";
             $imageName = md5(uniqid(rand(), true)) .'.'. $file->clientExtension();
-            $slides->file_link = $file->storeAs($imagePath, $imageName);
+            $gallerypics->file_link = $file->storeAs($imagePath, $imageName);
             $img->save($imagePath.$imageName);
             $img->encode('jpg');
 
         }
 
-        $result = $slides->save();
+        $result = $gallerypics->save();
         try{
 
             if ($result == true) {

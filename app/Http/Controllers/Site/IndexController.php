@@ -45,7 +45,18 @@ class IndexController extends Controller
     }
 
     public function categories(){
-        return view('Site.categories');
+        $menus              = Menu::select('id' , 'title' , 'slug' , 'submenu')->whereStatus(4)->orderBy('priority')->get();
+        $categories         = Menu::select('id' , 'title' , 'route' , 'icon' , 'col_style' , 'long_title')->whereHome_show(1)->whereStatus(4)->get();
+        $submenus           = Submenu::select('title' , 'slug' , 'menu_id')->whereStatus(4)->get();
+        $slides             = Slide::select('title' , 'file_link')->whereStatus(4)->get();
+        $logos              = Logo::select('title' , 'file_link')->first();
+
+        return view('Site.categories')
+            ->with(compact('menus'))
+            ->with(compact('logos'))
+            ->with(compact('slides'))
+            ->with(compact('categories'))
+            ->with(compact('submenus'));
     }
 
     public function faq(){

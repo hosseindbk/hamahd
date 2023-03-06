@@ -13,7 +13,9 @@
 {{--    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">--}}
 
     <!-- Favicon -->
-    <link rel="icon" sizes="16x16" href="images/favicon.png">
+    <!-- <link rel="icon" sizes="16x16" href="images/favicon.png"> -->
+    <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
 
     <!-- inject:css -->
     <link rel="stylesheet" href="{{asset('site/css/bootstrap.min.css')}}">
@@ -96,8 +98,10 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2">
                         <div class="logo-box">
-                            <a href="{{route('/')}}" class="logo"><img src="{{asset($logos['file_link'])}}" alt="{{$logos['title']}}" style="width: 30%"></a>
-                            <div class="user-btn-action">
+                            <a href="{{route('/')}}" class="logo">
+                                <img src="{{asset($logos['file_link'])}}" alt="{{$logos['title']}}" style="width: 30%">
+                            </a>
+                            <div class="user-btn-action d-flex">
                                 <div class="search-menu-toggle icon-element icon-element-sm shadow-sm mr-2" data-toggle="tooltip" data-placement="top" title="جستجو کردن">
                                     <i class="la la-search"></i>
                                 </div>
