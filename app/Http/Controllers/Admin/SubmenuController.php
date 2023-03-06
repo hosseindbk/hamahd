@@ -20,8 +20,7 @@ class SubmenuController extends Controller
         $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         if ($request->ajax()) {
-            $data = Submenu::select('id', 'title', 'slug', 'status')
-                ->get();
+            $data = Submenu::select('id', 'title', 'slug', 'status')->get();
 
             return Datatables::of($data)
                 ->editColumn('id', function ($data) {
@@ -152,10 +151,11 @@ class SubmenuController extends Controller
     }
 
 
-    public function destroy(Submenu $submenu)
+    public function deletesubmenus(Request $request)
     {
         try{
-        $result = $submenu->delete();
+            $submenu = Submenu::findOrfail($request->input('id'));
+            $result = $submenu->delete();
 
             if ($result == true) {
                 $success = true;

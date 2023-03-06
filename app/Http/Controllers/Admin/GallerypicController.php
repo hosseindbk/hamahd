@@ -7,15 +7,13 @@ use App\Models\Gallerypic;
 use App\Models\Submenu_panel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 use Yajra\DataTables\Facades\DataTables;
 
 class GallerypicController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index(Request $request)
     {
         $menus          = Gallerypic::all();
@@ -23,7 +21,7 @@ class GallerypicController extends Controller
         $submenupanels  = Submenu_panel::whereStatus(4)->get();
 
         if ($request->ajax()) {
-            $data = Gallerypic::select('id', 'title', 'slug', 'status' , 'submenu', 'priority')->get();
+            $data = Gallerypic::select('id', 'title', 'slug' , 'file_link', 'status')->get();
 
             return Datatables::of($data)
                 ->editColumn('title', function ($data) {
@@ -32,8 +30,8 @@ class GallerypicController extends Controller
                 ->editColumn('slug', function ($data) {
                     return ($data->slug);
                 })
-                ->editColumn('priority', function ($data) {
-                    return ($data->priority);
+                ->editColumn('file_link', function ($data) {
+                    return ($data->file_link);
                 })
                 ->editColumn('status', function ($data) {
                     if ($data->status == "0") {
@@ -65,11 +63,7 @@ class GallerypicController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         $menupanels     = Menu_panel::whereStatus(4)->get();
@@ -80,57 +74,72 @@ class GallerypicController extends Controller
             ->with(compact(['menupanels' , 'submenupanels']));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $slides = new Slide();
+        $slides->title      = $request->input('title');
+        $slides->status     = 1;
+        $slides->user_id    = Auth::user()->id;
+
+        if ($request->file('file_link')) {
+
+            $file = $request->file('file_link');
+            $img = Image::make($file);
+            $imagePath ="images/slides";
+            $imageName = md5(uniqid(rand(), true)) .'.'. $file->clientExtension();
+            $slides->file_link = $file->storeAs($imagePath, $imageName);
+            $img->save($imagePath.$imageName);
+            $img->encode('jpg');
+
+        }
+
+        $result = $slides->save();
+        try{
+
+            if ($result == true) {
+                $success = true;
+                $flag    = 'success';
+                $subject = 'عملیات موفق';
+                $message = 'اطلاعات با موفقیت ثبت شد';
+            }
+            else {
+                $success = false;
+                $flag    = 'error';
+                $subject = 'عملیات نا موفق';
+                $message = 'اطلاعات ثبت نشد، لطفا مجددا تلاش نمایید';
+            }
+
+        } catch (\Exception $e) {
+
+            $success = false;
+            $flag    = 'error';
+            $subject = 'خطا در ارتباط با سرور';
+            //$message = strchr($e);
+            $message = 'اطلاعات ثبت نشد،لطفا بعدا مجدد تلاش نمایید ';
+        }
+
+        return response()->json(['success'=>$success , 'subject' => $subject, 'flag' => $flag, 'message' => $message]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

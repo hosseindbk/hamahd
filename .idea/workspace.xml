@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3f281dc-e80c-4db7-b55c-2c8fc05a93f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/New folder/167a59ba8f1a34bab63885dc05d9f940.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/New folder/8dae7c2fd046ac5d8637bb0dd3f9454a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/New folder/ec34d9ad61fe318a7f84223d018947c8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MediaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MediaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/GallerypicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GallerypicController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlideController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlideController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/slides/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/slides/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SubmenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SubmenuController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/gallerypics/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/gallerypics/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,10 +171,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../xampp/htdocs/autokala" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../autokala" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
