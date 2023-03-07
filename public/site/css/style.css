@@ -8641,3 +8641,25 @@ div.datedropper .picker .pick-lg-b li {
  .linkedin-bg-blue:hover{
      background-color: rgba(59, 130, 246, 0.87);
  }
+
+
+ /* -- Amiri ------------------------------------------------------------------------- */
+ .icon-social {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    overflow: hidden;
+ }
+
+ .icon-social a {
+    display: block;
+ }
+
+ .icon-social:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ }
+
+ .icon-social a img {
+    width: auto;
+    height: 42px;
+ }
