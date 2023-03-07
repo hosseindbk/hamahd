@@ -59,78 +59,80 @@
             </div>
             <div class="category-wrapper mt-30px">
                 <div class="row">
+                    @foreach($programs as $program)
                     <div class="col-lg-4 responsive-column-half">
                         <div class="category-item">
-                            <img class="cat__img lazy" src="images/img-loading.png" data-src="images/Heidari-1.jpg" alt="تصویر دسته">
+                            <img class="cat__img lazy" src="{{asset($program->file_link)}}" data-src="{{asset($program->file_link)}}" alt="{{$program->title}}">
                             <div class="category-content">
                                 <div class="category-inner">
-                                    <h3 class="cat__title"><a href={{route('careers')}}>فاطمیه</a></h3>
-                                    <p class="cat__meta">9 دوره</p>
+                                    <h3 class="cat__title"><a href={{route('careers')}}>{{$program->title}}</a></h3>
+                                    <p class="cat__meta"></p>
                                     <a href="{{route('careers')}}" class="btn theme-btn theme-btn-sm theme-btn-white">مشاهده <i class="la la-arrow-left icon ml-1"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 responsive-column-half">
-                        <div class="category-item">
-                            <img class="cat__img lazy" src="images/img-loading.png" data-src="images/Heidari-7.jpg" alt="تصویر دسته">
-                            <div class="category-content">
-                                <div class="category-inner">
-                                    <h3 class="cat__title"><a href="{{route('careers')}}">محرم</a></h3>
-                                    <p class="cat__meta">7 دوره</p>
-                                    <a href="{{route('careers')}}" class="btn theme-btn theme-btn-sm theme-btn-white">مشاهده <i class="la la-arrow-left icon ml-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 responsive-column-half">
-                        <div class="category-item">
-                            <img class="cat__img lazy" src="images/img-loading.png" data-src="images/Heidari-8.jpg" alt="تصویر دسته">
-                            <div class="category-content">
-                                <div class="category-inner">
-                                    <h3 class="cat__title"><a href="{{route('careers')}}">نیمه شعبان</a></h3>
-                                    <p class="cat__meta">8 دوره</p>
-                                    <a href="{{route('careers')}}" class="btn theme-btn theme-btn-sm theme-btn-white">مشاهده <i class="la la-arrow-left icon ml-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 responsive-column-half">
-                        <div class="category-item">
-                            <img class="cat__img lazy" src="images/img-loading.png" data-src="images/Heidari-9.jpg" alt="تصویر دسته">
-                            <div class="category-content">
-                                <div class="category-inner">
-                                    <h3 class="cat__title"><a href="{{route('careers')}}">شهادت ها</a></h3>
-                                    <p class="cat__meta">6 دوره</p>
-                                    <a href="{{route('careers')}}" class="btn theme-btn theme-btn-sm theme-btn-white">مشاهده <i class="la la-arrow-left icon ml-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 responsive-column-half">
-                        <div class="category-item">
-                            <img class="cat__img lazy" src="images/img-loading.png" data-src="images/Heidari-10.jpg" alt="تصویر دسته">
-                            <div class="category-content">
-                                <div class="category-inner">
-                                    <h3 class="cat__title"><a href="{{route('careers')}}">ولادت ها</a></h3>
-                                    <p class="cat__meta">7 دوره</p>
-                                    <a href="{{route('careers')}}" class="btn theme-btn theme-btn-sm theme-btn-white">مشاهده <i class="la la-arrow-left icon ml-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 responsive-column-half">
-                        <div class="category-item">
-                            <img class="cat__img lazy" src="images/img-loading.png" data-src="images/Heidari-11.jpg" alt="تصویر دسته">
-                            <div class="category-content">
-                                <div class="category-inner">
-                                    <h3 class="cat__title"><a href="{{route('careers')}}">حاج قاسم</a></h3>
-                                    <p class="cat__meta">8 دوره</p>
-                                    <a href="{{route('careers')}}" class="btn theme-btn theme-btn-sm theme-btn-white">مشاهده <i class="la la-arrow-left icon ml-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+{{--                    <div class="col-lg-4 responsive-column-half">--}}
+{{--                        <div class="category-item">--}}
+{{--                            <img class="cat__img lazy" src="images/img-loading.png" data-src="images/Heidari-7.jpg" alt="تصویر دسته">--}}
+{{--                            <div class="category-content">--}}
+{{--                                <div class="category-inner">--}}
+{{--                                    <h3 class="cat__title"><a href="{{route('careers')}}">محرم</a></h3>--}}
+{{--                                    <p class="cat__meta">7 دوره</p>--}}
+{{--                                    <a href="{{route('careers')}}" class="btn theme-btn theme-btn-sm theme-btn-white">مشاهده <i class="la la-arrow-left icon ml-1"></i></a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-lg-4 responsive-column-half">--}}
+{{--                        <div class="category-item">--}}
+{{--                            <img class="cat__img lazy" src="images/img-loading.png" data-src="images/Heidari-8.jpg" alt="تصویر دسته">--}}
+{{--                            <div class="category-content">--}}
+{{--                                <div class="category-inner">--}}
+{{--                                    <h3 class="cat__title"><a href="{{route('careers')}}">نیمه شعبان</a></h3>--}}
+{{--                                    <p class="cat__meta">8 دوره</p>--}}
+{{--                                    <a href="{{route('careers')}}" class="btn theme-btn theme-btn-sm theme-btn-white">مشاهده <i class="la la-arrow-left icon ml-1"></i></a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-lg-4 responsive-column-half">--}}
+{{--                        <div class="category-item">--}}
+{{--                            <img class="cat__img lazy" src="images/img-loading.png" data-src="images/Heidari-9.jpg" alt="تصویر دسته">--}}
+{{--                            <div class="category-content">--}}
+{{--                                <div class="category-inner">--}}
+{{--                                    <h3 class="cat__title"><a href="{{route('careers')}}">شهادت ها</a></h3>--}}
+{{--                                    <p class="cat__meta">6 دوره</p>--}}
+{{--                                    <a href="{{route('careers')}}" class="btn theme-btn theme-btn-sm theme-btn-white">مشاهده <i class="la la-arrow-left icon ml-1"></i></a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-lg-4 responsive-column-half">--}}
+{{--                        <div class="category-item">--}}
+{{--                            <img class="cat__img lazy" src="images/img-loading.png" data-src="images/Heidari-10.jpg" alt="تصویر دسته">--}}
+{{--                            <div class="category-content">--}}
+{{--                                <div class="category-inner">--}}
+{{--                                    <h3 class="cat__title"><a href="{{route('careers')}}">ولادت ها</a></h3>--}}
+{{--                                    <p class="cat__meta">7 دوره</p>--}}
+{{--                                    <a href="{{route('careers')}}" class="btn theme-btn theme-btn-sm theme-btn-white">مشاهده <i class="la la-arrow-left icon ml-1"></i></a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-lg-4 responsive-column-half">--}}
+{{--                        <div class="category-item">--}}
+{{--                            <img class="cat__img lazy" src="images/img-loading.png" data-src="images/Heidari-11.jpg" alt="تصویر دسته">--}}
+{{--                            <div class="category-content">--}}
+{{--                                <div class="category-inner">--}}
+{{--                                    <h3 class="cat__title"><a href="{{route('careers')}}">حاج قاسم</a></h3>--}}
+{{--                                    <p class="cat__meta">8 دوره</p>--}}
+{{--                                    <a href="{{route('careers')}}" class="btn theme-btn theme-btn-sm theme-btn-white">مشاهده <i class="la la-arrow-left icon ml-1"></i></a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>

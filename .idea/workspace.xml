@@ -1,20 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3f281dc-e80c-4db7-b55c-2c8fc05a93f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/New folder/167a59ba8f1a34bab63885dc05d9f940.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/New folder/8dae7c2fd046ac5d8637bb0dd3f9454a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/New folder/ec34d9ad61fe318a7f84223d018947c8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Site/galleries.blade.php" afterDir="false" />
+    <list default="true" id="a3f281dc-e80c-4db7-b55c-2c8fc05a93f2" name="Changes" comment="v1.9.6">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GallerymusicController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProgramController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Program.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2023_03_07_063245_create_programs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/desktop.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/gallerypic/6c2b73ccc1fc9ac29361376c9b840db7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/gallerypic/dc649bd3bf3bacc1cab999c0a4e30f7a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/gallerypic/e195f08e3756306a9d8ea00588d79ae0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/programs/bbaa2ea7141742e24b0708a2ca5ed0d5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/gallerymusices/all.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/gallerymusices/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/gallerymusices/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/gallerymusices/image.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/programs/all.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/programs/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/programs/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/programs/image.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/GallerypicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GallerypicController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlideController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SlideController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/slides/045c13396bd21c9ff3efcb7dfc17f8e7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/slides/77a056d1ab29f48e4a2a0c28d8387850.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/slides/8478e066b30ccb6b56ef66ac88c32645.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/menus/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/menus/all.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Site/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,17 +196,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Site" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../autokala" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp2\htdocs\hamahd\resources\views\Site" />
+      <recent name="C:\xampp\htdocs\hamahd\resources\views\Admin" />
+      <recent name="C:\xampp\htdocs\hamahd\app\Http\Controllers\Admin" />
       <recent name="C:\xampp2\htdocs\hamahd\app\Http\Controllers\Admin" />
       <recent name="C:\xampp2\htdocs\hamahd\resources\views\Admin" />
       <recent name="C:\xampp2\htdocs\hamahd\public\admin\assets\js" />
@@ -353,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677873322098</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="v1.9.5">
+      <created>1678090021726</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1678090021726</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,6 +425,7 @@
     <MESSAGE value="v1.7.4" />
     <MESSAGE value="v1.8.4" />
     <MESSAGE value="v1.9.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.9.4" />
+    <MESSAGE value="v1.9.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.9.5" />
   </component>
 </project>

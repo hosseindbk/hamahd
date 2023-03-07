@@ -6,9 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Menu;
 use App\Models\Logo;
 use App\Models\Slide;
-use App\Models\Gallerypic;
+use App\Models\Gallerymusic;
 use App\Models\Submenu;
 use App\Models\Original_category;
+use App\Models\Program;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -17,12 +18,14 @@ class IndexController extends Controller
 
         $menus              = Menu::select('id' , 'title' , 'slug' , 'submenu')->whereStatus(4)->orderBy('priority')->get();
         $categories         = Menu::select('id' , 'title' , 'route' , 'icon' , 'col_style' , 'long_title')->whereHome_show(1)->whereStatus(4)->get();
+        $programs           = Program::select('id' , 'title' , 'slug' , 'file_link')->whereStatus(4)->get();
         $submenus           = Submenu::select('title' , 'slug' , 'menu_id')->whereStatus(4)->get();
         $slides             = Slide::select('title' , 'file_link')->whereStatus(4)->get();
         $logos              = Logo::select('title' , 'file_link')->first();
 
         return view('Site.index')
             ->with(compact('menus'))
+            ->with(compact('programs'))
             ->with(compact('logos'))
             ->with(compact('slides'))
             ->with(compact('categories'))
@@ -71,6 +74,20 @@ class IndexController extends Controller
             ->with(compact('logos'))
             ->with(compact('slides'))
             ->with(compact('pics'))
+            ->with(compact('submenus'));
+    }
+    public function musics(){
+        $menus              = Menu::select('id' , 'title' , 'slug' , 'submenu')->whereStatus(4)->orderBy('priority')->get();
+        $musics             = Gallerymusic::whereStatus(4)->get();
+        $submenus           = Submenu::select('title' , 'slug' , 'menu_id')->whereStatus(4)->get();
+        $slides             = Slide::select('title' , 'file_link')->whereStatus(4)->get();
+        $logos              = Logo::select('title' , 'file_link')->first();
+
+        return view('Site.musics')
+            ->with(compact('menus'))
+            ->with(compact('logos'))
+            ->with(compact('slides'))
+            ->with(compact('musics'))
             ->with(compact('submenus'));
     }
 

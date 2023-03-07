@@ -12,6 +12,8 @@ Route::prefix('/')->group(function (){
     Route::get('careers'        , [App\Http\Controllers\Site\IndexController::class   , 'careers'])         ->name('careers');
     Route::get('categories'     , [App\Http\Controllers\Site\IndexController::class   , 'categories'])      ->name('categories');
     Route::get('galleries'      , [App\Http\Controllers\Site\IndexController::class   , 'galleries'])       ->name('galleries');
+    Route::get('galleryvideo'   , [App\Http\Controllers\Site\IndexController::class   , 'galleryvideo'])    ->name('galleryvideo');
+    Route::get('musics'         , [App\Http\Controllers\Site\IndexController::class   , 'musics'])          ->name('musics');
     Route::get('faq'            , [App\Http\Controllers\Site\IndexController::class   , 'faq'])             ->name('faq');
     Route::get('lessondetails'  , [App\Http\Controllers\Site\IndexController::class   , 'lessondetails'])   ->name('lessondetails');
     Route::get('shoppingcart'   , [App\Http\Controllers\Site\PriceController::class   , 'shoppingcart'])    ->name('shoppingcart');
@@ -31,11 +33,12 @@ Route::prefix('admin')->middleware(['auth:web' , 'checkAdmin'])->group(function 
 
     Route::get('panel'                      , [App\Http\Controllers\Admin\PanelController::class   , 'index'])->name('/');
     Route::resource('gallerypicmanage'    , App\Http\Controllers\Admin\GallerypicController::class);
-//    Route::resource('gallerymusic'        , App\Http\Controllers\Admin\GallerymusicController::class);
+    Route::resource('gallerymusicmanage'  , App\Http\Controllers\Admin\GallerymusicController::class);
 //    Route::resource('galleryclip'         , App\Http\Controllers\Admin\GalleryclipController::class);
     Route::resource('users'                     , App\Http\Controllers\Admin\UserController::class);
     Route::resource('slides'                    , App\Http\Controllers\Admin\SlideController::class);
     Route::resource('permissions'               , App\Http\Controllers\Admin\PermissionController::class);
+    Route::resource('programs'                  , App\Http\Controllers\Admin\ProgramController::class);
     Route::resource('roles'                     , App\Http\Controllers\Admin\RoleController::class);
     Route::resource('levelAdmins'               , App\Http\Controllers\Admin\LevelManageController::class);
     Route::resource('profile'                   , App\Http\Controllers\Admin\ProfileController::class);
