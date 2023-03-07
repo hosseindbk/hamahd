@@ -98,7 +98,7 @@ class SlideController extends Controller
 
             $file = $request->file('file_link');
             $img = Image::make($file);
-            $imagePath ="images/slides";
+            $imagePath ="images/slides/";
             $imageName = md5(uniqid(rand(), true)) .'.'. $file->clientExtension();
             $slides->file_link = $file->storeAs($imagePath, $imageName);
             $img->save($imagePath.$imageName);

@@ -81,7 +81,7 @@ class GallerypicController extends Controller
 
             $file = $request->file('file_link');
             $img = Image::make($file);
-            $imagePath ="images/gallerypic";
+            $imagePath ="images/gallerypic/";
             $imageName = md5(uniqid(rand(), true)) .'.'. $file->clientExtension();
             $gallerypics->file_link = $file->storeAs($imagePath, $imageName);
             $img->save($imagePath.$imageName);

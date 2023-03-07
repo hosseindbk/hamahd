@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Menu;
 use App\Models\Logo;
 use App\Models\Slide;
+use App\Models\Gallerypic;
 use App\Models\Submenu;
 use App\Models\Original_category;
 use Illuminate\Http\Request;
@@ -56,6 +57,20 @@ class IndexController extends Controller
             ->with(compact('logos'))
             ->with(compact('slides'))
             ->with(compact('categories'))
+            ->with(compact('submenus'));
+    }
+    public function galleries(){
+        $menus              = Menu::select('id' , 'title' , 'slug' , 'submenu')->whereStatus(4)->orderBy('priority')->get();
+        $pics               = Gallerypic::whereStatus(4)->get();
+        $submenus           = Submenu::select('title' , 'slug' , 'menu_id')->whereStatus(4)->get();
+        $slides             = Slide::select('title' , 'file_link')->whereStatus(4)->get();
+        $logos              = Logo::select('title' , 'file_link')->first();
+
+        return view('Site.galleries')
+            ->with(compact('menus'))
+            ->with(compact('logos'))
+            ->with(compact('slides'))
+            ->with(compact('pics'))
             ->with(compact('submenus'));
     }
 

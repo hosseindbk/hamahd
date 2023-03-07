@@ -78,7 +78,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">خیر</button>
-                        <button type="button" id="deletemenu{{$menu->id}}" class="btn btn-danger" data-id="{{$menu->id}} " data-dismiss="modal">بله</button>
+                        <button type="button" id="deletemenu{{$menu->id}}" class="btn btn-danger" data-id="{{$menu->id}}" data-dismiss="modal">بله</button>
                     </div>
                 </div>
 

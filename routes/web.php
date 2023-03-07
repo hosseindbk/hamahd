@@ -11,6 +11,7 @@ Route::prefix('/')->group(function (){
     Route::get('privacypolicy'  , [App\Http\Controllers\Site\IndexController::class   , 'privacypolicy'])   ->name('privacypolicy');
     Route::get('careers'        , [App\Http\Controllers\Site\IndexController::class   , 'careers'])         ->name('careers');
     Route::get('categories'     , [App\Http\Controllers\Site\IndexController::class   , 'categories'])      ->name('categories');
+    Route::get('galleries'      , [App\Http\Controllers\Site\IndexController::class   , 'galleries'])       ->name('galleries');
     Route::get('faq'            , [App\Http\Controllers\Site\IndexController::class   , 'faq'])             ->name('faq');
     Route::get('lessondetails'  , [App\Http\Controllers\Site\IndexController::class   , 'lessondetails'])   ->name('lessondetails');
     Route::get('shoppingcart'   , [App\Http\Controllers\Site\PriceController::class   , 'shoppingcart'])    ->name('shoppingcart');
