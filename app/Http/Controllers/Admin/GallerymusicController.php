@@ -27,12 +27,15 @@ class GallerymusicController extends Controller
                 ->editColumn('title', function ($data) {
                     return ($data->title);
                 })
+                ->addColumn('cover', function ($row) {
+                    return '<img src="'.asset($row->cover).'"  width="200" class="img-rounded" align="center" />';
+
+                })
                 ->editColumn('slug', function ($data) {
                     return ($data->slug);
                 })
-                ->addColumn('file_link', function ($row) {
-                    return '<img src="'.asset($row->file_link).'"  width="200" class="img-rounded" align="center" />';
-
+                ->addColumn('file_link', function ($data) {
+                    return  '<audio controls> <source src="'. asset($data->file_link) .'" type="audio/mpeg"> </audio>';
                 })
                 ->editColumn('status', function ($data) {
                     if ($data->status == "0") {
@@ -48,7 +51,7 @@ class GallerymusicController extends Controller
 
                     return $actionBtn;
                 })
-                ->rawColumns(['action', 'file_link'])
+                ->rawColumns(['action', 'file_link' , 'cover'])
                 ->make(true);
         }
 
@@ -85,6 +88,17 @@ class GallerymusicController extends Controller
             $gallerymusices->file_link = $file->storeAs($imagePath, $imageName);
             $file->move($imagePath, $imageName);
             //$gallerymusices->save($imagePath.$imageName);
+
+        }
+        if ($request->hasFile('cover')) {
+
+            $cover = $request->file('cover');
+            $img = Image::make($cover);
+            $imagePath ="musices/pic/";
+            $imageName = md5(uniqid(rand(), true)) .'.'. $cover->clientExtension();
+            $gallerymusices->cover = $cover->storeAs($imagePath, $imageName);
+            $img->save($imagePath.$imageName);
+            $img->encode('jpg');
 
         }
 

@@ -1,12 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3f281dc-e80c-4db7-b55c-2c8fc05a93f2" name="Changes" comment="v1.9.6">
-      <change afterPath="$PROJECT_DIR$/public/musices/15Sha'ban.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/musices/Heidari-25.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/musices/صلوات ضراب.m4a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/site/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/site/css/style.css" afterDir="false" />
+    <list default="true" id="a3f281dc-e80c-4db7-b55c-2c8fc05a93f2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BookmanageController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GalleryvideoController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/musices/37e154d011d1ab103c12d48d3b23f397.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/musices/9ad4c957792429a0f1a772d650dcf69b.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/musices/pic/2b7e4f8d3abafb06c94c80530ea331f6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/musices/pic/a364d0a531bd1597fd33ec1b97f0cf55.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/videos/24a84e7e7adf35e6de74e80ccd23b2ee.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/videos/a2f1d982cb540e45a06fc7fe1340d430.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/videos/af32fba51007c197bf4ea2df87960fa8.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/videos/b4f52814ce5a3bcde481a60297805d20.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/videos/pic/33843d406510da4eadca53c293ee3653.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/videos/pic/511b80d46d824a470b794e50f579dfb5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/videos/pic/55e7c1dc3a99b158c30607fd3c877fc0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/videos/pic/f91eac23db4a962c5d0ed3d0d7784291.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/videos/subtitle/english.vtt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/videos/subtitle/farsi.vtt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/bookmanage/all.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/bookmanage/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/bookmanage/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/bookmanage/image.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/galleryvideos/all.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/galleryvideos/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/galleryvideos/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/galleryvideos/image.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Site/bio.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Site/bookdetail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Site/books.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Site/musicdetail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Site/picturedetail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Site/pictures.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Site/terms.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Site/videodetail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Site/videos.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/GallerymusicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GallerymusicController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/programs/bbaa2ea7141742e24b0708a2ca5ed0d5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/musices/15Sha'ban.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/musices/Heidari-25.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/musices/صلوات ضراب.m4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/gallerymusices/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/gallerymusices/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Site/galleries.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Site/music.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Site/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,23 +211,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../autokala" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Site" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\hamahd\resources\views\Admin" />
-      <recent name="C:\xampp\htdocs\hamahd\app\Http\Controllers\Admin" />
-      <recent name="C:\xampp2\htdocs\hamahd\app\Http\Controllers\Admin" />
+      <recent name="C:\xampp2\htdocs\hamahd\resources\views\Site" />
+      <recent name="C:\xampp2\htdocs\hamahd\app\Models" />
       <recent name="C:\xampp2\htdocs\hamahd\resources\views\Admin" />
-      <recent name="C:\xampp2\htdocs\hamahd\public\admin\assets\js" />
+      <recent name="C:\xampp2\htdocs\hamahd\app\Http\Controllers\Admin" />
+      <recent name="C:\xampp2\htdocs\hamahd\public\videos\subtitle" />
     </key>
   </component>
   <component name="RunManager">
@@ -242,6 +281,7 @@
       <workItem from="1677774720680" duration="9743000" />
       <workItem from="1677873204636" duration="141000" />
       <workItem from="1677935821868" duration="15629000" />
+      <workItem from="1678435760037" duration="8693000" />
     </task>
     <task id="LOCAL-00001" summary="v1.0.1">
       <created>1673105255784</created>
@@ -348,21 +388,7 @@
       <option name="project" value="LOCAL" />
       <updated>1677873322098</updated>
     </task>
-    <task id="LOCAL-00016" summary="v1.9.5">
-      <created>1678090021726</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1678090021726</updated>
-    </task>
-    <task id="LOCAL-00017" summary="v1.9.6">
-      <created>1678192581897</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1678192581897</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,8 +432,6 @@
     <MESSAGE value="v1.7.4" />
     <MESSAGE value="v1.8.4" />
     <MESSAGE value="v1.9.4" />
-    <MESSAGE value="v1.9.5" />
-    <MESSAGE value="v1.9.6" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.9.6" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.9.4" />
   </component>
 </project>

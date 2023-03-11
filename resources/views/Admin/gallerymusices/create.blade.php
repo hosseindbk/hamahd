@@ -44,49 +44,24 @@
                                         <div class="col-md-12">
                                             {{--                                            @include('error')--}}
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <p class="mg-b-10">عنوان تصویر سایت</p>
+                                                <p class="mg-b-10">عنوان فایل </p>
                                                 <input type="text" name="title" id="title" placeholder="عنوان اسلاید را وارد کنید" class="form-control" />
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <p class="mg-b-10">انتخاب موقعیت اسلاید</p>
-                                                <select name="position" class="form-control select-lg select2" id="position">
-                                                    <option value="1">اسلاید اصلی</option>
-                                                    <option value="2">اسلاید تبلیغاتی چپ بالا</option>
-                                                    <option value="3">اسلاید تبلیغاتی چپ پایین</option>
-                                                </select>
+                                                <div class="form-group">
+                                                    <p class="mg-b-10">فایل صوتی</p>
+                                                    <input type="file" name="file_link" id="file_link" class="form-control" data-height="200">
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <p class="mg-b-10">انتخاب نوع اسلاید</p>
-                                                <select name="type" class="form-control select-lg select2" id="type">
-                                                    <option value="">انتخاب کنید</option>
-                                                    <option value="external">لینک خارجی</option>
-                                                    <option value="technical">تعمیرگاه</option>
-                                                    <option value="supplier">فروشگاه</option>
-                                                    <option value="product">کالا</option>
-                                                    <option value="offer">آگهی</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <p class="mg-b-10">ارتباط اسلاید</p>
-                                                <select name="type_id" class="form-control select-lg select2" id="type_id">
-
-                                                </select>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <p class="mg-b-10">فایل صوتی</p>
-                                                <input type="file" name="file_link" id="file_link" class="form-control" data-height="200">
+                                                <p class="mg-b-10">تصویر کاور</p>
+                                                <input type="file" name="cover" id="cover" class="dropify" data-height="200">
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mg-b-10 text-center">
@@ -185,12 +160,14 @@
                 });
                 let    _token      = jQuery('input[name="_token"]').val();
                 let    title       = jQuery('#title').val();
+                let    cover       = jQuery('#cover')[0].files[0];
                 let    file_link   = jQuery('#file_link')[0].files[0];
 
                 let formData = new FormData();
-                formData.append('title' , title);
+                formData.append('title'     , title);
                 formData.append('file_link' , file_link);
-                formData.append('_token' , _token);
+                formData.append('cover'     , cover);
+                formData.append('_token'    , _token);
 
                 swal({
                         title: "Are you sure to delete this  of ?",

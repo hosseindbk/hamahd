@@ -1,0 +1,36 @@
+WEBVTT
+
+STYLE
+::cue {
+  background-color: #000;
+  color: #fff;
+  font-family:IRANSans;
+  line = -1;
+}
+/* Style blocks cannot use blank lines nor "dash dash greater than" */
+
+NOTE comment blocks can be used between style blocks.
+
+STYLE
+::cue(b) {
+  color: peachpuff;
+}
+
+1
+00:00:00.230 --> 00:00:04.406
+<p>مهمترین محور مواخذه و سوال در روز قیامت محور ولایت و امامته</p>
+
+
+2
+00:00:04.739 --> 00:00:10.274
+<p>آقا جونم در این عصر و زمان تنها علمدار ولایت و امامت در جهان چه جریانی است؟</p>
+<p>چه شخصیتی هست؟</p>
+
+3
+00:00:10.159 --> 00:00:12.953
+<p>کی داره برای امام زمان (عج) علمداری می کنه؟</p>
+
+4
+00:00:13.559 --> 00:00:15.953
+<p>شما داستان نبوت رو بگید!</p>
+<p>داستان امامت و ولایت رو بگید</p>
